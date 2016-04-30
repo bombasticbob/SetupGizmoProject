@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Setting up an Application</TITLE>
+</HEAD>
+<BODY>
+<H1>Setting up an Application</H1>
+<br />
+<p>
+A typical application SETUP will have an EXE file, a help '.HLP' file, and (likely as not) shared components in the form of DLL's, plus possible custom DLL's, test data, initialization data, and so forth.
+</p>
+<p>
+As an example, the Microsoft developer environment for C++ offers you the ability to use 'shared' versions of MFC and C run-time in DLL's.  Although this can potentially cause version problems (such as the C++ Version 4.0 incompatibility bug with ODBC introduced with OSR2 NT SP3, where MFC40.DLL no longer worked properly for programs that used 'CRecordset' classes with ODBC databases), and the 'midnight call' when YOU are awakened by some user that can't run &quot;XXX&quot; any more, and they blame YOU because it's YOUR program that broke, even though &quot;some other guy's SETUP&quot; did it to you, people often elect to go ahead and bite the bullet and ship these monolithic components with their applications, possibly because it gives them some capability (like MFC Extension DLL's) that otherwise would not be possible, or because some component (like an ActiveX control) requires them, so they might as well make use of them with their application as well.
+</p>
+<p>
+In addition, Microsoft's &quot;Visual Basic&quot; requires a run-time DLL to be shipped with all programs written for this developer platform, EVEN IF you elect to compile to native code (and not P-code).  Because of this, the need for 'shared component' registration is crucial.  But, don't worry.  S.F.T. Setup Gizmo knows how nasty this can be, and I've made great effort to &quot;get it right&quot;.
+</p>
+<p>
+Typically, you will copy files for your application as follows:
+<OL>
+<LI>Executable files and custom DLL's, followed by HELP files<br />
+Install these into the 'App Directory'.</LI>
+<LI>Language-specific DLL's (run-time, classes)<br />
+Mark these 'System / Shared' and install these into the 'System Directory'</LI>
+<LI>3rd party custom controls and OLE 'in proc' servers - ActiveX controls, certain DLL's.<br />
+Mark these 'System / Shared' and 'Register After Copy', and install these into the 'System Directory', unless otherwise specified by the author.</LI>
+<LI>Your own custom controls and OLE 'in proc' servers - ActiveX controls, certain DLL's<br />
+Mark these 'Register After Copy'.  If you plan on shipping them with many applications, also mark them 'System / Shared' and install these into the 'System Directory'.  Otherwise, install them into the 'App Directory' or select 'other' and install into '%appcommon%'.</LI>
+<LI>Test data, initialization data, and so forth.<br />
+You may wish to install these into a sub-directory off of the application directory.  To do so, specify 'Other' for the 'Install Path' and enter '%apppath%\DataDirectoryName' into the edit box below 'Other'.  This will create a directory 'DataDirectoryName' (change it to whatever you desire, as this is only an example) off of the installation directory for your application.<br />
+In some cases, you may want to make these an optional install.  For more information on options, see Using Optionsoptional_components.</LI>
+<LI>Self-extracting 'component' installers, and &quot;Run During SETUP helper EXE's&quot;<br />
+Often you will include self-extracting components, such as 'WININET.DLL' or 'Speech API', along with your application.  For these, use 'Execute After Copy' and 'Delete After Exec' to install them and delete after all of them have run.  'Execute After Copy' passes an optional argument (such as '/SETUP') on the command line. For an example, see Including WININETwininet.  If this application also supports uninstall, and you do NOT specify 'Delete After Exec', you can specify a command line argument for UNINSTALL as well.</LI>
+</OL>
+</p>
+<p>
+Additionally, you might want to write a special utility program that does more complex SETUP tasks, or performs operations that the S.F.T. Setup Gizmo's SETUP program cannot perform by itself.  You would include this 'configuration utility' along with the other files, and mark it 'Execute After Copy' and 'Delete After Exec' to ensure that it runs during SETUP, and is deleted when done.
+</p>
+<br />
+<H3>LIST OF TYPICAL 'SHARED COMPONENT' FILES</H3>
+<UL>
+<LI>MFC20.DLL - Microsoft Visual C++ 2.0 (included with original Win '95 and NT 4.0)</LI>
+<LI>MSVCRT20.DLL - Microsoft Visual C++ 2.0 (included with original Win '95 and NT 4.0)</LI>
+<LI>MFC40.DLL - Microsoft Visual C++ 4.0, 4.1 (included with Win '95 OSR2, and NT 4.0 SP3)</LI>
+<LI>MSVCRT40.DLL - Microsoft Visual C++ 4.x, 5.0, 6.0 (included with Win '95 OSR2, and NT 4.0 SP3)</LI>
+<LI>MFC42.DLL - Microsoft Visual C++ 4.2, 5.0, 6.0</LI>
+<LI>MSVBVM50.DLL - Microsoft Visual Basic 5.0</LI>
+<LI>MSVBVM60.DLL - Microsoft Visual Basic 6.0 (requires updated OLEAUT32.DLL and OLEPRO32.DLL, included with VB 6 SP1 and later)</LI>
+<LI>MSVCR71.DLL, MSVCP71.DLL - run-time for Microsoft Visual C/C++ &quot;.Net&quot;</LI>
+<LI>MFC71.DLL - Microsoft Visual C/C++ &quot;.Net&quot;</LI>
+<LI>'.Net Run-time' (only available as a self-extracting setup utility, for C# and Visual Basic 7.x).</LI>
+</UL>
+<br />
+<p>
+You should always check your application's &quot;manifest&quot; or dependencies (via 'dumpbin') when creating a setup that requires shared components to be shipped (see the 'dumpbin' utility with Microsoft compilers, and its '/imports' function, to list all of the external dependencies of an EXE or DLL file).  Additionally, these shared components may have other dependencies that need to be resolved in order to ship them (MFC71.DLL requires MSVCR71.DLL, for example).
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

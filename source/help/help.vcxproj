@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{266DFFEF-9C9B-4830-B5B4-9DB89CA73662}</ProjectGuid>
+    <RootNamespace>help</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.chm</TargetExt>
+    <NMakeBuildCommandLine>nmake /f makefile.mak all</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake /a /f makefile.mak</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake /f makefile.mak clean</NMakeCleanCommandLine>
+    <NMakeOutput>Output/SetupGiz.chm</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.chm</TargetExt>
+    <NMakeBuildCommandLine>nmake /f makefile.mak all</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake /f makefile.mak rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake /f makefile.mak clean</NMakeCleanCommandLine>
+    <NMakeOutput>Output/SetupGiz.chm</NMakeOutput>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>
+      </OutputFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>hhc help.hcw</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>building help file</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(OutDir)$(TargetName)$(TargetExt)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>
+      </OutputFile>
+    </Link>
+    <CustomBuildStep>
+      <Message>building help file</Message>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="application.html" />
+    <None Include="BugoSoftNotYet.html" />
+    <None Include="building.html" />
+    <None Include="certificates.html" />
+    <None Include="CertMgr.html" />
+    <None Include="command_lines.html" />
+    <None Include="create_cert_authority.html" />
+    <None Include="create_signing_cert.html" />
+    <None Include="giz_format.html" />
+    <None Include="makefile.mak" />
+    <None Include="mdac.html" />
+    <None Include="nt_services.html" />
+    <None Include="ole_object.html" />
+    <None Include="optional_components.html" />
+    <None Include="overview.html" />
+    <None Include="process.html" />
+    <None Include="res\autorun.jpg" />
+    <None Include="res\certmgr.jpg" />
+    <None Include="res\flowchart.jpg" />
+    <None Include="res\option_install.jpg" />
+    <None Include="res\screen1.jpg" />
+    <None Include="res\screen1a.jpg" />
+    <None Include="res\screen2.jpg" />
+    <None Include="res\screen3.jpg" />
+    <None Include="res\screen3a.jpg" />
+    <None Include="res\screen3b.jpg" />
+    <None Include="res\screen4.jpg" />
+    <None Include="res\screen5.jpg" />
+    <None Include="self_register.html" />
+    <None Include="SetupGiz.hhc" />
+    <None Include="SetupGiz.hhp" />
+    <None Include="SetupGiz.html" />
+    <None Include="setup_inf.html" />
+    <None Include="signed_cabinets.html" />
+    <None Include="signing_with_cert.html" />
+    <None Include="specifying_paths.html" />
+    <None Include="speech_api.html" />
+    <None Include="subsystem.html" />
+    <None Include="wininet.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,32 @@
+[Page1]
+AppName=SFT Setup Gizmo DEMO
+CompanyName=Stewart~Frazier Tools, Inc.
+SourcePath=d:\source\SetupGiz\images
+DestPath=d:\source\SetupGiz\images\DEMO
+LicenseFile=d:\source\SetupGiz\images\demo_license.rtf
+StartMessage=Welcome to SETUP for the\nSFT Setup Gizmo!\nThis SETUP application is the same kind that the\nSFT Setup Gizmo can create for your application.
+AppPath=%programfiles%\%appname%
+AppCommon=%programfiles%\Common Files
+StartMenuFolderName=%appname%
+Upgrade=
+[FileList]
+SetupGiz.exe=0,1,0,0,1,"","",0,0,0,1,/DEMO,/UNINST
+SETUPGIZ.HLP=0,0,1,0,1,"","",0,0,0,1,,
+MAKECAB.EXE=0,0,0,0,1,"","",0,0,0,0,,
+SETUP.exe=0,0,0,0,1,"","",0,0,0,0,,
+UNINST.exe=0,0,0,0,1,"","",0,0,0,0,,
+autorun.exe=0,0,0,0,1,"","",0,0,0,0,,
+autorun.bmp=0,0,0,0,1,"","",0,0,0,0,,
+autorun.ico=0,0,0,0,1,"","",0,0,0,0,,
+[AddShortcut]
+SetupGiz.exe="Start the SFT Setup Gizmo Wizard","SFT Setup Gizmo.LNK","","","SetupGiz.exe",1,1
+SETUPGIZ.HLP="SFT Setup Gizmo HELP file","SFT Setup Gizmo HELP","","","",-1,1
+[RegistryList]
+000=[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SetupGiz.exe]"Path"="%apppath%"
+001=[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SetupGiz.exe]@="%apppath%\SetupGiz.exe"
+002=[HKLM\SOFTWARE\Stewart~Frazier Tools\SFT Setup Gizmo]@="SFT Setup Gizmo"
+003=[HKCR\.giz]@="SETUPGizFile"
+004=[HKCR\SETUPGizFile]@="SFT Setup Gizmo File"
+005=[HKCR\SETUPGizFile\DefaultIcon]@="%apppath%\SETUPGiz.EXE,1"
+006=[HKCR\SETUPGizFile\shell\open\command]@="%apppath%\SETUPGiz.EXE %%1"
+007=[HKCR\.giz]"ContentType"="text/plain"

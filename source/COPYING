@@ -1,0 +1,39 @@
+S.F.T. Setup Gizmo - Copyright (c) 1998-2016 by S.F.T. Inc. - all rights reserved
+
+Use, copying, and re-distribution of this software are licensed according
+to the GPLv2, LGPLv2, or a BSD-like license, as appropriate.
+
+                                 DISCLAIMER
+                                 ==========
+THIS SOFTWARE IS BEING PROVIDED AS-IS, WITH NO WARRANTY WHATSOEVER.  USE IT AT
+YOUR OWN RISK.  S.F.T. INC. CLAIMS NO RESPONSIBILITY FOR ANY ACTIONS OR CONSE-
+QUENCES THAT MAY ARISE FROM THE USE, ABUSE, OR DISTRIBUTION OF THIS SOFTWARE.
+
+
+You may use and/or make an unlimited of copies of this software, for any
+non-commercial use, including unlimited re-distribution in any form,
+provided that:
+
+a) You distribute it according to a GPLv2 or LGPLv2, which means that all source
+files must be distributed along with any binary distributions;
+
+-or-
+
+b) You include the above copyright notice and disclaimer in its entirety along
+with any re-distribution of this software, as binary or in source form, and
+provide an unmodified copy of this file (COPYING) upon request.
+
+Item 'a' constitutes a GPLv2 or LGPLv2 license.
+
+Item 'b' constitutes a BSD-like license.
+
+Either may be used in redistributing this source.  keep in mind that if you
+obtain a GPL-covered version, it is covered by GPL and so GPL restrictions will
+apply.  However, if you apply modifications done to a GPL version to the original
+version, you could (technically) re-distribute it under a BSD-like license, as
+long as your modifications aren't a "derived work" from the GPL version.
+
+
+For the latest copy of the GPLv2, see:
+
+  https://www.gnu.org/licenses/old-licenses/gpl-2.0

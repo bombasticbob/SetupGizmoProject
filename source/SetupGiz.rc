@@ -1,0 +1,554 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\SetupGiz.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_SETUP               ICON                    "res\\mainframe.ico"
+IDR_MAINFRAME           ICON                    "res\\SetupGiz.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 220, 115
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "About the S.F.T. Setup Gizmo"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,2,21,20
+    CTEXT           "SFT Setup Gizmo Version 1.1",IDC_STATIC,30,4,160,8,SS_NOPREFIX
+    CTEXT           "Copyright © 1998-2004 by S.F.T. Inc.\nAll Rights Reserved",IDC_STATIC,30,17,160,18
+    DEFPUSHBUTTON   "OK",IDOK,80,96,60,17,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,197,2,21,20
+    LTEXT           "The SFT Setup Gizmo is a set of applications that allows you to easily create a SETUP for your application, without a lot of excess overhead for capabilities you are unlikely to need.  It is a lean, mean, SETUP machine that saves you both time and money.",IDC_STATIC,2,38,216,33
+    CTEXT           "web site:  http://www.mrp3.com/SetupGizmo.html\ne-mail:  SetupGizmo@mrp3.com",IDC_STATIC,2,74,216,20
+END
+
+IDD_PAGE_1 DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SetupGiz - the 'Setup Gizmo'"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "This is a very simple SETUP 'Gizmo' that lets you create '.CAB' files and various kinds of SETUP\nimages from the plethora of 'things' that typically need to be included in your application's installer.",IDC_STATIC,2,2,326,18
+    CTEXT           "Step 1:  Enter the following basic information about your application SETUP project",IDC_STATIC,2,26,326,9
+    RTEXT           "&Company Name",IDC_STATIC,2,41,58,9
+    EDITTEXT        IDC_COMPANY_NAME,66,38,262,13,ES_AUTOHSCROLL
+    RTEXT           "&Application Name",IDC_STATIC,2,55,58,9
+    EDITTEXT        IDC_APP_NAME,66,54,262,13,ES_AUTOHSCROLL
+    RTEXT           "Start &Message",IDC_STATIC,2,71,58,9
+    EDITTEXT        IDC_START_MESSAGE,66,70,230,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Test",IDC_TEST,300,70,28,13
+    PUSHBUTTON      "Source &Path",IDC_BROWSE,4,96,55,17
+    EDITTEXT        IDC_SOURCE_PATH,66,98,262,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Dest Path",IDC_BROWSE_DEST,4,114,55,17
+    EDITTEXT        IDC_DEST_PATH,66,116,262,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&License File",IDC_BROWSE_LICENSE,4,132,55,17
+    EDITTEXT        IDC_LICENSE_FILE,66,134,230,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "T&est",IDC_TEST_LIC,300,134,28,13
+    PUSHBUTTON      "&Cert Files",IDC_BROWSE_CERT,4,150,55,17
+    EDITTEXT        IDC_CERT_FILES,66,152,262,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Open GizFile",IDC_OPEN,59,181,72,16,BS_CENTER | BS_VCENTER | BS_MULTILINE
+    PUSHBUTTON      "&Advanced Settings",IDC_ADVANCED,195,181,72,16,BS_CENTER | BS_VCENTER | BS_MULTILINE
+    CTEXT           "NOTE:  All setup source files must reside within the specified 'Source Path'",IDC_STATIC,2,85,326,10
+END
+
+IDD_PAGE_2 DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - File Selection"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Select the files to be installed and position them in the correct order",IDC_STATIC,2,2,326,10
+    CTEXT           "Files to be installed",IDC_STATIC,2,16,133,9
+    LISTBOX         IDC_DEST_LIST,2,26,143,171,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CTEXT           "Files in source directory",IDC_STATIC,198,16,130,9
+    LISTBOX         IDC_SOURCE_LIST,181,26,147,171,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_GOZINTA,152,40,22,16
+    PUSHBUTTON      ">>",IDC_GOZOUTA,152,60,22,16
+    PUSHBUTTON      "^^",IDC_MOVE_UP,152,92,22,16
+    PUSHBUTTON      "vv",IDC_MOVE_DOWN,152,112,22,16
+    CONTROL         "&Show\nDirs",IDC_SHOWDIRS,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,147,134,32,16
+END
+
+IDD_FINISH DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - FINISH!!!!!"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "You're nearly complete... but there's one more step:\n\nSelect the type of 'disk image' that you want to create, and press the 'FINISH' button to complete the process.",IDC_STATIC,2,2,244,33
+    LTEXT           "Setup Gizmo will create an appropriate set of files (and directories) according to the type of installation, including the S.F.T. 'SETUP' utility and configuration files.",IDC_STATIC,2,42,244,25
+    LTEXT           "You may also save the configuration in a '.giz' file that you can use at a later time to create a SETUP image.",IDC_STATIC,2,71,244,16
+    CONTROL         132,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER,251,2,77,71
+    CONTROL         "&DVD ROM Image",IDC_CDROM,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,10,92,104,10
+    CONTROL         "DVD ROM as CD &Images",IDC_CDROM_MULTI,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,10,102,104,10
+    CONTROL         "&CD ROM Image",IDC_DISKETTE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,10,112,104,10
+    CONTROL         "&Self-Extracting SETUP Utility",IDC_SELF_EXTRACT,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,10,122,104,10
+    CONTROL         "&Auto-Run CD/DVD",IDC_AUTOINSERT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,92,80,10
+    LTEXT           "&Reserve Space on Disk #1:",IDC_STATIC,146,107,88,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_DISK1_RESERVE,238,106,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "KB",IDC_STATIC,280,107,12,10,SS_CENTERIMAGE
+    CONTROL         "No &Uninstall",IDC_NO_UNINSTALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,122,64,10
+    CONTROL         "Use L&Z Compression",IDC_LZCOMPRESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,240,122,88,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,2,135,326,16
+    CONTROL         "&Quiet SETUP",IDC_QUIET_SETUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,138,58,10
+    LTEXT           "&Prompt for REBOOT:",IDC_STATIC,111,138,68,10,SS_CENTERIMAGE
+    CONTROL         "Aut&o",IDC_BOOT_AUTO,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,181,138,34,10
+    CONTROL         "Al&ways",IDC_BOOT_ALWAYS,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,221,138,40,10
+    CONTROL         "&Never",IDC_BOOT_NEVER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,265,138,36,10
+    CONTROL         "DO NOT E&XIT ON COMPLETION!",IDC_DO_NOT_CLOSE,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,157,129,10
+    PUSHBUTTON      "Sa&ve Configuration",IDC_SAVE,209,168,78,16
+    CONTROL         "DO NOT DELETE &WORK FILES",IDC_DO_NOT_DEL_WORKFILES,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,171,129,10
+    CONTROL         "DO NOT REBUILD CAB FILE",IDC_DO_NOT_REBUILD_CAB,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,185,129,10
+END
+
+IDD_PAGE_3 DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - File Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Assign the correct properties to each of the files to be installed (Ctrl-click to copy)",IDC_STATIC,2,0,326,9
+    CTEXT           "Files to be installed",IDC_STATIC,2,12,116,9
+    LISTBOX         IDC_FILE_LIST,2,24,173,173,LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    GROUPBOX        "Install &Path",IDC_STATIC,182,10,146,62
+    CONTROL         "&System Directory",IDC_SYSTEMDIR,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,185,19,70,10
+    CONTROL         "&App Directory",IDC_APPDIR,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,255,19,70,10
+    CONTROL         "Te&mp Directory",IDC_TEMPDIR,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,185,30,70,10
+    CONTROL         "&Other (see below)",IDC_OTHERPATH,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,255,30,70,10
+    CONTROL         "&Keep Path Info 'as is'",IDC_NOEDITPATH,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,185,42,134,10
+    EDITTEXT        IDC_OTHERPATH_NAME,188,56,124,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "_&?_",IDC_MINI_HELP,312,57,14,12
+    CONTROL         "S&hared / System",IDC_SHARED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,178,74,72,10
+    CONTROL         "Over&write Always",IDC_OVERWRITE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,256,74,72,10
+    CONTROL         "E&xecute after copy",IDC_EXECUTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,178,86,72,10
+    CONTROL         "&Delete after Exec",IDC_AUTODELETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,256,86,72,10
+    LTEXT           "Ar&gs:",IDC_STATIC,178,98,16,9
+    EDITTEXT        IDC_EXEC_ARGS,196,97,42,12,ES_AUTOHSCROLL
+    LTEXT           "Unins&t Args:",IDC_STATIC,244,99,40,9
+    EDITTEXT        IDC_UNINST_ARGS,286,97,42,12,ES_AUTOHSCROLL
+    CONTROL         "&Register Control",IDC_REGISTER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,178,110,72,10
+    CONTROL         "Use &.Net Reg",IDC_REG_DOT_NET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,188,122,62,10
+    CONTROL         "Do &NOT Uninstall!",IDC_NO_UNINSTALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,256,110,72,10
+    CONTROL         "Specific OS onl&y",IDC_SELECT_OS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,256,122,72,10
+    LISTBOX         IDC_OSLIST,256,137,72,60,LBS_SORT | LBS_MULTIPLESEL | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Add Shortc&ut",IDC_ADD_SHORTCUT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,178,134,72,10
+    CONTROL         "Option &Install",IDC_OPTION_INSTALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,178,146,72,10
+    COMBOBOX        IDC_OPTIONS,178,156,75,87,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_3A DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - Install Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Since you selected at least one option, you need to enter information about each",IDC_STATIC,2,2,326,10
+    CTEXT           "Install Option &Name",IDC_STATIC,2,16,116,9
+    LISTBOX         IDC_OPTION_LIST,2,24,181,173,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CTEXT           "Short &Description",IDC_STATIC,186,16,142,9
+    EDITTEXT        IDC_DESC,186,27,142,12,ES_AUTOHSCROLL
+    CTEXT           "&Long Description",IDC_STATIC,186,44,142,9
+    EDITTEXT        IDC_LONGDESC,186,52,142,145,ES_MULTILINE | WS_VSCROLL
+END
+
+IDD_PAGE_4 DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - Registry Entries"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Indicate the registry entries to be automatically added during SETUP",IDC_STATIC,2,2,326,10
+    LISTBOX         IDC_ENTRY_LIST,2,14,326,128,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "&Key:",IDC_STATIC,2,148,24,9
+    EDITTEXT        IDC_KEY,26,146,287,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "_&?_",IDC_KEY_HELP,314,146,14,12
+    LTEXT           "&String:",IDC_STATIC,2,162,24,9
+    EDITTEXT        IDC_STRING,26,160,122,12,ES_AUTOHSCROLL
+    LTEXT           "V&alue:",IDC_STATIC,155,162,22,9
+    EDITTEXT        IDC_VALUE,177,160,136,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "_&?_",IDC_MINI_HELP,314,160,14,12
+    PUSHBUTTON      "Add &New",IDC_ADD_NEW,180,181,38,16
+    PUSHBUTTON      "&Remove",IDC_REMOVE,236,181,38,16
+    PUSHBUTTON      "Re&vert",IDC_REVERT,290,181,38,16
+    PUSHBUTTON      "Add Standard &Entries",IDC_ADD_STANDARD,2,181,72,16
+    PUSHBUTTON      "&Import '.REG'",IDC_IMPORT_REG,94,181,50,16
+END
+
+IDD_SETUP_DIALOG DIALOGEX 0, 0, 230, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SETUP DIALOG (testing only - this is what it looks like)"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Install",IDOK,130,84,50,14
+    PUSHBUTTON      "E&xit",IDCANCEL,50,84,50,14
+    CTEXT           "{Welcome Message goes Here}",IDC_WELCOME,28,2,174,38
+    ICON            IDR_SETUP,IDC_STATIC,204,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    ICON            IDR_SETUP,IDC_STATIC,2,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    CTEXT           "SETUP will copy the necessary files to your computer and\nmake any required changes to your system configuration.",IDC_STATIC,2,42,226,16
+    CTEXT           "IMPORTANT:  You must make certain that all other running\napplications have been closed before proceeding with SETUP.",IDC_STATIC,2,64,226,16
+END
+
+IDD_PAGE1_ADVANCED DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Advanced Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,183,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,137,183,50,14
+    PUSHBUTTON      "&Help (F1)",IDHELP,202,183,50,14
+    LTEXT           "App Install Path",IDC_STATIC,2,4,60,9
+    EDITTEXT        IDC_APPPATH,68,2,172,12,ES_AUTOHSCROLL
+    LTEXT           "App Common Path",IDC_STATIC,2,18,60,9
+    EDITTEXT        IDC_APPCOMMON,68,16,172,12,ES_AUTOHSCROLL
+    LTEXT           "Start Menu Folder",IDC_STATIC,2,32,60,9
+    EDITTEXT        IDC_STARTMENU,68,30,172,12,ES_AUTOHSCROLL
+    CTEXT           "&Upgrade These Applications Also",IDC_STATIC,2,47,326,9,SS_CENTERIMAGE
+    LISTBOX         IDC_UPGRADE,2,58,326,102,LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add",IDC_ADD,97,163,50,14
+    PUSHBUTTON      "&Remove",IDC_REMOVE,181,163,50,14
+END
+
+IDD_NAG DIALOGEX 0, 0, 187, 185
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "S.F.T. Setup Gizmo - Registration"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Please take the time to register the SFT Setup Gizmo.  The Setup Gizmo is copyrighted software and\nmust be licensed for any sort of commercial use.\n\nYou may use this software for evaluation (up to 30 days) and for non-commercial use without registration.",IDC_STATIC,2,2,183,48
+    CTEXT           "If you choose to distribute any commercial applications\nusing SFT Setup Gizmo you must obtain a license.\n\nFor more information, contact SFT Inc. at:",IDC_STATIC,2,55,183,33
+    CTEXT           "http://www.mrp3.com/\nSetupGizmo@mrp3.com",IDC_STATIC,2,90,183,16
+    LTEXT           "User/Company:",IDC_STATIC,2,126,50,10
+    EDITTEXT        IDC_AUTHCOMPANY,65,125,120,14,ES_AUTOHSCROLL
+    LTEXT           "&Authorization\nCode",IDC_STATIC,2,138,50,16
+    EDITTEXT        IDC_AUTHCODE,60,140,74,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Register",IDOK,141,140,44,14
+    PUSHBUTTON      "Register\n&Later",IDCANCEL,118,159,44,24,BS_MULTILINE
+    PUSHBUTTON      "&Skip\nRegistration",IDNO,26,159,44,24,BS_MULTILINE
+    CTEXT           "Enter License Information Below",IDC_STATIC,2,112,183,11,SS_SUNKEN
+END
+
+IDD_PAGE_3B DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Setup Gizmo - Shortcuts (advanced properties)"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Since you are creating at least one shortcut, please assign their properties here:",IDC_STATIC,2,2,326,10
+    CTEXT           "&Application File Name",IDC_STATIC,2,16,116,9
+    LISTBOX         IDC_APP_LIST,2,27,178,131,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CTEXT           "Command Line &Parameters",IDC_STATIC,2,162,177,8
+    EDITTEXT        IDC_PARMS,2,171,178,12,ES_AUTOHSCROLL
+    CONTROL         "&Normal",IDC_SHOWNORMAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,2,187,36,10
+    CONTROL         "&Min",IDC_SHOWMIN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,50,187,26,10
+    CONTROL         "Ma&x",IDC_SHOWMAX,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,86,187,28,10
+    CONTROL         "&Hide",IDC_SHOWHIDE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,128,187,28,10
+    CTEXT           "Shortcut &File Name (relative path)",IDC_STATIC,186,16,142,9
+    EDITTEXT        IDC_FILENAME,186,27,142,12,ES_AUTOHSCROLL
+    CTEXT           "Shortcut &Description",IDC_STATIC,186,44,142,9
+    EDITTEXT        IDC_DESC,186,54,142,36,ES_MULTILINE | WS_VSCROLL
+    CTEXT           "&Icon Image",IDC_STATIC,186,95,142,9
+    COMBOBOX        IDC_ICON_FILES,186,105,142,68,CBS_DROPDOWNLIST | CBS_SORT | CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_ICON_LIST,186,125,142,72,LBS_SORT | LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_MULTICOLUMN | LBS_DISABLENOSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_INPUT DIALOG 0, 0, 210, 52
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Setup Gizmo - Data Entry"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Please enter the appropriate value",IDC_CAPTION,2,2,206,9
+    EDITTEXT        IDC_INPUT,2,16,206,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,15,36,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,36,50,14
+    PUSHBUTTON      "&Help (F1)",IDHELP,145,36,50,14
+END
+
+IDD_LICENSE DIALOGEX 0, 0, 301, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "SETUP - License Information"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "I &Agree",IDOK,189,185,50,14
+    PUSHBUTTON      "E&xit Setup",IDCANCEL,58,185,50,14
+    CONTROL         "",IDC_LICENSE,"RichEdit",TCS_RAGGEDRIGHT | TCS_MULTISELECT | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,2,2,296,179
+END
+
+IDD_PAGE_3_CERT DIALOGEX 0, 0, 330, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Gizmo - Certificate Repository"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "Please indicate the destination repository for each certificate",IDC_STATIC,2,2,326,10
+    CTEXT           "Certificate &Name",IDC_STATIC,2,16,116,9
+    LISTBOX         IDC_CERT_LIST,2,27,181,170,LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CTEXT           "&Destination Repository",IDC_STATIC,186,16,142,9
+    COMBOBOX        IDC_REPOSITORY,185,27,143,125,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,2,3
+ PRODUCTVERSION 1,1,2,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.mrp3.com/ - Setup GIZMO Main Application - use this to create setup images"
+            VALUE "CompanyName", "Stewart~Frazier Tools, Inc"
+            VALUE "FileDescription", "SFT Setup Gizmo Application - aka ""Setup Gizzard"""
+            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "InternalName", "SetupGiz"
+            VALUE "LegalCopyright", "Copyright © 1998-2016  by Stewart~Frazier Tools, Inc. - all rights reserved"
+            VALUE "OriginalFilename", "SetupGiz.EXE"
+            VALUE "ProductName", "SFT Setup Gizmo Wizard"
+            VALUE "ProductVersion", "1, 1, 2, 3"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 218
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PAGE_1, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_PAGE_2, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_FINISH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_PAGE_3, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_PAGE_3A, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_PAGE_4, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_SETUP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 228
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_PAGE1_ADVANCED, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_NAG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 185
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_PAGE_3B, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 328
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 208
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_LICENSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 298
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_PAGE_3_CERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 328
+        BOTTOMMARGIN, 197
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_FINISH              BITMAP                  "res\\finish.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About SetupGiz..."
+    IDS_REGISTER            "&Register S.F.T. Setup Gizmo"
+    IDS_REREGISTER          "&Re-Register S.F.T. Setup Gizmo"
+    IDS_REREGINFO1          "You are already registered for this product as """
+    IDS_REREGINFO2          """.\nIf you want to re-register this product using a different name, please obtain a\nnew authorization code first.\n\nYou can obtain a new authorization code by sending e-mail to:\n\n    SetupGizmo@mrp3.com\n\nwith 'RE-REGISTER SETUP GIZMO' in the subject line.  You must include your existing\nregistration info (name and authorization code) in the message body, as well as\nthe new name under which you want to register the product.\n\nPress 'Yes' to continue, 'No' to return to the application."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\SetupGiz.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

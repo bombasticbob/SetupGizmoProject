@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Including Speech API</TITLE>
+</HEAD>
+<BODY>
+<H1>Including Speech API</H1>
+<br />
+<p>
+If you have Microsoft's 'MSDN' development product, you should have a copy of the 'Speech SDK'.  Within the 'Speech SDK' in the 'REDIST\API' sub-directory is a self-extracting executable file, 'SPCHAPI.EXE'.  If you execute this file, it installs the necessary components for the SPEECH API to the target computer.  The SPEECH API allows your application to perform functions like simple speech recognition and simple text to voice translation.  Some third party products may enhance this capability, such as a speech to text 'dictation' product, and you may want to install these products in lieu of the Speech API.  However, Microsoft's Speech SDK is part of their developer's library and can normally be distributed with your application at no additional cost.  For more information, visit http://www.microsoft.com/iit .
+</p>
+<br />
+<H3>ADDING Speech API</H3>
+<OL>
+<LI>Copy the file 'SPCHAPI.EXE' to the directory containing your application's files to be included on the SETUP disk.</LI>
+<LI>Add 'SPCHAPI.EXE' to the list of files to include, and specify <b>'Exec After Copy'</b> and <b>'Delete after Exec'</b>.  It is not important where you install it, but it's probably best to install it to the temporary directory using '%tmpdir%'.</LI>
+<LI>For the command line option, use the following string:  /q:a /c:&quot;setup.exe /QNT&quot;<br />
+These options prevent reboot after install, and perform a 'quiet' install of the components.</LI>
+</OL>
+<p>
+Microsoft has made several speech engines available for redistribution with SAPI applications on 32-bit Windows&tm; platforms.  For more information, see http://www.microsoft.com/iit and MSDN documentation.  At the time of this writing, SAPI 4.0a was available for download.
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

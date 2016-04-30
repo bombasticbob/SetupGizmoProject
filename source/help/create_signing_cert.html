@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Creating a Code Signing Cert from your own Root CA Cert</TITLE>
+</HEAD>
+<BODY>
+<center><h1>Creating a Code Signing Cert from your own Root CA Cert</h1></center>
+<p>
+For the purpose of this documentation, we're interested in making certs that sign code.  And so the
+next steps will generate JUST THAT, a 'Publisher' certificate that you can sign code with.  You will
+be prompted for passwords at a couple of points, and for other information.  Since you can generate
+as many as you like, using YOUR very own Root CA certificate, you should experiment with the data
+entry and possibly automate it all.  I did.
+</p>
+<p>
+The step-by-step example below uses the 'openssl' utility, which you can easily install
+on Linux, on Windows under Cygwin, or natively on Windows using the installer from the
+<a href="http://gnuwin32.sourceforge.net/packages/openssl.htm">GNU WIN32 project</a>
+on SourceForge.<br />
+</p>
+<p>
+If you have not already created a root certificate, you can find instructions on how to do that
+on the <a href="create_cert_authority.html">Creating your own Root CA Certificate</a> page.
+</p>
+<OL>
+<li><b>Create another key for your code signing certificate</b><br />
+    This key will be used in the code signing process, and should NOT be password
+    protected.  Don't let it get out of your control.<br />
+    To create a non-password-protected key into the file 'MyCodeSigningCert.key':<br />
+    <pre>    openssl genrsa -out MyCodeSigningCert.key 2048</pre>
+    The key size parameter is 2048, as before.  Use whatever you like.</li>
+    <br />
+    <br />
+<li><b>Create a certificate 'request' file</b><br />
+    This is an intermediate step for creating a signed certificate.  Again, you will be asked several
+    questions for information to be embedded in the certificate.  The 'description' needs to be chosen
+    carefully, as this will appear as the name in your certificate store (if you import it), and in
+    some cases needs to 'match' something to be valid (such as an SSL certificate).<br />
+    <pre>    openssl req -new -key MyCodeSigningCert.key -out MyCodeSigningCert.csr -reqexts v3_req -nodes</pre>
+    This creates the REQUEST for a certificate.  Once done, you can use this multiple times to create certificates
+    with newer expiration dates, as needed.  Also, the '-nodes' parameter keeps it from encrypting the key,
+    so you should NOT let this thing out of your hands.  As far as I can tell, '-nodes' is necessary.</li>
+    <br />
+    <br />
+<li><b>Create a certificate file with an expiration date and additional info</b><br />
+    This step creates the actual certificate.  To do this properly, you need to create a small file that
+    contains the correct options for your certificate, since the default openssl implementation does
+    not seem to have this.  For this step I used a shell script (this should work under Cygwin).  YMMV<br />
+    <pre>
+    #!/bin/sh
+
+    cat &gt;temp.cnf &lt;&lt;THING
+    [usr_cert]
+    nsCertType = objsign
+    basicConstraints=CA:FALSE
+    subjectKeyIdentifier=hash
+    authorityKeyIdentifier=issuer
+    keyUsage = nonRepudiation, digitalSignature, keyEncipherment, dataEncipherment, keyAgreement, keyCertSign
+    extendedKeyUsage = codeSigning, serverAuth, clientAuth, emailProtection, timeStamping, \
+                       OCSPSigning, msCodeInd, msCodeCom, msCTLSign, msEFS
+
+    THING
+
+    openssl x509 -req -in MyCodeSigningCert.csr -CA MyCert.pem \
+            -CAkey MyCert.key -CAcreateserial \
+            -extfile temp.cnf -extensions usr_cert \
+            -out MyCodeSigningCert.crt -days 365 -sha256
+    </pre>
+    Then, if you want to view the resulting certificate's encoded information, you can do so with this command:
+    <pre>    openssl x509 -noout -text -in MyCodeSigningCert.crt</pre>
+    NOTE:  The Microsoft example for making a code signing certificate (from
+    <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832%28v=vs.85%29.aspx">HERE</a>)
+    has the following additional parameter, which they say restricts the usage of the certificate:
+    <pre>    /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13"</pre>
+    The '/eku' parameter (2 OID values, comma and no space separates them) corresponds to the 'extendedKeyUsage' member
+    of the '[usr_cert]' block that is written to the temporary configuration file.  The first 'OID' in that
+    list is 'codeSigning', and the second is (apparently) a Microsoft custom OID that CertMgr.msc displays as
+    &quot;Lifetime Signing&quot;.  What it REALLy does is RESTRICT the application's signature to the expiration date
+    of the cert (so don't use it unless you want to do this).  The 'extendedKeyUsage' definition in the shell script
+    has 'codeSigning' (the first one), plus &quot;all of the rest I could find&quot;.  The apparent reasoning is that
+    whenever this certificate entry is NOT defined, the extended usage is 'un-restricted'.  So defining it restricts
+    the usage (to help protect against mis-use). HOWEVER, I'm concerned that Microsoft may NOT allow signed drivers and
+    signed code to load WITHOUT the presence of 'extendedKeyUsage'.  So (in sticking with the intent of their documentation)
+    I have included it in the example, here.<br /><br />
+    So in summary, the example from the 'openssl' command (above) basically allows ALL usages except 'Revocation List'
+    related functions, AND includes an 'extended key usage' for Code Signing (but NOT &quot;Lifetime Signing&quot;) and
+    everything else I could find. And if you want to manage the certificate's capabilities, you can always add or
+    remove items from the 'keyUsage' or 'extendedKeyUsage' assignment, as you see fit.  For more information, see the
+    <a href="https://www.openssl.org/docs/manmaster/apps/x509v3_config.html">OpenSSL config file documentation</a></li>
+    <br />
+    <br />
+<li><b>Create a 'pfx' certificate file that Microsoft's CertMgr can import along with a key</b><br />
+    This step is very important, because without the private key, you can't use it for CODE SIGNING,
+    and that was the whole POINT, right?  So, we do that here.  You'll be prompted for passwords again.
+    When you password protect the file, a blank password is ok if you want.  I did that for my test.<br />
+    <pre>    openssl pkcs12 -export -out MyCodeSigningCert.pfx -inkey MyCodeSigningCert.key -in MyCodeSigningCert.crt</pre>
+    NOW, you have a 'pfx' file that you can import with Microsoft' Certificate Manager 'CertMgr.msc'.</li>
+    <br />
+    <br />
+<li><b>As before, convert the certificate into a '.cer' file in X.509 DER format.</b><br />
+    You can convert it easily with a command similar to the following:<br />
+    <pre>    openssl x509 -in MyCodeSigningCert.crt -outform der -out MyCodeSigningCert.cer</pre>
+    This file is the one you will install on end-user machines in the 'TrustedPublisher' folder when signing
+    code.  Microsoft uses this store for device driver verification and (as far as I can tell) application
+    verification.  As with the 'ROOT' store, you have to do this with Admin privileges so that it goes into
+    the 'Local Machine' store rather than the 'user' store.  For more information, see
+    <a href="certificates.html">Adding Certificates to the System Certificate Store</a> and
+    <a href="CertMgr.html">Using the CertMgr Management Console</a>.
+    </li>
+    <br />
+</OL>
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Specifying Paths</TITLE>
+</HEAD>
+<BODY>
+<H1>Specifying Paths</H1>
+<br />
+<p>
+In several places you may wish to specify a path that depends upon the system configuration, the name of the application, or the choices that the user made when he was prompted for information such as the application path or 'common files' path.  These 'string substitutions' apply to the 'Advanced Settings' dialog box for default path information (1st screen), the 'Application Path' settings (3rd screen), and the 'Registry Entry' values (4th screen).
+</p>
+<table>
+<tr><td valign=top>apppath</td><td>The fully qualified application install path, entered/confirmed by the user</td></tr>
+<tr><td valign=top>appcommon</td><td>The fully qualified 'common files' install path, entered/confirmed by the user.  When specified at any time, it causes the 'Application Common Files' dialog to appear during SETUP so that the user can alter the path.</td></tr>
+<tr><td valign=top>uninst</td><td>The 'uninstall' directory, where UNINST.EXE and SETUP.INF are stored.  This is typically derived from 'apppath' and the name of the application.  The assumption here is that you might use the same default directory for all of your products.  In such a case, if you were to install 2 different products, the UNINST.EXE and SETUP.INF would be overwritten on each subsequent install, making uninstall impossible (or worse, uninstalling the WRONG application!).  To prevent this from happening, the uninstall path is derived from the application's name (basically, illegal file name characters are substituted with '_').  See 'appname', below.</td></tr>
+<tr><td valign=top>sysdir</td><td>The 'system' or 'system32' directory for the operating system.  Typically, this is used for shared components that must be upgraded among all installed application.  Visual Basic run-time, for example, should be installed in the 'system directory'.  Selecting 'system directory' on the 'application path' setting for a particular file implies '%sysdir%'.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  The system directory is not guaranteed to be writeable.  If you expect your application to install properly on a system that is bootable from ROM or from a network ('shared' system) you will need to use the windows directory (see below).</td></tr>
+<tr><td valign=top>&nbsp;</td><td>Additionally, SETUP will normally prompt you when the file that is already installed is NEWER than the current one.  If a file is being installed to 'sysdir' (or a directory that is located within 'sysdir') and the file is marked 'shared', the user will NOT be prompted if the existing file is newer.  Shared files in 'sysdir' are expected to be newer quite frequently, and it is annoying to be prompted for such things during installation.  If you need to avoid this, put the shared files in a different directory.</td></tr>
+<tr><td valign=top>windir</td><td>The 'windows' directory for the operating system.  This is guaranteed to be 'writeable'.  On 'Terminal Services' server systems, this will ALWAYS be the 'system' windows directory (not a private directory), identical to those systems that do not have terminal services loaded.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>Typically this is used for applications or system components that are not to be uninstalled, for shared components in a special 'common' directory located off of the windows directory, or for 'quiet' install of components that you do not want to &quot;clog up&quot; the windows directory with [after all, SETUP shouldn't assume that the user's computer won't be running anything except the application it is installing…].</td></tr>
+<tr><td valign=top>&nbsp;</td><td>As an example, you can specify a 'shared components' directory off the 'windows' directory, by using a name such as</td></tr>
+<tr><td valign=top>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&quot;%windir%\MySharedComponents&quot;</td></tr>
+<tr><td valign=top>&nbsp;</td><td>for the install path.  Specifying a unique directory name off of the windows keeps the windows directory from becoming &quot;clogged up&quot; with a bozillion different applications, while simultaneously guaranteeing that your components have a unique installation on a user's machine.</td></tr>
+<tr><td valign=top>themedir</td><td>The 'themes' directory - useful for storing 'themes' (Windows 'Plus!' pack).</td></tr>
+<tr><td valign=top>tmpdir</td><td>This is the 'TEMP' directory used by the operating system.  Files stored here are assumed to be 'delete after exec'.</td></tr>
+<tr><td valign=top>appdrive</td><td>The drive letter followed by '\' for the install path specified by the user.  Sometimes you may want to specify an absolute path using this drive letter.  Using 'appdrive' will obtain that information automatically.</td></tr>
+<tr><td valign=top>windrive</td><td>The drive letter followed by '\' where WINDOWS is installed.  In some cases, such as a 'shared' installation, this may differ from the 'sysdrive' (see below).</td></tr>
+<tr><td valign=top>sysdrive</td><td>The drive letter followed by '\' where the 'Windows System' directory is installed.</td></tr>
+<tr><td valign=top>bootdrive</td><td>The drive letter followed by '\' for the 'active partition'.  The 'boot drive' will contain the NT loader or 'IO.SYS', depending upon the operating system you have, and is the one marked as the &quot;active&quot; partition.</td></tr>
+<tr><td valign=top>tmpdrive</td><td>The drive letter followed by '\' where the 'TEMP' directory is located.</td></tr>
+<tr><td valign=top>programfiles</td><td>This is the 'Program Files' directory where (by default) new applications are automatically installed.</td></tr>
+<tr><td valign=top>appname</td><td>This is the name of the app specified by you on the first page under &quot;Application Name&quot;, potentially adjusted to remove invalid characters so that it can become a valid file or directory name.</td></tr>
+</table>
+<p> 
+These strings are denoted (where applicable) by surrounding them with '%', such as '%appname%' or '%sysdir%'.  Fully qualified paths are specified as directories and are NOT followed by a backslash.  However, drive letters ARE specified with a trailing backslash.  In the rare case that a network share or root directory is specified as an installation path, &quot;doubled backslashes&quot; are resolved to single backslashes before any files are copied, and root directories or network shares are not created to avoid unnecessary error messages.
+</p>
+<p>
+<b>NOTE:</b>  When installing your own shared components, it is always best to create a unique 'shared components' directory, located either off of the 'windows' or 'system' directory.  A typical 'shared components' directory might be specified as follows:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%windir%\MySharedComponents
+<br />
+<br />
+&nbsp;- or -
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%sysdir%\MySharedComponents
+</p>
+<p>
+Using '%windir%' is preferable to '%sysdir%', because on some systems, it is conceivable that the system directory might not be 'writeable'.  [and please don't use 'MySharedComponents' for your actual application - that is just an example…].
+</p>
+<p>
+By specifying a unique directory name (such as the ones above), you can install all of YOUR shared components into this sub-directory, avoid any naming conflicts with other controls, and keep the files OUT of the windows and system directory.  By definition, the windows directory should always &quot;writeable&quot; for any Windows installation, especially important for ROM-bootable or network-bootable (shared) systems.  On systems that have the 'Terminal Services' server running, the windows directory returned by '%windir%' will be that of the operating system, NOT the private directory of the currently logged in user.  See documentation on 'GetWindowsDirectory()' and 'GetSystemWindowsDirectory()' for details on this.
+</p>
+<p>
+Shared components that are common to the operating system, or that are recommended to be installed in the windows or system directories, should only be installed into the directory specified by the component's author.  In the case of C++ and Visual Basic run-time libraries, this is always the 'system' directory.  Other components may have their own SETUP utilities (such as 'MDAC_TYP.EXE' for the ODBC API and associated components).  Because of the volatility of shared components, and the possibility of &quot;mix and match&quot; problems, it is always recommended to use a setup application that was written by the component's author whenever it is practical to do so.  See <a href="subsystem.html">Subsystem</a> for more information.
+</p>
+<p>
+16-bit applications that must be installed to the 'system' directory should always be installed to '%windir%\system' rather than '%sysdir%'.  On Windows NT, 2000, and XP, the 'system' directory is reserved for 16-bit applications.  The 'system32' directory is reserved for the operating system and other 32-bit components.  '%sysdir%' (or choosing 'system directory') uses the 'system32' directory, and not the 'system' directory on NT, 2000, and XP.  On Windows '9x and ME, it uses the 'system' directory, as expected.  Therefore, to make sure that a 16-bit component is correctly installed, use '%windir%\system' as the destination path.
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

@@ -1,0 +1,339 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\UNINST.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\UNINST.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 218, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "About UNINST"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,7,20,20
+    CTEXT           "S.F.T. Un-Installer Version 1.1\nA component of the 'SFT Setup Gizmo'",IDC_STATIC,34,8,146,16,SS_NOPREFIX
+    CTEXT           "Copyright © 1998-2004 by Stewart~Frazier Tools, Inc.\nAll rights reserved\n\nPlease visit our Web Page at:  http://www.mrp3.com/",IDC_STATIC,2,31,213,36
+    DEFPUSHBUTTON   "OK",IDOK,183,10,32,14,WS_GROUP
+END
+
+IDD_UNINST_DIALOG DIALOGEX 0, 0, 232, 98
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SFT Un-Installer"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Un-Install",IDOK,20,82,50,14
+    DEFPUSHBUTTON   "E&xit",IDCANCEL,90,82,50,14
+    PUSHBUTTON      "&About...",IDRETRY,162,82,50,14
+    CTEXT           "SFT Un-Install Utility",IDC_APP_TITLE,24,2,184,11
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,2,20,20,SS_REALSIZEIMAGE
+    ICON            IDR_MAINFRAME,IDC_STATIC,209,2,20,20,SS_REALSIZEIMAGE
+    CTEXT           "A part of the 'SFT Setup Gizmo' Integrated SETUP System",IDC_TAGLINE,24,14,184,9
+    LTEXT           "UNINSTALL utility - this program will uninstall software.  Put an appropriate message in here.",IDC_CAPTION,2,26,228,51
+END
+
+IDD_PROGRESS DIALOGEX 0, 0, 221, 44
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "UNINSTALL Progress Indicator"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_PROGRESS,2,2,217,18,SS_CENTERIMAGE | WS_BORDER | NOT WS_GROUP
+    LTEXT           "Static",IDC_PROGRESS_TEXT,2,22,217,20
+END
+
+IDD_REMOVE_SHARED DIALOG 0, 0, 269, 101
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "UNINSTALL - Remove Shared Component"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "The following shared component now has a reference count of zero:",IDC_STATIC,2,2,265,10
+    CTEXT           "",IDC_FILENAME,2,14,265,10,SS_NOPREFIX
+    LTEXT           "",IDC_MESSAGE,2,26,265,40
+    LTEXT           "Do you want to permanently remove this file from your computer?",IDC_STATIC,2,70,265,10
+    DEFPUSHBUTTON   "&Yes",IDYES,22,85,50,14
+    PUSHBUTTON      "Yes to &All",IDC_YES_TO_ALL,80,85,50,14
+    PUSHBUTTON      "&No",IDNO,139,85,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,85,50,14
+END
+
+IDD_LOGON DIALOGEX 0, 0, 270, 124
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Privileged Login Required for UNINSTALL"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "WARNING:  You do not have sufficient privileges\n on this system to run the UNINSTALL application.",IDC_STATIC,2,10,266,21
+    CTEXT           "Please enter a user name and password for a user with sufficient privileges\nto install applications on this system, or press 'Cancel' to exit at this time.",IDC_STATIC,2,32,266,20
+    LTEXT           "&User Name:",IDC_STATIC,25,56,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_USERNAME,67,56,176,12,ES_AUTOHSCROLL
+    LTEXT           "&Password:",IDC_STATIC,25,70,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_PASSWORD,67,70,176,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Domain:",IDC_STATIC,25,84,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_DOMAIN,67,84,176,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,44,108,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,171,108,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,2,3
+ PRODUCTVERSION 1,1,2,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.mrp3.com/ - self-cleaning UNINSTALL utility for SFT Setup Gizmo - use only with installations created by SFT Setup Gizmo"
+            VALUE "CompanyName", "Stewart~Frazier Tools, Inc."
+            VALUE "FileDescription", "SFT Setup Gizmo self-cleaning UNINSTALL  Application - unlike OTHERS, it doesn't leave itself ""installed"" when you UNINSTALL"
+            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "InternalName", "UNINST"
+            VALUE "LegalCopyright", "Copyright (C) 1998-2016 by Stewart~Frazier Tools, Inc. - all rights reserved"
+            VALUE "OriginalFilename", "UNINST.EXE"
+            VALUE "ProductName", "SFT Setup Gizmo UNINSTALL"
+            VALUE "ProductVersion", "1, 1, 2, 3"
+            VALUE "SpecialBuild", "Every build is ""special"""
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 216
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_UNINST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 230
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 219
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_REMOVE_SHARED, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 267
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_LOGON, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 268
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About UNINST..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR01             "UNINSTALL - Internal error (module name)"
+    IDS_ERROR02             "UNINSTALL ERROR - Unable to get temporary file name (1)"
+    IDS_ERROR03             "UNINSTALL ERROR - Unable to get temporary file name (2)"
+    IDS_ERROR04             "UNINSTALL ERROR - Unable to create temporary file (1)"
+    IDS_ERROR05             "UNINSTALL ERROR - Unable to create temporary file (2)"
+    IDS_ERROR06             "Cannot find 'SETUP.INF' - UNINSTALL will now close"
+    IDS_ERROR07             "Read error on 'SETUP.INF' - SETUP will now close"
+    IDS_ERROR08             "Unable to get UNINSTALL information from registry"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR09             "Unable to create/open registry key '%s'"
+    IDS_ERROR10             "INTERNAL ERROR - unable to get path for %s"
+    IDS_ERROR11             "DllUnregisterServer() returns ERROR in %s\r\nDo you want to continue with UNINSTALL?"
+    IDS_ERROR12             "INTERNAL ERROR:  UNABLE TO RESOLVE %s\r\nOne or more files or subsystems may not get uninstalled correctly."
+    IDS_WARNING01           "UNINSTALL WARNING:  'No Uninstall' was specified in 'SETUP.INF' and no files are listed in the 'Uninstall' section - UNINSTALL will now close"
+    IDS_WARNING02           "UNINSTALL WARNING:  no files listed in 'Uninstall' section of SETUP.INF - UNINSTALL will now close"
+    IDS_WARNING03           "WARNING:  'SETUP.INF' specifies 'No Uninstall' - UNINSTALL will still continue; however, it may not function properly"
+    IDS_WARNING04           "WARNING: cannot get exit code from %s."
+    IDS_WARNING05           "WARNING:  %s process did not terminate."
+    IDS_WARNING06           "WARNING:  %s exits with error code %d (%08xH)"
+    IDS_WARNING07           "WARNING:  Unable to create/open registry key '%s' - shared components will NOT be properly de-referenced!"
+    IDS_WARNING08           "WARNING:  unable to update reference count for %s"
+    IDS_WARNING09           "WARNING:  Skipping invalid registry entry - '%s'"
+    IDS_WARNING10           "WARNING:  skipping registry entry '%s' due to an error in string expansion"
+    IDS_WARNING11           "WARNING:  key '%s' not recognized - using 'HKEY_CLASSES_ROOT'"
+    IDS_MESSAGE01           "UNINSTALL has been canceled.  No files have been removed at this time."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_REF_COUNT_ZERO      "WARNING:  reference count for %s is already zero. This may indicate a problem with the registry.  Removing this shared file may affect other applications that rely on it, or prevent your machine from re-starting.\r\nDo you want to remove this file anyway?"
+    IDS_CANNOT_EXEC         "WARNING:  UNINSTALL cannot execute %s\r\nOne or more files or subsystems may not uninstall correctly."
+    IDS_CANNOT_EXEC2        "ERROR - UNINSTALL cannot execute %s\r\nDo you want to continue UNINSTALL anyway?"
+    IDS_REMOVE_SHARED       "If you choose to remove it now, it may affect other applications that were not properly installed.  If you are certain that this file will not be needed by Windows or by any other installed application, you should elect to remove it from your computer at this time.  Otherwise, you should consider leaving it on your computer to prevent problems with other applications."
+    IDS_UNREG_FAILED        "WARNING:  attempt to un-register %s failed. This file will not be correctly uninstalled.\r\nAlthough it is not likely to affect any installed applications, you should be aware that the registry entries for this file may not be properly removed, which could theoretically hamper system performance, though it is not likely to do so in actual practice."
+    IDS_UNSUP_OS            "WARNING:  Unsupported operating system - UNINSTALL will continue, but be advised that you may experience problems."
+    IDS_PROGRESS01          "Initializing..."
+    IDS_PROGRESS02          "CHECKING SHARED COMPONENTS..."
+    IDS_PROGRESS03          "CHECKING SHARED COMPONENTS... COMPLETE!"
+    IDS_PROGRESS04          "EXECUTING PROGRAMS..."
+    IDS_PROGRESS05          "EXECUTING PROGRAMS...\n%s"
+    IDS_PROGRESS06          "EXECUTING PROGRAMS... COMPLETE!"
+    IDS_PROGRESS07          "UN-REGISTERING DLL's..."
+    IDS_PROGRESS08          "UN-REGISTERING DLL's...\n%s"
+    IDS_PROGRESS09          "UN-REGISTERING DLL's... COMPLETE!"
+    IDS_PROGRESS10          "DEREFERENCING SHARED COMPONENTS..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_PROGRESS11          "DEREFERENCING SHARED COMPONENTS...\nCOMPLETE!"
+    IDS_PROGRESS12          "REMOVING REGISTRY ENTRIES..."
+    IDS_PROGRESS13          "REMOVING REGISTRY ENTRIES...\nCOMPLETE!"
+    IDS_PROGRESS14          "REMOVING FILES..."
+    IDS_PROGRESS15          "REMOVING FILES...\nCOMPLETE!"
+    IDS_PROGRESS16          "REMOVING DIRECTORIES..."
+    IDS_PROGRESS17          "REMOVING DIRECTORIES...\nCOMPLETE!"
+    IDS_PROGRESS18          "FINAL CLEANUP..."
+    IDS_WARNING08a          "WARNING:  unable to remove zero-reference count registry entry for %s."
+    IDS_ERROR13             "Error:  unable to execute %s"
+    IDS_WARNING12           "WARNING: cannot get exit code from %s"
+    IDS_WARNING13           "WARNING: %s process did not terminate"
+    IDS_WARNING14           "WARNING:  %s exits with error code %d"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\UNINST.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

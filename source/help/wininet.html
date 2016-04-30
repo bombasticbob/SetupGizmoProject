@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>WinINET DLL</TITLE>
+</HEAD>
+<BODY>
+<H1>WinINET DLL</H1>
+<br />
+<p>
+The 'WININET.DLL' is included with Microsoft's C++ compiler version 5.0, and is required for several of the C++ classes for internet access, such as http and ftp.  It requires a somewhat complex installation process, so Microsoft included it with their development system as a self-extracting setup utility.
+</p>
+<p>
+On Windows '95/98 and NT 4.0 (and later) you need to run 'WINTDIST.EXE' to install WININET.DLL and associated components, and to update the registry accordingly (earlier operating systems, such as NT 3.51, are not supported by S.F.T. Setup Gizmo).  This gives you the ability to do FTP and HTTP access to internet sites rather easily, much more easily than trying to code it all yourself using WINSOCK API's. 
+</p>
+<br />
+<H3>ADDING WININET.DLL</H3>
+<OL>
+<LI>Copy the file 'WINTDIST.EXE' to the directory containing your application's files to be included on the SETUP disk.</LI>
+<LI>Add 'WINTDIST.EXE' to the list of files to include, and specify 'Exec After Copy' and 'Delete after Exec'.  It is not important where you install it, but it's probably best to install it to the temporary directory using '%tmpdir%'.</LI>
+<LI>For the command line option, use the following string:  /q:1</LI>
+</OL>
+<p>
+NOTE:  The '/q:1' option performs a 'quiet' install of the components.  If a reboot is required, it should not prompt you.  However, the S.F.T. Setup Gizmo's SETUP will normally detect it and prompt you to reboot.
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

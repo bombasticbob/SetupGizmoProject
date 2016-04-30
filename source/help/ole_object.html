@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>OLE Objects and ActiveX controls</TITLE>
+</HEAD>
+<BODY>
+<H1>OLE Objects and ActiveX controls</H1>
+<br />
+<p>
+Installing an OLE Object or ActiveX control as a 'stand-alone' is very much like installing an application.  However, it is very likely that you do not want to prompt the user for a bunch of stuff, and merely want to load the ActiveX implementation (&quot;.OCX&quot;) file (and associated support DLL's and whatnot) into the 'windows' or the 'system' directory, register the control, and be done with it.  For this, 'Quiet Setup' as a 'Self-Extracting Executable' is most likely the right choice.  Further, you may want to select 'No Uninstall', as it's not likely anyone will want to uninstall your ActiveX control once it has been installed.  You should normally install it in either the 'windows' directory, the 'system' directory, or a shared directory (located within the windows or the system directory) if you expect multiple applications to use it.
+</p>
+<p>
+In the case of Internet Explorer components, you might want to install your ActiveX files into the 'Downloaded ActiveX Controls' directory, off of the Windows directory.  For this, select 'Other' as the 'Install Path' and type '%windir%\Downloaded ActiveX Controls' into the box below 'Other' in lieu of 'Windows Directory' or 'System Directory' for each of the items below.
+</p>
+<OL>
+<LI>Add the OLE Objects or ActiveX controls ('.ocx' and '.dll' files) to the file list, and mark them 'System / Shared', 'Register After Copy', and install them into the 'System Directory', or a 'shared components' directory that's located within the windows or the system directory (see below).</LI>
+<LI>Add supporting DLL's and license files to the file list, and install them also into the 'System Directory' or 'shared components' directory.</LI>
+<LI>If desired, select <b>&quot;No Uninstall&quot;</b> and <b>&quot;Quiet SETUP&quot;</b> on the final screen.  Use <b>&quot;Self-Extracting SETUP Utility&quot;</b> to create a single EXE 'SETUP.EXE' that will extract the components and install them.</LI>
+<LI>If required, write and include special configuration programs, marking them <b>'Execute After Copy'</b> and <b>'Delete After Exec'</b> to remove them once they have executed.</LI>
+<LI>As with applications, include any self-extracting component SETUP applications along with the rest of your files, marking them <b>'Execute After Copy'</b> and/or <b>'Delete After Exec'</b> as necessary to acomplish the SETUP functionality.</LI>
+</OL>
+<p>
+<b>NOTE:</b>  A typical 'shared components' directory might be specified as follows:  First, select 'other' for the install path, then enter one of the following strings into the associated text box:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%windir%\MySharedComponents
+<br />
+<br />
+&nbsp;&nbsp;- or -
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%sysdir%\MySharedComponents
+</p>
+<p>
+Using '%windir%' is preferable to '%sysdir%', because on some systems, it is conceivable that the system directory might not be 'writeable'.  [and please don't use 'MySharedComponents' for your actual application - that is just an example…].
+</p>
+<p>
+By specifying a unique directory name (such as the ones above), you can install all of YOUR shared components into this sub-directory, avoid any naming conflicts with other controls, and keep the files OUT of the windows and system directory.  By definition, the windows directory should always &quot;writeable&quot; for any Windows installation, especially important for ROM-bootable or network-bootable (shared) systems.  On systems that have the 'Terminal Services' server running, the windows directory returned by '%windir%' will be that of the operating system, NOT the private directory of the currently logged in user.  See documentation on 'GetWindowsDirectory()' and 'GetSystemWindowsDirectory()' for details on this.
+</p>
+
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>
+

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Adding Certificates to the System Certificate Store</TITLE>
+</HEAD>
+<BODY>
+<H1>Adding Certificates to the System Certificate Store</H1>
+<br />
+<p>
+A new feature of the SFT Setup Gizmo is the ability to add 'root' certificates
+to the system certificate store as part of your setup.
+</p>
+<br />
+<p>
+Since Windows Vista, 'certificate signing' has been required for device drivers,
+particularly for the 64-bit platform.  Using an 'approved' CA for this purpose
+can be expensive, sometimes costing you several hundred dollars per year.  Obviously
+for open source and independent software developers, this is VERY undesireable.  It
+is, in many ways, like a 'toll booth' in which a 'cottage industry' (driver signing
+certificate authorities) exact a kind of 'toll' on every software developer that
+needs to sign his code for some reason.  And that's hardly FAIR.
+</p>
+<br />
+<p>
+The main purpose of this certificate signing policy is for DRM; that is, signed
+drivers supposedly provide a kind of 'liability' against the abuse of DRM.
+Additionally, they provide a kind of 'false sense of security' for end-users who
+want to install software or 3rd party drivers on their computers, making it appear
+as if the driver or software is 'safe' because it was signed and/or verified.
+</p>
+<br />
+<p>
+But the fact is that ANYONE can create a certifying authority, and install this into
+the root certificate store on ANY computer, using an installation program with that
+capability.  And the SFT Setup Gizmo makes that process easy.
+</p>
+<br />
+<p>
+What this does for YOU, the developer, is eliminate the 'toll booth' aspect of
+certificates and code signing, by allowing YOU to become &quot;your own&quot;
+certificate authority (CA).  Then, you can issue certificates to yourself and
+sign your code as you see fit.  The 'down side' of course is that the 'Root CA'
+certificate that you create for yourself MUST be installed on the target machine
+for anyone who might be needing to use it.<br />
+</p>
+<br />
+<p>
+This is where the SFT Setup Gizmo comes into play.  It can install your root CA
+certificate AUTOMATICALLY during the setup process, making all of this very very
+easy to implement.  You're welcome.
+</p>
+
+<br />
+
+
+<p>Reserved</p>
+<br />
+<br />
+<p>
+See Also:
+<UL>
+  <li><a href="create_cert_authority.html">Creating your own Root CA Certificate</a></li>
+  <li><a href="create_signing_cert.html">Creating a Code Signing Cert from your own Root CA Cert</a></li>
+  <li><a href="CertMgr.html">Adding Certificates to the System Certificate Store</a></li>
+  <li><a href="signing_with_cert.html">Signing your Code with a Signing Certificate</a></li>
+</UL>
+</p>
+</BODY>
+</HTML>

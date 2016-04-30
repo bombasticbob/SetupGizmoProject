@@ -1,0 +1,193 @@
+<HTML><HEAD><!--Sitemap 1.0--></HEAD>
+<BODY>
+
+<tr><td width=180><a href="overview.html">Overview</a></td><td>An overview of the S.F.T. Setup Gizmo (general description, licensing, and supported operating systems)</td></tr>
+<tr><td><a href="process.html">Process</a></td><td>An explanation of the SETUP Process</td></tr>
+<tr><td><a href="self_register.html">Self-Register</a></td><td>Creating applications and DLL's that 'self-register' and 'self-unregister'</td></tr>
+<tr><td><a href="building.html">Building</a></td><td>Building a SETUP Image from your application</td></tr>
+<tr><td><a href="optional_components.html">Optional components</a></td><td>How to implement Optionally Installed Components</td></tr>
+<tr><td><a href="command_lines.html">Command Lines</a></td><td>Command line arguments for the various applications</td></tr>
+<tr><td><a href="signed_cabinets.html">Signing Files</a></td><td>Signing self-extracting setups and Cabinet Files (For Internet Download)</td></tr>
+
+<UL>
+<LI><object type="text/sitemap">
+<param name="Name" value="Contents">
+<param name="Local" value="SetupGiz.html">
+<param name="ImageNumber" value="1">
+</object></LI>
+
+<LI><object type="text/sitemap">
+<param name="Name" value="Overview">
+<param name="Local" value="overview.html">
+<param name="ImageNumber" value="1">
+</object></LI>
+
+  <UL>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Process">
+  <param name="Local" value="process.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Self-Register">
+  <param name="Local" value="self_register.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Building">
+  <param name="Local" value="building.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Optional Components">
+  <param name="Local" value="optional_components.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Command Lines">
+  <param name="Local" value="command_lines.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Signed Cabinets">
+  <param name="Local" value="signed_cabinets.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Adding Certificates">
+  <param name="Local" value="certificates.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  </UL>
+
+<LI><object type="text/sitemap">
+<param name="Name" value="Typical Installations">
+<param name="Local" value="SetupGiz.html">
+<param name="ImageNumber" value="1">
+</object></LI>
+
+  <UL>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Application">
+  <param name="Local" value="application.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="OLE Object">
+  <param name="Local" value="ole_object.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="ActiveX Control">
+  <param name="Local" value="ole_object.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Subsystem">
+  <param name="Local" value="subsystem.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Frameworks">
+  <param name="Local" value="BugoSoftNotYet.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Including '.Net'">
+  <param name="Local" value="BugoSoftNotYet.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="WININET Subsystem">
+  <param name="Local" value="wininet.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="MDAC (ODBC)">
+  <param name="Local" value="mdac.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Speech API">
+  <param name="Local" value="speech_api.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="NT Services">
+  <param name="Local" value="nt_services.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  </UL>
+
+<LI><object type="text/sitemap">
+<param name="Name" value="Additional Information">
+<param name="Local" value="SetupGiz.html">
+<param name="ImageNumber" value="1">
+</object></LI>
+
+  <UL>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="SETUP.INF">
+  <param name="Local" value="setup_inf.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="'.GIZ' Format">
+  <param name="Local" value="giz_format.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Specifying Paths">
+  <param name="Local" value="specifying_paths.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Creating a Root CA Certificate">
+  <param name="Local" value="create_cert_authority.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Creating a Signing Certificate">
+  <param name="Local" value="create_signing_cert.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Signing Code (and other objects) with a Signing Cert">
+  <param name="Local" value="signing_with_cert.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  <LI><object type="text/sitemap">
+  <param name="Name" value="Using CertMgr">
+  <param name="Local" value="CertMgr.html">
+  <param name="ImageNumber" value="11">
+  </object></LI>
+
+  </UL>
+
+</UL>

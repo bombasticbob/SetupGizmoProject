@@ -1,0 +1,54 @@
+; test comment
+
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Output\SetupGiz.chm
+Contents file=SetupGiz.hhc
+Default Window=main
+Default topic=SetupGiz.html
+Display compile progress=No
+Full-text search=Yes
+Language=0x409 English (United States)
+
+[WINDOWS]
+
+
+[FILES]
+SetupGiz.html
+application.html
+BugoSoftNotYet.html
+building.html
+certificates.html
+CertMgr.html
+command_lines.html
+create_cert_authority.html
+create_signing_cert.html
+giz_format.html
+mdac.html
+nt_services.html
+ole_object.html
+optional_components.html
+overview.html
+process.html
+self_register.html
+setup_inf.html
+signed_cabinets.html
+signing_with_cert.html
+specifying_paths.html
+speech_api.html
+subsystem.html
+wininet.html
+res\autorun.jpg
+res\certmgr.jpg
+res\flowchart.jpg
+res\option_install.jpg
+res\screen1.jpg
+res\screen1a.jpg
+res\screen2.jpg
+res\screen3.jpg
+res\screen3a.jpg
+res\screen3b.jpg
+res\screen4.jpg
+res\screen5.jpg
+
+

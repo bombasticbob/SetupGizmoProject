@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Building Self-registering Applications and DLLs</TITLE>
+</HEAD>
+<BODY>
+<H1>Building Self-registering Applications and DLLs</H1>
+<br />
+<p>
+Two of the simpler features to use in the S.F.T. Setup Gizmo are the &quot;execute after copy&quot; feature and the 'Register DLL' feature.  Both of these also allow uninstall, by specifying a command argument for &quot;execute after copy&quot; and automatically via 'DLLUnregisterServer' for DLL's and ActiveX controls.
+</p>
+<p>
+An application is most likely to &quot;know&quot; about itself more than anything else in your system.  This is especially true when components are involved.  By encapsulating all of the necessary 'extra settings' and registry entries needed by an application or DLL, and placing them within the application itself, you can allow them to be self-registering and self-uninstalling, minimizing the kinds of changes and &quot;jumping through hoops&quot; that you need to put into the SETUP application.
+</p>
+<p>
+And this is precisely the philosophy used by the S.F.T. Setup Gizmo:  make developing the SETUP as easy as possible.
+</p>
+<p>
+As an example, suppose your application had 2 additional arguments that it supported:  The first, &quot;-SETUP&quot; (or &quot;/SETUP&quot; if you prefer), tells the application that you are installing it, and that it should add all of its appropriate registry entries, check for additional system requirements particular to your application, and then exit.  If there are installed components that this application depends on, you would place it AFTER those entries within the setup.  And since 'execute after copy' is performed AFTER all of the files have been installed, there should be no problems with the order in which they are copied.  The order in which they are registered and executed, however, matches the order in which they are specified in the setup.
+</p>
+<p>
+Additionally, you decide that your application needs to delete some registry entries on uninstall.  To facilitate this, you add support for a &quot;/UNINST&quot; switch that tells the application that you are about to remove it from the system, and that it should clean up the registry (and perhaps any temporary and/or cache files that it might have created).
+</p>
+<p>
+In this way, your application and all of the entities that it modifies are all controlled by the application itself, during the installation process AND during the uninstall process.
+</p>
+<p>
+Similarly, a DLL that supports 'DllRegisterServer' can also support 'DllUnregisterServer' to perform uninstalls.  These calls are made automatically whenever a DLL or ActiveX component has been marked as 'Register'.  Similarly, a &quot;.Net&quot; component will register and unregister using its built-in functions, primarily by running 'regasm' from SETUP.EXE and UNINST.EXE .
+</p>
+<p>
+If you use MFC to code your applications, you might consider adding new switches to a derived 'CCommandLineInfo' object so that you can use 'ParseCommandLine' to filter out the '/SETUP' and '/UNINST' commands.  Typically it might look like this
+</p>
+<pre>
+class CMyCommandLineInfo : public CCommandLineInfo
+{
+public:
+  CMyCommandLineInfo() { m_bSetup = FALSE; m_bUninst = FALSE; }
+  virtual void ParseParam(LPCTSTR,BOOL,BOOL);
+  BOOL m_bSetup, m_bUninst;
+};
+
+void CMyCommandLineInfo::ParseParam(LPCTSTR pszParam, BOOL bFlag, BOOL bLast)
+{
+  if(bFlag)
+  {
+    if(!stricmp(pszParam, "SETUP"))
+    {
+      m_bSetup = TRUE;
+      return;
+    }
+    else if(!stricmp(pszParam, "UNINST"))
+    {
+      m_bUninst = TRUE;
+      return;
+    }
+  }
+  
+  CCommandLineInfo(pszParam, bFlag, bLast);
+}
+</pre>
+<br />
+<p>
+Then you can use 'CWinApp::ParseCommandLine()' to parse out your command line, and handle the 'm_bSetup' and 'm_bUninst' parameters appropriately.
+</p>
+<br />
+<p>
+<b>NOTE:</b>  POSIX compliant applications can use 'getopt()' for command line options.
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>
+

@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Creating your own Root CA Certificate</TITLE>
+</HEAD>
+<BODY>
+<center><h1>Creating your own Root CA Certificate</h1></center>
+<br />
+<p>
+The process of creating a root certificate is VERY EASY.  A general overview of the
+process can be found <a href="http://mrp3.com/cert_authority.html">HERE</a> if you like.
+</p>
+<br />
+<p>
+The step-by-step example below uses the 'openssl' utility, which you can easily install
+on Linux, on Windows under Cygwin, or natively on Windows using the installer from the
+<a href="http://gnuwin32.sourceforge.net/packages/openssl.htm">GNU WIN32 project</a>
+on SourceForge.
+</p>
+<br />
+<p>
+If you follow this procedure as stated, you'll have a self-signed root cert capable
+of being installed by the S.F.T. Setup Gizmo, and useful for creating code-signing
+certificates.
+</p>
+<ol>
+<li><b>Create the key for your root certificate</b><br />
+    This key will be used in the signing process, and should be password
+    protected.  Otherwise, it could be abused if the key ever got out of
+    your hands.  Yes, this kind of thing happens.<br />
+    To create a password-protected key into the file 'MyCert.key':<br />
+    <pre>    openssl genrsa -des3 -out MyCert.key 2048</pre>
+    The key size parameter is 2048, as in the web-page example.  You can pick a
+    different value if you like.</li>
+    <br />
+    <br />
+<li><b>Create a self-signed 'root' certificate 'pem' file</b><br />
+    This will create a self-signed root certificate.  You will be asked several
+    questions for information to be embedded in the certificate.  The 'CN' will
+    appear as the name of the certificate, so choose wisely.<br />
+    <pre>    openssl req -x509 -new -nodes -key MyCert.key -sha256 -days 365 -out MyCert.pem</pre>
+    The sample creates a certificate that is good for one year (365 days).  you should consider
+    limiting the expiration date of your certificate, and just create a new one whenever
+    it expires.  This limits the possibility of it being exploited for nefarious purposes.</li>
+    <br />
+    <br />
+<li><b>Convert the certificate into a '.cer' file for S.F.T. Setup Gizmo</b><br />
+    S.F.T. Setup Gizmo needs this file to be a '.cer' file in X.509 DER format.
+    You can convert it easily with a command similar to the following:<br />
+    <pre>    openssl x509 -in MyCert.pem -outform der -out MyCert.cer</pre>
+    </li>
+</ol>
+<p>
+Once you have the '.cer' certificate file, you can add it to your setup via the
+'Cert Files' button on the opening page for the S.F.T. Setup Gizmo.
+</p>
+<p>For information on how to add the Root CA certificate, see
+<a href="certificates.html">Adding Root Certificates to your Setup</a>
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>

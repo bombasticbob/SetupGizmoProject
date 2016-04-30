@@ -1,0 +1,21 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Fri Apr 29 01:50:24 2016           **
+;**                                                                **
+;** MakeCAB Version: 6.1.7600.16385                                 **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,bitmaps
+[cabinet list]
+1,1,BITMAPS.CAB
+[file list]
+1,1,palm.bmp,65598
+1,1,sftpromo.bmp,23102
+\source\setupgiz\setup\res\palm.bmp palm.bmp
+\source\setupgiz\setup\res\sftpromo.bmp sftpromo.bmp
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Fri Apr 29 01:50:24 2016           **
+;**                                                                **
+;*** END ************************************************************

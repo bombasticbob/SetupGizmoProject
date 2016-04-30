@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Using Signed Cabinet Files</TITLE>
+</HEAD>
+<BODY>
+<H1>Using Signed Cabinet Files</H1>
+<br />
+<p>
+For Internet download, it is often desirable to use a &quot;Signed Cabinet File&quot; or &quot;Signed Executable File&quot; to mark your application's SETUP file as 'safe'.  The easiest method that you can use to generate a &quot;Signed Cabinet File&quot; for download would be to build a self-extracting SETUP image, then enclose this within a cabinet file using an appropriate cabinet utility (marking the self-extracting executable as 'auto execute' for the installer to automatically run it on download), and then sign the cabinet with an appropriate signing utility, such as 'signcode.exe'.
+</p>
+<p>
+Microsoft's 'Visual Interdev' and 'Developer Studio' allow you to generate signed cabinet files for distributing self-extracting executables in this manner, as part of a &quot;solution&quot;.  Additionally, the Microsoft 32-bit Platform SDK contains the required utilities for creating and signing cabinet files from the command line.
+</p>
+<p>
+An alternative method would be to create a self-extracting EXE setup, then subsequently sign the code.  This process has been verified to work using a test certificate, created using the example below. Although it is highly unlikely that a certificate would cause a self-extracting SETUP to malfunction (its placement within the EXE does not interfere with the application's operation), you should always test your &quot;signed&quot; self-extracting SETUP before making it available for download, then download it from your web server to make certain that the certificate works correctly.
+</p>
+<p>
+The following commands demonstrate how to use the command line utilities to create a test certificate, and to use this certificate to 'sign' a self-extracting SETUP created using the S.F.T. Setup Gizmo.
+</p>
+<pre>
+makecert -sk mykey -ss mykey -n "CN=My Name" -l http://mywebsite.com/ -r mykey.cer
+cert2spc mykey.cer mykey.spc
+signcode -spc mykey.spc -k mykey -n &quot;My App&quot; -I http://mywebsite.com/ mysetup.exe
+</pre>
+<p>
+NOTE:  substitute correct names for 'mykey', 'My Name', 'My App', 'mywebsite.com', and 'mysetup.exe' if you use this example.
+</p>
+<p>
+For more information on these applications, see <a href="signing_with_cert.html">Signing your code</a>, as well as the MSDN Documentation regarding 'signcode.exe' (File Signing Tool), 'cert2spc.exe' (Software Publisher Certificate Test Tool), and 'makecert.exe' (Certificate Creation Tool).  A list of command line arguments can be obtained by specifying '-?' as the only argument on the command line for each of these applications.
+</p>
+<p>
+For information on creating your own 'Certificate Authority' see <a href="create_cert_authority.html">Creating your own Root CA Certificate</a>.
+For information on installing the 'Root CA Certificate' automatically, see <a href="certificates.html">Certificates</a>.
+</p>
+<p>
+If you need to generate a '.CAB' file, the 'MAKECAB' utility included as part of the S.F.T. Setup Gizmo software allows you to create a cabinet file directly, from the command line.  To make it work, you would need to generate an appropriate '.DDF' file, and a '.INF' file to include with the self-extracting SETUP.  The format of these files and the use of MAKECAB are documented in the Microsoft 32-bit Platform SDK under &quot;Cabinet SDK&quot;.
+</p>
+<p>
+For more information, see the Microsoft Cabinet SDK and 32-bit Platform SDK documentation, and the Microsoft MSDN web site at http://msdn.microsoft.com/
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

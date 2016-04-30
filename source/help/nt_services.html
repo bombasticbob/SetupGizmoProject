@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Special Handling for NT Services</TITLE>
+</HEAD>
+<BODY>
+<H1>Special Handling for NT Services</H1>
+<br />
+<p>
+Windows NT has the capability of running applications in the context of the operating system.  These applications start up during boot, and do not require a user to log in.  Typically they are used to perform 'server' functionality, but occasionally you may want to write one of your own, either as a helper application, or a DCOM server that shares global data between applications, or as a simple utility that periodically adjusts your system clock to match the atomic clock in Colorado.
+</p>
+<p>
+NT Services have their own set of problems in setup.  First of all, if the service is NOT already running, it needs to be installed with the Service Control Manager and started.  And, if shared components have been installed, but are 'pending reboot' for proper registration, it may be desirable to force a reboot before actually installing and configuring the service.
+</p>
+<p>
+To make this type of application's setup easier, the S.F.T. Setup Gizmo treats any file marked 'Shared/System' such that if a re-boot is pending (due to a shared file 'in use'), the <b>'exec after copy'</b> and <b>'register control'</b> functionality (including those files marked as 'Use .Net Reg') is delayed until after the next reboot.  This is accomplished by placing entries in the registry using the <i>'RunOnce'</i> key.
+</p>
+<p>
+This way, if a service is already running, and the new service in the SETUP package needs to replace the old one, and you specify a 'configuration' switch value for the 'exec after copy' argument in SETUP, the new service executable will be invoked after the next login instead of during SETUP.  Then, during reboot, the new executable file (and any DLL's) will replace the old ones before the operating system tries to start the service.  After the files have been updated, the service will attempt to start.  In this case it is important to make sure that the service can gracefully handle any error condition in which it may not be completely installed, as in the case where there are various DLL's that have not yet been registered.
+</p>
+<p>
+Then, as soon as a user logs in, SETUP will continue via the operating system, and run each one of the tasks that must NOW be performed after reboot.
+</p>
+<p>
+Although this may not be adequate for ALL cases, it is sufficient in the majority of cases to allow you to install an upgraded NT Service EXE while the service is already running.  In those cases where it is necessary to jump through more hoops before reboot you may be able to use a temporary utility program for this purpose, and mark it &quot;exec after copy&quot; and &quot;delete after exec&quot;. 
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

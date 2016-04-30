@@ -1,0 +1,512 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\SETUP.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\mainframe.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETUP_DIALOG DIALOGEX 0, 0, 230, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SETUP"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Install",IDOK,130,84,50,14
+    PUSHBUTTON      "E&xit",IDCANCEL,50,84,50,14
+    CTEXT           "{Welcome Message goes Here}",IDC_WELCOME,28,2,174,38
+    ICON            IDR_MAINFRAME,IDC_STATIC,204,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    CTEXT           "SETUP will copy the necessary files to your computer and\nmake any required changes to your system configuration.",IDC_STATIC,2,42,226,16
+    CTEXT           "IMPORTANT:  You must make certain that all other running\napplications have been closed before proceeding with SETUP.",IDC_STATIC,2,64,226,16
+END
+
+IDD_PROGRESS DIALOGEX 0, 0, 221, 44
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "SETUP Progress Indicator"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_PROGRESS,2,2,217,18,SS_CENTERIMAGE | WS_BORDER | NOT WS_GROUP
+    LTEXT           "Static",IDC_PROGRESS_TEXT,2,22,217,20
+END
+
+IDD_PATH_DIALOG DIALOGEX 0, 0, 317, 61
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Integrated SETUP - Installation Path"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "",IDC_PATH_CAPTION,4,4,309,20
+    EDITTEXT        IDC_PATHNAME,4,25,294,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE,299,25,14,14
+    DEFPUSHBUTTON   "OK",IDOK,51,43,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,212,43,50,14
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 230, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "About S.F.T. Setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,90,74,50,14
+    LTEXT           "This application is a distributable component of the 'Setup Gizmo' SETUP creation tool, which uses the '.INF' file included on your setup disk(s) to install the target software product on your computer.",IDC_STATIC,26,27,178,31
+    CTEXT           "SFT Internet Site:  http://www.mrp3.com/",IDC_STATIC,2,61,226,9
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,2,20,20,SS_SUNKEN | WS_BORDER
+    ICON            IDR_MAINFRAME,IDC_STATIC,207,2,20,20,SS_SUNKEN | WS_BORDER
+    CTEXT           "SFT Setup Application - version 1.0",IDC_STATIC,25,2,178,9
+    CTEXT           "Copyright © 1998-2001 by SFT Inc. - all rights reserved",IDC_STATIC,26,14,178,9
+END
+
+IDD_LICENSE DIALOGEX 0, 0, 301, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "SETUP - License Information"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "I &Agree",IDOK,189,185,50,14
+    PUSHBUTTON      "E&xit Setup",IDCANCEL,58,185,50,14
+    CONTROL         "",IDC_LICENSE,"RichEdit",TCS_RAGGEDRIGHT | TCS_MULTISELECT | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,2,2,296,179
+END
+
+IDD_STARTMENU_FOLDER DIALOGEX 0, 0, 186, 97
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "SETUP - Start Menu Program Folder"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "SETUP can automatically create or update a program folder for you in your Start Menu.\nIf you want to use a folder with a different name than the one specified, please enter the new name below.",IDC_TEXT,2,2,182,35
+    EDITTEXT        IDC_FOLDER_NAME,2,43,168,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE,171,43,13,13
+    CONTROL         "Apply to &All Users (may require admin privileges)",IDC_ALL_USERS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,62,182,12
+    DEFPUSHBUTTON   "Add/&Update Folder",IDOK,14,79,70,16
+    PUSHBUTTON      "Do &Not Add/Update",IDCANCEL,102,79,70,16
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 288, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "SETUP - Optional Components"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Please select the optional components that you want to install.\nOnly those items in the following list that are 'checked' will be installed.",IDC_STATIC,2,2,284,18
+    LISTBOX         IDC_OPTION_LIST,2,22,142,66,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_OPTION_DESC,146,22,140,66
+    DEFPUSHBUTTON   "OK",IDOK,50,94,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,188,94,50,14
+END
+
+IDD_LOGON DIALOGEX 0, 0, 270, 124
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Privileged Login Required for SETUP"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "WARNING:  You do not have sufficient privileges\n on this system to run the SETUP application.",IDC_STATIC,2,10,266,21
+    CTEXT           "Please enter a user name and password for a user with sufficient privileges\nto install applications on this system, or press 'Cancel' to exit at this time.",IDC_STATIC,2,32,266,20
+    LTEXT           "&User Name:",IDC_STATIC,25,56,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_USERNAME,67,56,176,12,ES_AUTOHSCROLL
+    LTEXT           "&Password:",IDC_STATIC,25,70,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_PASSWORD,67,70,176,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Domain:",IDC_STATIC,25,84,40,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_DOMAIN,67,84,176,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,44,108,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,171,108,50,14
+END
+
+IDD_CERTIFICATE DIALOGEX 0, 0, 280, 153
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Certificate Install"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK to Add Certificates",IDOK,50,129,50,22,BS_MULTILINE
+    PUSHBUTTON      "Cancel\nDo Not Add",IDCANCEL,180,127,50,24,BS_MULTILINE
+    CTEXT           "You may want to review these certificates after\ninstallation, by running 'certmgr.msc' as an Administrator.\n\nIf you do not want to install the certificates,\npress 'Cancel'; otherwise, press 'OK' to continue:",IDC_STATIC,30,79,220,44
+    CTEXT           "Setup needs to install one or more security certificates in the\nsystem certificate store in order to complete the installation.",IDC_STATIC,30,2,220,20,SS_SUNKEN
+    ICON            IDR_MAINFRAME,IDC_STATIC,2,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    ICON            IDR_MAINFRAME,IDC_STATIC,254,2,20,20,SS_REALSIZEIMAGE | SS_SUNKEN | WS_BORDER
+    LISTBOX         IDC_CERTLIST,30,35,220,41,NOT LBS_NOTIFY | LBS_SORT | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | LBS_NOSEL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Certificate 'Friendly' Name",IDC_STATIC,30,26,108,8
+    LTEXT           "Certificate Store",IDC_STATIC,140,26,108,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,2,3
+ PRODUCTVERSION 1,1,2,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.mrp3.com/ - SETUP utility for SFT Setup Gizmo.  Requires supporting files generated by Setup Gizmo!"
+            VALUE "CompanyName", "Stewart~Frazier Tools, Inc."
+            VALUE "FileDescription", "SFT Setup Gizmo 'Killer' SETUP Application"
+            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "InternalName", "SETUP"
+            VALUE "LegalCopyright", "Copyright © 1998-2016 by Stewart~Frazier Tools, Inc. - all rights reserved"
+            VALUE "OriginalFilename", "SETUP.EXE"
+            VALUE "ProductName", "SFT Setup Gizmo SETUP"
+            VALUE "ProductVersion", "1, 1, 2, 3"
+            VALUE "SpecialBuild", "EVERY build is ""special"""
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SETUP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 228
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 219
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_PATH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 313
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 57
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 228
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_LICENSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 298
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STARTMENU_FOLDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 184
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 286
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_LOGON, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 268
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_CERTIFICATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 278
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(NOT_COMPRESSED)
+#if defined(APSTUDIO_INVOKED)
+IDB_PALM$(NOT_COMPRESSED) BITMAP                  "res\\palm.bmp"
+#else
+IDB_PALM                BITMAP                  "res\\palm.bmp"
+#endif
+#endif
+#if defined(APSTUDIO_INVOKED) || defined(NOT_COMPRESSED)
+#if defined(APSTUDIO_INVOKED)
+IDB_PROMO$(NOT_COMPRESSED) BITMAP                  "res\\sftpromo.bmp"
+#else
+IDB_PROMO               BITMAP                  "res\\sftpromo.bmp"
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// CAB
+//
+
+IDR_BITMAPS_CAB         CAB                     "res\\bitmaps.cab"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "S.F.T. SETUP Gizmo - Default Lingo"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR01             "ERROR:  unable to initialize OLE/COM - SETUP will now close\nThis error indicates a problem with your computer.  You should re-install your operating system to correct this problem."
+    IDS_ERROR02             "COPY error on 'SETUP.INF' - SETUP will now close."
+    IDS_ERROR03             "COPY error on 'UNINST.EXE' - SETUP will now close."
+    IDS_ERROR04             "Skipping invalid registry entry - '%s'"
+    IDS_ERROR05             "Unable to create registry key '%s'"
+    IDS_ERROR06             "DllRegisterServer() returns ERROR in %s"
+    IDS_ERROR07             "ERROR - Unable to execute %s"
+    IDS_ERROR08             "Destination file name not valid: %s\r\nSETUP will now close."
+    IDS_ERROR09             "RENAME ERROR ON %s\r\nSETUP will now close."
+    IDS_ERROR10             "The file ""%s"" is marked 'read-only'.  Press 'OK' to overwrite it with the SETUP version of the same file, 'Cancel' to abort SETUP at this point\nNOTE:  aborting SETUP at this time may cause instabilities in your system if there are mismatched shared components. It is recommended that you go ahead and overwrite the file even though it has been marked 'read-only'."
+    IDS_ERROR11             "COPY ERROR ON %s\r\nSETUP will now close."
+    IDS_ERROR12             "File COPY error on %s\r\nEnsure that ALL other applications have been closed before re-trying copy."
+    IDS_ERROR13             "FDICreate() failed: code %d [%s]\n"
+    IDS_ERROR14             "ERROR:  Setup does not (yet) support un-compressed files"
+    IDS_ERROR15             "CABINET FILE '%s' is either missing or corrupt - SETUP will now close"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR16             "INTERNAL ERROR in destination path - SETUP will now terminate\r\n"
+    IDS_ERROR17             "Unable to create directory '%s'\r\nSETUP will now close."
+    IDS_ERROR18             "ERROR:  unable to parse entry #%d in [Files] section of SETUP.INF"
+    IDS_ERROR19             "Unable to get temporary file name for '%s'"
+    IDS_ERROR20             "EXTRACT failed on %s\r\n%s\r\nSETUP will now close"
+    IDS_ERROR21             "Error obtaining file info for %s\r\nSETUP will now close"
+    IDS_ERROR22             "The file %s is newer than the one on the SETUP disk.\r\nDo you want to KEEP the existing file?"
+    IDS_ERROR23             "EXTRACT failed on %s\r\n%s\r\n"
+    IDS_ERROR24             "Invalid File Name Specified"
+    IDS_ERROR25             "Illegal drive specified - please re-enter"
+    IDS_ERROR26             "The specified path already exists, but is not a directory.  Please specify a different path."
+    IDS_ERROR27             "Unsupported operating system - SETUP will now close."
+    IDS_ERROR28             "Cannot find 'SETUP.INF' - SETUP will now close"
+    IDS_ERROR29             "Read error on 'SETUP.INF' - SETUP will now close"
+    IDS_ERROR30             "Internal error - no files listed in 'SETUP.INF' - SETUP will now close"
+    IDS_ERROR31             "Internal error - no 'cabinets' listed in 'SETUP.INF' - SETUP will now close"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR32             "Internal error - no disks/labels listed in 'SETUP.INF' - SETUP will now close"
+    IDS_ERROR33             "Unable to create main window!"
+    IDS_ERROR34             "Read error on 'LICENSE' file - SETUP will now close"
+    IDS_ERROR35             "Install %s?\n%s"
+    IDS_ERROR36             "Initialization error - SETUP will now close."
+    IDS_ERROR37             "Unable to create temporary ('SETUP.INF') file."
+    IDS_ERROR38             "WRITE ERROR on SELF-EXTRACTING SETUP data(1)"
+    IDS_ERROR39             "Unable to create temporary ('LICENSE.TXT') file."
+    IDS_ERROR40             "WRITE ERROR on SELF-EXTRACTING SETUP data(2)"
+    IDS_ERROR41             "Unable to create temporary ('SFTCAB.1') file"
+    IDS_ERROR42             "WRITE ERROR on SELF-EXTRACTING SETUP data(3)"
+    IDS_ERROR43             "PROGRESS DIALOG CREATE FAIL"
+    IDS_ERROR44             "WRITE ERROR on SELF-EXTRACTING SETUP data(4)"
+    IDS_ERROR45             "ERROR:  unable to create registry key for SETUP.  The upgraded installation may not function properly.\nIf you want to continue running SETUP anyway, press 'OK' - otherwise, press 'Cancel' to terminate SETUP at this time so that you can correct the problem before running SETUP again."
+    IDS_ERROR46             "** SETUP ERROR **"
+    IDS_ERROR47             "SETUP did not complete successfully.  You will need to re-run SETUP before you can use %s"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR48             "%s SETUP"
+    IDS_ERROR49             "SETUP has completed successfully."
+    IDS_ERROR50             "SETUP has completed successfully.\nSome files were not updated yet because they were in use by running applications.  You will need to re-start windows before you can run %s"
+    IDS_ERROR51             "ERROR:  invalid path expansion in application path\r\n%s"
+    IDS_ERROR52             "ERROR:  invalid path expansion in application 'common' path\r\n%s"
+    IDS_ERROR53             "CABINET FILE NOT FOUND in SETUP.INF - File may be corrupt!  SETUP will now close"
+    IDS_ERROR54             "INVALID DISK NUMBER in SETUP.INF - File may be corrupt!  SETUP will now close."
+    IDS_ERROR55             "MISSING 'TARGET' FILE in SETUP.INF - File may be corrupt!  SETUP will now close."
+    IDS_ERROR56             "TARGET FILE not found on SETUP disk - Disk may be corrupt!  SETUP will now close"
+    IDS_ERROR57             "Please insert the disk labeled %s into drive %s"
+    IDS_ERROR58             "The drive '%s' is not valid."
+    IDS_ERROR59             "A file with this name already exists, but is not a directory"
+    IDS_ERROR60             "The directory '%s' does not exist - do you want to create it?"
+    IDS_ERROR61             "Invalid directory name '%s'"
+    IDS_ERROR62             "Unable to create directory '%s'"
+    IDS_ERROR63             "PARSE ERROR - %s - entry skipped"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR64             "You must specify a non-blank folder name"
+    IDS_ERROR65             "INTERNAL ERROR - no Windows NT user name!"
+    IDS_ERROR66             "Unable to create folder in 'All Users' - would you like to add it for your user only?"
+    IDS_ERROR67             "Unable to create folder - please specify another"
+    IDS_ERROR68             "Unable to create shortcut for "
+    IDS_ERROR69             "Unable to create shortcut for Un-Install"
+    IDS_ERROR70             "You must re-start your computer before you can run %s\r\nDo you want to re-start your computer now?"
+    IDS_ERROR71             "An unknown system exception has taken place - this program will now close"
+    IDS_ERROR72             "** FATAL SETUP ERROR **"
+    IDS_ERROR73             "ERROR:  The specified SETUP path '%s' cannot be resolved."
+    IDS_ERROR74             "ERROR:  The path '%s' does not appear to have sufficient free space (%I64u bytes) in which to upgrade this application.  Free space is reported as %I64u bytes.  If you want to continue SETUP anyway, press 'OK'.  Otherwise, you can press 'Cancel' and attempt to free up some disk space before re-running SETUP."
+    IDS_ERROR75             "ERROR:  The specified path '%s' does not appear to have sufficient free space in which to install this application.  Please choose a different drive that has at least %I64u bytes of free space.  Free space on this drive is reported as %I64u."
+    IDS_ERROR76             "ERROR:  unable to calculate 'free space' for '%s'.  Please make sure that the specified path has at least %lu bytes of free space before you continue with SETUP.  Press 'OK' to proceed, or 'Cancel' to terminate SETUP at this time."
+    IDS_ERROR77             "ERROR:  The specified SETUP path '%s' cannot be resolved.  SETUP will now close."
+    IDS_ERROR78             "ERROR:  unable to calculate the 'free space' for '%s'.  SETUP will now close."
+    IDS_ERROR79             "ERROR:  Unable to defer DLL registration or 'exec on copy' applications for reboot.  This may be due to a file system error or an internal problem in SETUP.  You should restart your computer now and then re-run SETUP."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_WARNING01           "WARNING:  skipping registry entry '%s' due to an error in string expansion"
+    IDS_WARNING02           "WARNING:  key '%s' not recognized - using 'HKEY_CLASSES_ROOT'"
+    IDS_WARNING03           "WARNING:  unable to add reference count for %s"
+    IDS_WARNING04           "WARNING:  unable to register %s"
+    IDS_WARNING05           "WARNING:  unable to update reference count for %s"
+    IDS_WARNING06           "WARNING - bad string expansion for %s\r\nPlease contact the software provider to correct this problem."
+    IDS_WARNING07           "WARNING: cannot get exit code from %s"
+    IDS_WARNING08           "WARNING: %s process did not terminate"
+    IDS_WARNING09           "WARNING:  %s exits with error code %d"
+    IDS_WARNING10           "WARNING:  unable to set file date/time on %s"
+    IDS_WARNING11           "WARNING:  the path you specified does not match the existing install path. Installing a separate copy to a different directory could have unexpected results, some of which may even prevent the application from functioning properly.  If you want to install the application to a different location, you should first run UNINSTALL on the old copy, the re-run SETUP to install the application to the desired location.\r\nTo accept the install path as entered, press 'OK'  To re-enter the install path, press 'Cancel'."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_WARNING12           "WARNING - unable to assign shortcut information"
+    IDS_WARNING13           "WARNING - unable to get inteface for IShellLink"
+    IDS_WARNING14           "WARNING:  unable to expand %s\r\nUsing application name for default Start Menu folder name"
+    IDS_WARNING15           "WARNING:  an application is attempting to exit windows. You should allow SETUP to complete before pressing 'OK'"
+    IDS_WARNING16           "* SETUP WARNING *"
+    IDS_WARNING17           "WARNING:  The list of options specified on the SETUP command line do not match the list of options that are already installed.\nTo prevent problems, all existing options will still be upgraded regardless of the command line settings, and all new options specified on the command line will be installed."
+    IDS_WARNING18           "WARNING:  The previously installed version of this software included one or more options that you have not selected for the upgrade  To prevent problems, these options will be re-installed."
+    IDS_WARNING19           "An existing installation of %s has been detected.  SETUP will attempt to upgrade or re-install the application using this version.  If you do not want to upgrade or re-install the application at this time, you may press the 'Cancel' button to exit SETUP.\r\n\nPress 'OK' to proceed with SETUP and upgrade or re-install the application, or CANCEL' to exit setup at this time without affecting any installed application."
+    IDS_WARNING20           "An existing installation of %s has been detected.  SETUP will attempt to upgrade the existing application to %s.  If you do not want to upgrade at this time, you may press the 'Cancel' button to exit SETUP.\r\n\nPress 'OK' to proceed with SETUP and upgrade the application, or CANCEL' to exit setup at this time without affecting any installed application."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR80             "UNINSTALL information could NOT be copied.  As a result, the 'UNINSTALL' options may still be available for uninstalling %s.\nYou should NOT attempt to uninstall %s without first uninstalling %s.  Doing so could prevent %s from functioning properly."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\SETUP.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

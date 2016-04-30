@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Including Subsystems</TITLE>
+</HEAD>
+<BODY>
+<H1>Including Subsystems</H1>
+<br />
+<p>
+A 'Subsystem' install is typically part of another installation, in the form of a self-extracting SETUP utility containing all of the components in a single package.  Typically, it will be something that is more than trivial to install, requiring special configurations, complex registry entries, or a separate configuration application.
+</p>
+<p>
+As with an OLE Object or ActiveX control, it is recommended that you use <b>'Quiet SETUP'</b> and <b>'Self-Extracting SETUP Utility'</b>.  Additionally, you may want to use <b>'No Uninstall'</b> and write your own specialized un-install utility (if needed).
+</p>
+<p>
+To create a 'Subsystem' self-extracting executable, you should pre-assign the paths to a standard directory (especially if you do not want the user to be prompted for paths), using the 'Advanced' button on the first page of the S.F.T. Setup Gizmo wizard.  Typically, these will be in a sub-directory off of the 'Windows' or 'System' directory (appropriate to the operating system), and specified as follows:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%windir%\MySubSystem	for placing it in the 'windows' directory
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;%sysdir%\MySubSystem	for placing it in the 'system' directory
+</p>
+<p>
+THEN, if you create a self-extracting executable, and specify <b>'Quiet Setup'</b>, you will be able to include this self-extracting EXE as a component of your application.
+</p>
+<p>
+S.F.T. Setup Gizmo allows you to perform <b>'Execute After Copy'</b> operations which make installing the subsystem very easy.  It is best to make your subsystems appear at the TOP of the file listing so that they are installed first.  THEN, you mark them as 'execute after copy' and (normally) 'delete after execute' (so that the self-extracting file is not kept on the user's machine).  After SETUP copies all of the files to their appropriate directories, it will run the 'execute after copy' EXE's in the order that they were copied.
+</p>
+<p>
+To make <b>'Quiet Setup'</b> work even better, you can specify certain parameters on the command line.  To pass the '%apppath%' string to the contained self-extracting SETUP program, specify /APPPATH=&quot;application path&quot; on the command line (quote marks are optional).  To specify the 'Common Files' path, use /APPCOMMON=&quot;common files path&quot;.  To make sure that the subsystem SETUP does not prompt for re-boot, specify '/Q' or '/QUIET' on the command line.
+</p>
+<p>
+<b>NOTE:</b>  in a few cases, a subsystem will require a re-boot.  This is especially true with Microsoft's self-extracting setup applications for subsystems such as 'Data Access Components', or 'Speech API', or even shared MFC components (if they are in use).  You should make sure that no reboot will occur by using a command line argument that tells it NOT to re-boot automatically.  For the SETUP application included with S.F.T. Setup Gizmo, you can specify '/Q' or '/QUIET' on the command line.
+</p>
+<p>
+In the event that a reboot is required, SETUP will continue running all of the 'execute after copy' applications, and registering the appropriate DLL's.  When it is finished, it checks to see if any files have been added to the &quot;rename on reboot&quot; list maintained by Windows.  If it finds any, it assumes that a re-boot is necessary.  However, in some cases you might want to force a reboot to take place, even when no &quot;rename on reboot&quot; entries are present.  The easiest way to do this would be to write an application that simply deletes itself after re-boot using the 'MoveFileEx()' API with the MOVEFILE_DELAY_UNTIL_REBOOT flag set (or the equivalent 'WININIT.INI' entry in Win '9x - see Microsoft SDK documentation on MoveFileEx() for information on how to do this).  SETUP would then detect the presence of the entry and prompt the user to re-boot.
+</p>
+<p>
+In some cases the self-extracting executable will return a non-zero value when an error did not actually occur, as in the case of MDAC_TYP.EXE when it would have re-booted the system. This causes SETUP to prompt the user with a warning after the program exits with a non-zero value.  To avoid this warning, you can write a simple 'launcher' application to run the appropriate executable, wait for a return code, then return a non-zero from this 'launcher' application only when it was truly an error.  See the sections on <a href="wininet.html">WININET</a>, <a href="mdac.html">MDAC</a>, and <a href="speech_api.html">Speech API</a> for more information.
+</p>
+
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>
+

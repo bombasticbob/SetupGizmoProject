@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{7519f450-624b-4b2c-b0ad-79572fe8a55b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SetupGiz.hhp">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="makefile.mak">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SetupGiz.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\autorun.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\flowchart.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\option_install.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen1.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen1a.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen2.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen3.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen3a.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen3b.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen4.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\screen5.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="application.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="BugoSoftNotYet.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="building.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="command_lines.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="giz_format.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="mdac.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="nt_services.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ole_object.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="optional_components.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="overview.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="process.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="self_register.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="setup_inf.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="signed_cabinets.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="speech_api.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="subsystem.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="wininet.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SetupGiz.hhc">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="specifying_paths.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="certificates.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\certmgr.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="create_cert_authority.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="create_signing_cert.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="signing_with_cert.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="CertMgr.html">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

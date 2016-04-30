@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Command Line Parameters</TITLE>
+</HEAD>
+<BODY>
+<H1>Command Line Parameters</H1>
+<br />
+<p>
+The following command line arguments apply to each of the applications included with S.F.T. Setup Gizmo.
+</p>
+<br />
+<H3>SETUPGIZ.EXE</H3>
+<pre>
+SETUPGIZ [/?|/H[ELP]][/BATCH][/TYPE[:1|2|3|4]][/QUIET][/NOUN[INSTALL]]
+         [/LZ][/AUTOCD][/BOOT[:0|+|-]][/RES[ERVE]:r] gizfile.giz
+</pre>
+<table>
+<tr><td valign=top>where</td><td>'gizfile.giz' optionally represents an existing '.giz' file saved by setupgiz.exe .</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/?', '/H', or '/HELP' prints a short description of the command line arguments</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/BATCH' runs SetupGiz in 'Batch Mode', creating the setup without displaying the wizard or issuing any prompts [intended for automated 'batch' processes]</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/TYPE:n' indicates which type of setup to generate.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>1 = CD ROM</td></tr>
+<tr><td valign=top>&nbsp;</td><td>2 = CD ROM with Diskette Image</td></tr>
+<tr><td valign=top>&nbsp;</td><td>3 = Diskette Image Only</td></tr>
+<tr><td valign=top>&nbsp;</td><td>4 = Self-Extracting Setup (executable)</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/QUIET' turns on the 'quiet setup' flag by default</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  'Quiet setup' is disabled for unlicensed versions of S.F.T. Setup Gizmo.  Only a properly licensed version can invoke the 'Quiet setup' option from the SETUPGIZ command line.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/NOUN' or '/NOUNINSTALL' turns on the 'No Uninstall' flag by default</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/LZ' turns on the &quot;Use LZ Compression&quot; flag by default</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/AUTOCD' turns on the 'Autorun CD' flag by default</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/BOOT[:n]' indicates the setting for the 'Boot Flag'.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>0 = AUTOMATIC (the default value).  SETUP will prompt for reboot if there are any pending &quot;rename after reboot&quot; operations to perform.  Specifying '/BOOT' is the equivalent of '/BOOT:0'.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>+ = ALWAYS.  SETUP will always prompt for reboot.  Use this for any installation that may require a reboot under all circumstances.  This is useful for device drivers and applications that require shared components to be installed or operating system updates to be performed before you can register them.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>- = NEVER.  SETUP will never prompt for reboot no matter what the status of the &quot;rename after reboot&quot; file list that is maintained by the operating system.  This is useful for components that you expect to be installed from within an outer (controlling) SETUP application.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>'/RESERVE:r' reserves 'r' kbytes (k=1024 bytes) of space for additional files to be added later.  'r' is a value between 0 and 1024, inclusive.</td></tr>
+</table>
+</p>
+<p>
+NOTE:	For batch execution, use options such as '/TYPE' and '/LZ' to configure the kind of setup image you want to create.  In this way you can automatically create a setup image using a batch file (or other type of command script).  Typically, a batch file would build all of the appropriate applications, copy the updated executables (and other) files into the SETUP image source, then execute SetupGiz.exe to generate the setup image.
+Microsoft's Developer Studio allows you to run their development tools via the command line in order to perform such automated builds via batch files.  To obtain a list of command line arguments, run the appropriate application with the '/?' options.  Other development tools are likely to support similar methods that would allow you to automate your build processes.  See the appropriate documentation for your build tools for more information. 
+</p>
+<br />
+<H3>SETUP.EXE</H3>
+<pre>
+SETUP [/Q] [/NOL[ogo]] [/NOR[eboot]] [/FORCER[eboot]]
+      [/APPPATH=&quot;application path&quot;] [/APPCOMMON=&quot;common path&quot;]
+      [/STARTMENU=&quot;start menu path&quot;] [/OPT:option] [&quot;d:\dir&quot;]
+</pre>
+<table>
+<tr><td valign=top>where</td><td>/Q (or /QUIET) instructs SETUP to run in &quot;ultra-quiet&quot; mode - this implies 'quiet mode', and prevents any prompts for re-boot.  Calling applications must check to see if a reboot is required.  Since 'SETUP.EXE' already does this for you, you can use '/Q' on any subsystem to prevent re-boot until the 'containing' SETUP is ready to exit.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>'/Q' also does not prompt for application path or application common path, so you should specify them on the command line if anything other than the default assigned value will be used by SETUP.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  'Quiet setup' is disabled for unlicensed versions of S.F.T. Setup Gizmo.  Only a properly licensed version can process 'Quiet' mode from the SETUP command line.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/NOL (/NOLOGO) prevents displaying the &quot;logo&quot; background during SETUP.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  'NOLOGO' is disabled for unlicensed versions of S.F.T. Setup Gizmo.  Only a properly licensed version can process 'NOLOGO' from the SETUP command line.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/NOR (/NOREBOOT) instructs SETUP never to perform a reboot after completion.  This also overrides the 'Prompt for REBOOT' setting from the 'Finish' page in the S.F.T. Setup Gizmo GUI.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/FORCER (/FORCEREBOOT) instructs SETUP to always perform a reboot after completion. This also overrides the 'Prompt for REBOOT' setting from the 'Finish' page in the S.F.T. Setup Gizmo GUI.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/APPPATH=&quot;application path&quot; instructs SETUP to use the specified application path as its 'default'.  In 'quiet mode' (or ultra-quiet mode) SETUP will NOT prompt for an application path.  You can use this argument to pass the application path from an 'outer' (containing) SETUP to a subsystem (contained) SETUP.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/APPCOMMON=&quot;common path&quot; instructs SETUP to use the specified application 'common files' path as its 'default'.  In 'quiet mode' (or ultra-quiet mode) SETUP will NOT prompt for an application 'common files' path.  You can use this argument to pass the application 'common files' path from an 'outer' (containing) SETUP to a subsystem (contained) SETUP.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/STARTMENU=&quot;start menu path&quot; instructs SETUP to use the specified application path for the start menu folder. In 'quiet mode' (or ultra-quiet mode) SETUP will NOT prompt for a start menu folder.  You can use this argument to pass the start menu folder from an 'outer' (containing) SETUP to a subsystem (contained) SETUP.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  if the start menu folder name is an absolute path, the path name will be used as supplied by the calling application.  If the start menu folder name is a 'relative path' or a simple folder name, the 'All Users' Start Menu is implied.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>/OPT:option pre-selects the option using its option identifier ('option').  When &quot;ultra-quiet&quot; mode is in effect (see '/Q', above), the option selection dialog box will appear ONLY if no options have been pre-selected via '/OPT'.  Since the option identifier names are not actually checked, if you want to force NO options to be selected in &quot;ultra-quiet&quot; mode, and do not want the options dialog box to appear, specify a self-descriptive option name that does not actually exist (such as '/OPT:none').  All options that are NOT specified via '/OPT' will behave as if they were 'un-selected'.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>If the options dialog is displayed, and '/OPT' is used, options specified via '/OPT' will appear &quot;pre-selected&quot; in the options dialog box.  If only one option is actually available (this includes operating system dependencies) then this will have no visible effect (the user will still be prompted with the 'YES/NO' dialog box).</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:  the option name must be quoted (&quot;&quot;) if it contains embedded white space, such as ' /OPT:&quot;the option name&quot; '.</td></tr>
+<tr><td valign=top>&nbsp;and</td><td>&quot;d:\dir&quot; represents an optionally quoted path pointing to the location of 'SETUP.INF', the optional license file 'LICENSE.TXT', and the first cabinet file 'SFTCAB.1'.  In cases where multiple setups are possible, you could use this argument to run the correct setup by specifying a particular 'INF' file to a common SETUP.EXE located on the same disk as all of the SETUP images.</td></tr>
+</table>
+<br />
+<H3>UNINST.EXE</H3>
+<pre>
+UNINST	&quot;d:\dir\UNINST.EXE&quot;
+</pre>
+<table>
+<tr><td valign=top>where</td><td>&quot;d:\dir\UNINST.EXE&quot; represents the full path to the 'uninst.exe' within the application's 'Uninstall' directory (see 'uninst' under <a href="specifying_paths.html">Specifying Paths</a>). This sub-directory normally contains 'UNINST.EXE' and a copy of 'SETUP.INF', to be used during uninstall.  By specifying the name of the executable on the command line, you are forcing UNINST to read the 'SETUP.INF' file within the same directory.  Note that 'UNINST.EXE' does not actually have to exist in this directory.  The 'SETUP.INF' file will indicate the correct application name so that UNINST can read the registry for the uninstall information, such as the actual path the application was installed to, and so forth.  This will normally match the directory just beneath the one specified.</td></tr>
+<tr><td valign=top>&nbsp;</td><td>NOTE:</b>use of this command line argument is NOT recommended!  It is implemented internally by UNINST so that it can delete itself properly.</td></tr>
+</table>
+<br />
+<H3>MAKECAB.EXE</H3>
+<pre>
+MAKECAB [/?] [/V[n]] [/D var=value ...] [/L dir] source [destination]
+MAKECAB [/?] [/V[n]] [/D var=value ...] /F directive_file [...]
+where	{source} is the file to compress.
+ and  {destination} is the file name to give to the compressed file.  If
+      omitted, the last character of the source file name is replaced with an
+      underscore '_' and used as the destination.
+ and  '/F directive_file' […] specifies one or more files containing 'MAKECAB'
+      directives.  You may add multiple '/F' arguments onto the command line
+      to support multiple directive files.  One file is associated with each
+      '/F' argument.
+      NOTE:  following a 'MAKECAB' error in SetupGiz, you can specify the
+             '.DDF' file that SetupGiz creates on a command line using the
+             '/F' option.  The '.DDF' file will be in the same directory that
+             the SETUP images will be written to.  Often the problem will be
+             an entry that is too long, or contains embedded quote marks.
+             Since SetupGiz generates a '.DDF' file, then passes it to
+             'MAKECAB' to generate the cabinet file(s), it is possible that an
+             unforseen entry by a user could cause MAKECAB to fail.  In the
+             event of such a failure, SetupGiz does NOT delete the '.DDF' file
+             so that you can go back and see what caused the error.  See '/V',
+             below.
+ and  '/D var=value' defines 'var' with the specified value 'value'.
+ and  '/L dir' indicates the destination directory (default is current
+      directory).
+ and  '/V[n]' indicates the &quot;verbosity level&quot; (1-3).  /V3 is the most verbose,
+      and is useful for troubleshooting problems with a '.DDF' file (see above,
+      under '/F').
+ and  '/?' displays a help message containing information similar to this
+      section.
+</pre>
+<br />
+<H3>Microsoft's 'Self-Extracting SETUP' utility (MDAC, '.Net' Framework, etc.)</H3>
+<pre>
+{utility name} [/?] [/Q[:a]] [/T:<full path>] [/C[:<command>]]
+where	{utility name} is the name of the self-extracting executable file
+ and  '/?' displays the command line options
+ and  '/Q' indicates 'quiet mode' ('/Q:a' specifies that applications started
+      by the self-extractor should use 'quiet' mode also)
+ and  '/T:<full path>' specifies the full path into which the files should be
+      extracted
+ and  '/C:<command>' specifies a quoted command string to execute on extract
+      ('/C' by itself performs an extract only).  Typically to invoke the
+      embedded 'setup' utility you would specify a command similar to
+      ' /C:&quot;setup.exe /options&quot; ' (where 'setup.exe' is the setup application
+      embedded in the self-extracting executable file, and '/options'
+      represents one or more command line options, as appropriate to the
+      application).
+</pre>
+
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>
+

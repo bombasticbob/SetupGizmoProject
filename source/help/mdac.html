@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Including MDAC (ODBC) with your application</TITLE>
+</HEAD>
+<BODY>
+<H1>Including MDAC (ODBC) with your application</H1>
+<br />
+<p>
+Applications that use ODBC, OLE DB, ADO, or DAO will probably need to install Microsoft's Data Access Components.  Precisely because of a phenomenon infamously known as &quot;DLL HELL&quot;, it is no longer practical to install only a portion of these components onto a target system without running the danger of rendering it unstable, or even unusable.
+</p>
+<p>
+As such, Microsoft has begun shipping all of its database subsystem components as a single unit, called &quot;Microsoft Data Access Components&quot;, or MDAC.  In Visual Studio 98, these are installed by running MDAC_TYP.EXE, one of the re-distributable components made available via MSDN and Visual Studio '98.  Although a newer version of 'MDAC' is currently available, for sake of discussion, this topic will focus on the one shipped with Visual Studio '98.
+</p>
+<br />
+<H3>ADDING MICROSOFT DATA ACCESS COMPONENTS</H3>
+<LI>Copy the file 'MDAC_TYP.EXE' to the directory containing your application's files to be included on the SETUP disk.</LI>
+<LI>Add 'MDAC_TYP.EXE' to the list of files to include, and specify 'Exec After Copy' and 'Delete after Exec'.  It is not important where you install it, but it's probably best to install it to the temporary directory using '%tmpdir%'.</LI>
+<LI>For the command line option, use the following string:  /q:a /c:&quot;setup.exe /QNT&quot;<br />
+These options prevent reboot after install, and perform a 'quiet' install of the components.</LI>
+<LI>For applications that use load time dynamic linking to ODBC (i.e. they link with ODBC32.LIB) you may not be able to do an &quot;exec after copy&quot; until you reboot the machine.  SETUP will determine whether the system needs to be rebooted before it exits.  To ensure that your application correctly registers itself, you can attempt to run your application anyway to register it, or write another application to register it that doesn't use ODBC or any of the other MDAC components, or you can add an entry to the following registry keys:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce<br />
+&nbsp;&nbsp;&nbsp;&nbsp;HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\SETUP<br />
+Entries under these keys are run after logging in.  If your application registers itself in a benign way, you can add one of these keys in the 'Registry Keys' section, and the next time the machine restarts, your application would re-register itself.  Then, you would do an 'exec after copy' anyway, in case the system doesn't need to re-boot, and then ignore the return value.  As an extra added bonus, if you use the 'RunOnce\SETUP' sub-key, SETUP will prompt for re-boot, and the operating system will execute the entries under this key, in order, when the user logs in.</LI>
+</OL>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+

@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>Signing your Code with a Signing Certificate</TITLE>
+</HEAD>
+<BODY>
+<center><h1>Signing your Code with a Signing Certificate</h1></center>
+<p>
+You will first need to import the 'pfx' certificate file (a package containing the
+cert as well as the private key) into a certificate store using CertMgr.  For this
+example, we will be using the 'User' certificate store, and will import this certificate
+into the 'PrivateCertStore' folder.  For more information, see relative help and documentation
+for 'CertMgr.msc', the management console for certificate stores.
+</p>
+<p>
+To sign your code with a signing certificate, you can use the 'SignTool' application
+with a command line similar to the following:<br />
+<pre>
+    SignTool sign /s "PrivateCertStore" /n "MyCodeSigningCert" /t http://timestamp.verisign.com/scripts/timstamp.dll MyCode.exe
+</pre>
+where the certificate name (rather than 'MyCodeSigningCert') will be the one you assigned when you created the certificate
+request (csr) file, 'PrivateCertStore' is the certificate store you imported it into, and 'MyCode.exe' is the executable file
+(or other object) you are signing.  The certificate name will show up in the 'CertMgr.msc' display after you have added the
+cert, as a double-check.
+</p>
+<br />
+<hr size=2 width=100%>
+<br />
+<font size="-1">
+<center>{footer here}</center><br />
+</font>
+</BODY>
+</HTML>

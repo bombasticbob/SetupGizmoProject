@@ -1,0 +1,5 @@
+; SETUP.DEF - module definition file
+
+  NAME SETUP
+;  DESCRIPTION 'Integrated Setup Utility © 2000 by SFT Inc. - a part of SFT Setup Gizmo'
+

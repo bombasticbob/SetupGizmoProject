@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="gedit">
+<TITLE>'.GIZ' file format</TITLE>
+</HEAD>
+<BODY>
+<H1>'.GIZ' file format</H1>
+<br />
+<p>
+S.F.T. Setup Gizmo generates files in a format similar to an INI file.  The following entries apply:
+</p>
+<table>
+<tr><td valign=top><b>[Page1]</b></td><td>
+These entries provide information from 'Page 1' of the wizard.  They include the following:
+<br />
+<br />
+<table>
+  <tr><td><b>AppName&nbsp;</b></td><td>The name of the application from the start page</td></tr>
+  <tr><td><b>CompanyName&nbsp;</b></td><td>The company name from the start page</td></tr>
+  <tr><td><b>SourcePath&nbsp;</b></td><td>Root path for source files for building the SETUP image</td></tr>
+  <tr><td><b>DestPath&nbsp;</b></td><td>The destination path to which the image will be written</td></tr>
+  <tr><td><b>LicenseFile&nbsp;</b></td><td>The fully-qualified path for the license text file</td></tr>
+  <tr><td><b>StartMessage&nbsp;</b></td><td>The 'start message' string from the start page</td></tr>
+  <tr><td><b>AppPath&nbsp;</b></td><td>Advanced setting - default destination path during SETUP</td></tr>
+  <tr><td><b>AppCommon&nbsp;</b></td><td>Advanced setting - default 'common files' path during SETUP</td></tr>
+  <tr><td><b>StartMenuFolderName&nbsp;</b></td><td>Advanced setting - default 'start menu' folder name for creating shortcuts</td></tr>
+  <tr><td><b>CertFiles&nbsp;</b></td><td>Advanced setting - list of one or more 'Cert' file names to automatically install.</td></tr>
+  <tr><td><b>Upgrade&nbsp;</b></td><td>Advanced setting - list of application names to 'upgrade' to the one you're building the installation for.</td></tr>
+</table>
+<br />
+</td></tr>
+<tr><td valign=top><b>[FileList]</b></td><td>
+These entries contain a list of files to be included in SETUP and their settings from Page 3 of the wizard.  The order of the settings is as follows:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;FileName.ext=a,b,c,d,e,&quot;f&quot;,&quot;g&quot;,h,I,j,k,l,m
+<br />
+<br />
+Each of these parameters represents one of the settings from the various pages.  They are:<br />
+<table>
+  <tr><td><b>Auto Delete flag</b></td><td>'delete after exec'</td></tr>
+  <tr><td><b>Execute flag</b></td><td>'exec after copy'</td></tr>
+  <tr><td><b>Overwrite flag</b></td><td>'overwrite always'</td></tr>
+  <tr><td><b>Shared flag</b></td><td>'system file'</td></tr>
+  <tr><td><b>Dest Path</b></td><td>if 'other' was specified</td></tr>
+  <tr><td><b>Group Name</b></td><td>quoted string, for options</td></tr>
+  <tr><td><b>Other Path Name</b></td><td>destination path when 'other' was specified</td></tr>
+  <tr><td><b>OS Flag</b></td><td>bit mask indicating which OS's it should be installed on</td></tr>
+  <tr><td><b>No Uninstall</b></td><td>non-zero if the file should NEVER be uninstalled</td></tr>
+  <tr><td><b>Register</b></td><td>'Register Control' (SETUP calls 'DllRegisterServer()' [value = 1] or 'regasm.exe' [value = 2]).  The value is assigned according to the setting of the 'Register Control' and 'Use .Net Reg' flags.</td></tr>
+  <tr><td><b>Add Shortcut</b></td><td>non-zero to create a shortcut for this file</td></tr>
+  <tr><td><b>Exec Args</b></td><td>arguments for 'exec after copy' files during setup</td></tr>
+  <tr><td><b>Uninst Args</b></td><td>arguments for 'exec after copy' files during uninstall</td></tr>
+</table>
+<br />
+</td></tr>
+<tr><td valign=top><b>[AddShortcut]</b></td><td>
+These entries contain a list of files to be given shortcuts during SETUP and their settings from Page 3b of the wizard.  The format is:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;FileName.ext=&quot;Desc&quot;,&quot;File.LNK&quot;,&quot;StartPath&quot;,&quot;Args&quot;,&quot;IcoFile&quot;,IcoIndex,nCMDShow
+<br />
+<br />
+Where &quot;Desc&quot; is the long description, &quot;File.LNK&quot; is the name of the shortcut, &quot;StartPath&quot; is either blank or the path in which to run the application, &quot;Args&quot; is either blank or the arguments to pass to the application, &quot;IcoFile&quot; is the name of the 'icon' file if the default icon is not to be used, 'IcoIndex' is the icon index within the file specified by &quot;IcoFile&quot;, and nCMDShow is the 'show window' command sent to the application on startup (default is 1, 'show normal').
+<br />
+<br />
+</td></tr>
+<br />
+<tr><td valign=top><b>[GroupList]</b></td><td>
+These entries contain a list of 'groups' associated with the install options.  The format is as follows:
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Group Name=&quot;Short Description&quot;,&quot;Long Description&quot;
+<br />
+<br />
+The 'Group Name' string will appear in the 'FileList' entries that are members of the option 'group'.  The 'short description' and 'long description' are displayed on the options dialog box during SETUP.
+<br />
+<br />
+</td></tr>
+<tr><td valign=top><b>[RegistryList]</b></td><td>
+These entries contain a list of registry entries to be created during SETUP, and removed during UNINSTALL.  The format is a 3 digit sequential index followed by the registry key in '[]' , the value name (either '@' or a quoted string), and the registry string value (in quotes).
+<br />
+<br />
+</td></tr>
+</table>
+<br />
+<hr size=2 width=100%>
+<br />
+</BODY>
+</HTML>
+
