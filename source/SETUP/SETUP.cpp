@@ -431,7 +431,7 @@ BOOL CSETUPApp::InitInstance()
 
   if(!m_csOS.GetLength())
   {
-    MyMessageBox((IDS_ERROR27), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR27), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -607,7 +607,7 @@ BOOL CSETUPApp::InitInstance()
 //
   if(CoInitialize(NULL) != S_OK) // CoInitializeEx(NULL, COINIT_APARTMENTTHREADED) != S_OK)
   {
-    MyMessageBox((IDS_ERROR01), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR01), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -676,7 +676,7 @@ BOOL CSETUPApp::InitInstance()
       {
         MyMessageBox("You do not have sufficient privileges on this system to run SETUP.\r\n"
                       "SETUP will now close.",
-                      MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND);
+                      MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND | MB_TOPMOST);
 
         MSG *pMsg = MyGetCurrentMessage();
         if(pMsg)
@@ -744,7 +744,7 @@ BOOL CSETUPApp::InitInstance()
             TRACE("ERROR in 'CreateProcessWithLogonW' - %ld (%08xH)\r\n", dwErr, dwErr);
 
             MyMessageBox("Unable to log in with the specifed user/password",
-                          MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                          MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
           }
 
           if(bstrUser)
@@ -975,7 +975,7 @@ jump_point:
 
       if(hFile == INVALID_HANDLE_VALUE)
       {
-        MyMessageBox((IDS_ERROR28), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox((IDS_ERROR28), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         MSG *pMsg = MyGetCurrentMessage();
         if(pMsg)
@@ -1013,7 +1013,7 @@ jump_point:
     m_csINFFile.ReleaseBuffer(0);
     CloseHandle(hFile);
 
-    MyMessageBox((IDS_ERROR29), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR29), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -1145,7 +1145,7 @@ jump_point:
 
   if(!m_acsFiles.GetSize())
   {
-    MyMessageBox((IDS_ERROR30), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR30), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -1176,7 +1176,7 @@ jump_point:
   if(!m_acsCabs.GetSize())
   {
     MyMessageBox((IDS_ERROR31),
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -1195,7 +1195,7 @@ jump_point:
   if(!m_acsDisks.GetSize())
   {
     MyMessageBox((IDS_ERROR32),
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -1234,7 +1234,7 @@ jump_point:
       !m_pMyFrameWnd->Create(NULL, NULL, 0, 
                              CMainFrame::rectDefault, NULL, 0)))
   {
-    MyMessageBox((IDS_ERROR33), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR33), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     MSG *pMsg = MyGetCurrentMessage();
     if(pMsg)
@@ -1294,7 +1294,7 @@ jump_point:
       dlgLicense.m_csLicense.ReleaseBuffer(0);
       CloseHandle(hFile);
 
-      MyMessageBox((IDS_ERROR34), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox((IDS_ERROR34), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       PostQuitMessage(2);
 
@@ -1374,7 +1374,7 @@ jump_point:
                      (LPCSTR)acsTemp[1],    // csShortDesc
                      (LPCSTR)acsTemp[2]);   // csLongDesc
 
-        i2 = MyMessageBox(csMsg, MB_YESNOCANCEL | MB_ICONQUESTION | MB_SETFOREGROUND);
+        i2 = MyMessageBox(csMsg, MB_YESNOCANCEL | MB_ICONQUESTION | MB_SETFOREGROUND | MB_TOPMOST);
 
         if(i2 == IDCANCEL)
         {
@@ -1449,7 +1449,7 @@ jump_point:
 
     if(bReAddFlag)
     {
-      MyMessageBox((IDS_WARNING18), MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox((IDS_WARNING18), MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
     }
   }
   else
@@ -1620,7 +1620,7 @@ jump_point:
   if(!m_pCopyThread)
   {
     MyMessageBox((IDS_ERROR36),
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     PostQuitMessage(4);
 
@@ -2014,7 +2014,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
 
   if(hFile == INVALID_HANDLE_VALUE)
   {
-    MyMessageBox((IDS_ERROR37), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR37), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;
   }
@@ -2024,7 +2024,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
   {
     CloseHandle(hFile);
 
-    MyMessageBox((IDS_ERROR38), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR38), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 #ifndef _DEBUG
     DeleteFile(m_csEXEPath + "SETUP.INF");   // make sure they're not there
@@ -2054,7 +2054,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
     if(hFile == INVALID_HANDLE_VALUE)
     {
       MyMessageBox((IDS_ERROR39),
-                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 #ifndef _DEBUG
       DeleteFile(m_csEXEPath + "SETUP.INF");   // make sure they're not there
@@ -2068,7 +2068,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
     {
       CloseHandle(hFile);
 
-      MyMessageBox((IDS_ERROR40), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox((IDS_ERROR40), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 #ifndef _DEBUG
       DeleteFile(m_csEXEPath + "SETUP.INF");   // make sure they're not there
@@ -2097,7 +2097,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
 
   if(hFile == INVALID_HANDLE_VALUE)
   {
-    MyMessageBox((IDS_ERROR41), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR41), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 #ifndef _DEBUG
     DeleteFile(m_csEXEPath + "SETUP.INF");   // make sure they're not there
@@ -2116,7 +2116,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
     {
       CloseHandle(hFile);
 
-      MyMessageBox((IDS_ERROR42), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox((IDS_ERROR42), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 #ifndef _DEBUG
       DeleteFile(m_csEXEPath + "SETUP.INF");   // make sure they're not there
@@ -2137,7 +2137,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
     if(!dlgProgress.Create(CProgressDialog::IDD, NULL))
     {
       MyMessageBox((IDS_ERROR43),
-                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     }
 
     dlgProgress.SendMessage(WM_COMMAND, 0x1234, (LPARAM)"Initializing Setup...");
@@ -2165,7 +2165,7 @@ BOOL CSETUPApp::DoSelfExtract(const BYTE *lpEnd, const BYTE *lpSelf, DWORD cbSel
       {
         CloseHandle(hFile);
 
-        MyMessageBox((IDS_ERROR44), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox((IDS_ERROR44), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 //        m_pMainWnd = NULL;
         dlgProgress.DestroyWindow();
@@ -2778,7 +2778,7 @@ int CSETUPApp::DriveSpaceCheck(LPCSTR szPath, BOOL bNoRetry /* = FALSE */)
     if(bNoRetry)
     {
       csTemp.Format(theApp.LoadString(IDS_ERROR77), szPath);
-      MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       return(-1);
     }
@@ -2820,7 +2820,7 @@ int CSETUPApp::DriveSpaceCheck(LPCSTR szPath, BOOL bNoRetry /* = FALSE */)
     if(bNoRetry)
     {
       csTemp.Format(theApp.LoadString(IDS_ERROR78), szPath);
-      MyMessageBox(csTemp, MB_ICONHAND | MB_OK | MB_SETFOREGROUND);
+      MyMessageBox(csTemp, MB_ICONHAND | MB_OK | MB_SETFOREGROUND | MB_TOPMOST);
 
       return(-1);
     }
@@ -2900,7 +2900,7 @@ BOOL CSETUPApp::PromptForAndCreateAppPath(void)
   {
     csMsg.Format(theApp.LoadString(IDS_ERROR51), (LPCSTR)csAppPath);
 
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;  // end SETUP
   }
@@ -3008,7 +3008,7 @@ BOOL CSETUPApp::PromptForAndCreateAppCommon(void)
     CString csMsg;
     csMsg.Format(theApp.LoadString(IDS_ERROR52), (LPCSTR)csAppCommon);
 
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;  // end SETUP
   }
@@ -3446,7 +3446,7 @@ CString CSETUPApp::GetCabFilePath(int iCab)
 
   if(!csCabFile.GetLength())
   {
-    MyMessageBox((IDS_ERROR53), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR53), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     return("");
   }
 
@@ -3497,7 +3497,7 @@ CString CSETUPApp::GetPathAndPromptForDiskette(int iDisk)
 
   if(!csDiskTitle.GetLength())
   {
-    MyMessageBox((IDS_ERROR54), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR54), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     return("");
   }
 
@@ -3546,7 +3546,7 @@ CString CSETUPApp::GetPathAndPromptForDiskette(int iDisk)
 
   if(!csTargetFile.GetLength())
   {
-    MyMessageBox((IDS_ERROR55), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR55), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     return("");
   }
 
@@ -3596,7 +3596,7 @@ CString CSETUPApp::GetPathAndPromptForDiskette(int iDisk)
         }
       }
 
-      MyMessageBox((IDS_ERROR56), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox((IDS_ERROR56), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
       return("");  // all other conditions here are an error
     }
 
@@ -3887,7 +3887,7 @@ BOOL CheckForAndCreateDirectory(LPCSTR szPath, BOOL bPromptCreate /* = FALSE */)
     {
       csMsg.Format(theApp.LoadString(IDS_ERROR58), (LPCSTR)csPath);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
       return FALSE;
     }
 
@@ -3895,7 +3895,7 @@ BOOL CheckForAndCreateDirectory(LPCSTR szPath, BOOL bPromptCreate /* = FALSE */)
   }
   else if(!bIsDrive && !bIsDir)  // it's NOT a directory or a drive
   {
-    MyMessageBox((IDS_ERROR59), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR59), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     return FALSE;
   }
   else
@@ -3983,7 +3983,7 @@ BOOL CheckForAndCreateDirectory(LPCSTR szPath, BOOL bPromptCreate /* = FALSE */)
       {
         csMsg.Format(theApp.LoadString(IDS_ERROR61), (LPCSTR)csTemp);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
         return FALSE;
       }
     }
@@ -3993,7 +3993,7 @@ BOOL CheckForAndCreateDirectory(LPCSTR szPath, BOOL bPromptCreate /* = FALSE */)
       {
         csMsg.Format(theApp.LoadString(IDS_ERROR62), (LPCSTR)csTemp);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
         return FALSE;
       }
     }
@@ -4192,14 +4192,14 @@ HRESULT CreateLink(LPCSTR lpszPathObj, LPCSTR lpszPathLink,
     }
     else
     {
-      MyMessageBox((IDS_WARNING12), MB_OK | MB_ICONHAND | MB_SYSTEMMODAL | MB_SETFOREGROUND);
+      MyMessageBox((IDS_WARNING12), MB_OK | MB_ICONHAND | MB_SYSTEMMODAL | MB_SETFOREGROUND | MB_TOPMOST);
     }
 
     psl->Release(); 
   }
   else
   {
-    MyMessageBox((IDS_WARNING13), MB_OK | MB_ICONHAND | MB_SYSTEMMODAL | MB_SETFOREGROUND);
+    MyMessageBox((IDS_WARNING13), MB_OK | MB_ICONHAND | MB_SYSTEMMODAL | MB_SETFOREGROUND | MB_TOPMOST);
   }
 
   return(hres);
@@ -4709,7 +4709,7 @@ BOOL MoveApplication(LPCSTR szOldApp, LPCSTR szNewApp)
         csMsg.Format(theApp.LoadString(IDS_ERROR80), (LPCSTR)szOldApp, (LPCSTR)szOldApp,
                      (LPCSTR)szNewApp, (LPCSTR)szNewApp);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND | MB_TOPMOST);
 
         RegCloseKey(hkeyUSrc);
         hkeyUSrc = NULL;
@@ -4927,7 +4927,7 @@ BOOL ShellExecApp(LPCSTR szApp, LPCSTR szParms, UINT nCmdShow /* = SW_SHOWNORMAL
   {
     csMsg.Format(theApp.LoadString(IDS_ERROR07), szApp);
 
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;  // this is really a FATAL error...
   }
@@ -4940,7 +4940,7 @@ BOOL ShellExecApp(LPCSTR szApp, LPCSTR szParms, UINT nCmdShow /* = SW_SHOWNORMAL
     {
       csMsg.Format(theApp.LoadString(IDS_WARNING07), szApp);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       bRval = FALSE;
     }
@@ -4948,7 +4948,7 @@ BOOL ShellExecApp(LPCSTR szApp, LPCSTR szParms, UINT nCmdShow /* = SW_SHOWNORMAL
     {
       csMsg.Format(theApp.LoadString(IDS_WARNING08), szApp);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       bRval = FALSE;
     }
@@ -4956,7 +4956,7 @@ BOOL ShellExecApp(LPCSTR szApp, LPCSTR szParms, UINT nCmdShow /* = SW_SHOWNORMAL
     {
       csMsg.Format(theApp.LoadString(IDS_WARNING09), szApp, dwExitCode);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       bRval = FALSE;
     }

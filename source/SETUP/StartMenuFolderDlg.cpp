@@ -48,7 +48,7 @@ CStartMenuFolderDlg::CStartMenuFolderDlg(HWND hParent /*=NULL*/)
       CString csMsg;
       csMsg.Format(theApp.LoadString(IDS_WARNING14), (LPCSTR)theApp.m_csStartMenuFolderName);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       m_csFolderName = theApp.m_csAppName;
       bStripBackSlash = TRUE;
@@ -209,7 +209,7 @@ void CStartMenuFolderDlg::DoIt()
       {
         csTemp.Format(theApp.LoadString(IDS_ERROR63), (LPCSTR)acsTemp[0]);
 
-        MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
         continue;
       }
     }
@@ -265,7 +265,7 @@ void CStartMenuFolderDlg::OnOK()
 
   if(!m_csFolderName.GetLength())
   {
-    MyMessageBox((IDS_ERROR64), MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR64), MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
     m_csFolderName = AppNameToPathName(theApp.m_csAppName);
 
@@ -382,7 +382,7 @@ BOOL CStartMenuFolderDlg::GetStartMenuFolderName(BOOL bAllUsersFlag, CString &cs
     if(!csUser.GetLength())
     {
       if(bMessageBoxFlag)
-        MyMessageBox((IDS_ERROR65), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox((IDS_ERROR65), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       return FALSE;
     }
@@ -524,7 +524,7 @@ CString CStartMenuFolderDlg::GetFolderName(BOOL &bAllUsersFlag)
   if(CheckForAndCreateDirectory(csFolderName))
     return(csFolderName);
 
-  MyMessageBox((IDS_ERROR67), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+  MyMessageBox((IDS_ERROR67), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
   return("");
 }
@@ -577,7 +577,7 @@ BOOL CStartMenuFolderDlg::CreateShortcuts(CString &csFolderName)
       {
         csTemp.Format(theApp.LoadString(IDS_ERROR63), (LPCSTR)acsLine[0]);
 
-        MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csTemp, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
         continue;
       }
     }
@@ -643,7 +643,7 @@ BOOL CStartMenuFolderDlg::CreateShortcuts(CString &csFolderName)
         csTemp = theApp.LoadString(IDS_ERROR68);
 
         MyMessageBox(csTemp + acsLine[2],
-                      MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                      MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
         return FALSE;
       }
     }
@@ -672,7 +672,7 @@ BOOL CStartMenuFolderDlg::CreateShortcuts(CString &csFolderName)
     if(hres != NOERROR)
     {
       MyMessageBox((IDS_ERROR69),
-                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
       return FALSE;
     }
   }

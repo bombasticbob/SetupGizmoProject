@@ -911,7 +911,7 @@ LPSTR lp1 = tbuf;
     // TODO:  should I do this as a message string or not???
 
     ::MessageBox(NULL, tbuf, "TRACE EXCEPTION",
-                 MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                 MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
   }
 
   ::OutputDebugString(tbuf);

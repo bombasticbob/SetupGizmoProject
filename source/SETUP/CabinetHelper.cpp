@@ -396,7 +396,7 @@ int i1;
             CString csMsg;
             csMsg.Format(theApp.LoadString(IDS_ERROR08), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
-            MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+            MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
             return FALSE;
           }
           else if(i1 == 0)  // file not found - RENAME!
@@ -407,7 +407,7 @@ int i1;
               CString csMsg;
               csMsg.Format(theApp.LoadString(IDS_ERROR09), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
-              MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+              MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
               return FALSE;
             }
 
@@ -489,7 +489,7 @@ int i1;
                     CString csMsg;
                     csMsg.Format(theApp.LoadString(IDS_ERROR11), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
-                    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
                     return FALSE;
                   }
                 }
@@ -529,7 +529,7 @@ int i1;
                     CString csMsg;
                     csMsg.Format(theApp.LoadString(IDS_ERROR12), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
-                    i1 = MyMessageBox(csMsg, MB_ABORTRETRYIGNORE | MB_ICONHAND | MB_SETFOREGROUND);
+                    i1 = MyMessageBox(csMsg, MB_ABORTRETRYIGNORE | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
                     if(i1 == IDABORT)
                       return FALSE;
@@ -553,7 +553,7 @@ int i1;
                     {
                       csMsg.Format(theApp.LoadString(IDS_WARNING10), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
-                      MyMessageBox(csMsg, MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND);
+                      MyMessageBox(csMsg, MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND | MB_TOPMOST);
                     }
 
                     if(hFile != INVALID_HANDLE_VALUE)
@@ -648,7 +648,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
                   return_fdi_error_string((FDIERROR)erf.erfOper) );
 
     MyMessageBox(csTemp,
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;
   }
@@ -669,7 +669,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
       // TODO:  copy file
 
       MyMessageBox((IDS_ERROR14),
-                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       if(hf >= 0)
       {
@@ -707,7 +707,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
         CString csMsg;
         csMsg.Format(theApp.LoadString(IDS_ERROR15), (LPCSTR)csCabPath);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         FDIDestroy(hfdi);
 
@@ -747,7 +747,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
         csMsg.LoadString(IDS_ERROR16);
         csMsg += acsEntries[i1];
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         FDIDestroy(hfdi);
         return FALSE;
@@ -758,7 +758,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
         CString csMsg;
         csMsg.Format(theApp.LoadString(IDS_ERROR17), (LPCSTR)csTemp);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         FDIDestroy(hfdi);
         return FALSE;
@@ -770,7 +770,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
       if(!csDestPath.GetLength() || acsTemp.GetSize() < 6)
       {
         csDestPath.Format(theApp.LoadString(IDS_ERROR18), i1);
-        MyMessageBox(csDestPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csDestPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         FDIDestroy(hfdi);
 
@@ -792,7 +792,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
 
         csTempPath.Format(theApp.LoadString(IDS_ERROR19), (LPCSTR)csDestPath);
 
-        MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         FDIDestroy(hfdi);
 
@@ -851,7 +851,7 @@ BOOL CopyFilesFromCabinet(CStringArray &acsEntries)
       csMsg.Format(theApp.LoadString(IDS_ERROR20), (LPCSTR)fci.acsInternalFileName[fci.iCurrentIndex],
                    (LPCSTR)return_fdi_error_string((FDIERROR)erf.erfOper));
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       FDIDestroy(hfdi);
 
@@ -902,7 +902,7 @@ CString csTemp, csTempPath, csCabName, csCabPath, csRval;
                   return_fdi_error_string((FDIERROR)erf.erfOper) );
 
     MyMessageBox(csTemp,
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return ""; // error return
   }
@@ -921,7 +921,7 @@ CString csTemp, csTempPath, csCabName, csCabPath, csRval;
     csTempPath.Format("Unable to create temporary file name in \"%s\"",
                       (LPCSTR)csTemp);
 
-    MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     FDIDestroy(hfdi);
 
@@ -961,7 +961,7 @@ CString csTemp, csTempPath, csCabName, csCabPath, csRval;
   {
 //    csTemp.Format(theApp.LoadString(IDS_ERROR19), (LPCSTR)csTempPath); // TODO:  figure out what to do with this
 //
-//    MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+//    MyMessageBox(csTempPath, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     DeleteFile(csTempPath);
 
@@ -1129,7 +1129,7 @@ BOOL ExtractFilesFromTempCabinet(LPCSTR szCab, LPCSTR szDestPath)
     csMsg.Format(theApp.LoadString(IDS_ERROR23), (LPCSTR)szCab,
                  (LPCSTR)return_fdi_error_string((FDIERROR)erf.erfOper));
 
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     FDIDestroy(hfdi);
 
@@ -1406,7 +1406,7 @@ int PreFileCopyCompareVersions(FileCopyInfo *pFCI, FILETIME timeNew)
     CString csMsg;
     csMsg.Format(theApp.LoadString(IDS_ERROR21), (LPCSTR)csFile);
 
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return(-1);  // file does not exist - error (at this point, anyway)
   }
@@ -1440,7 +1440,7 @@ int PreFileCopyCompareVersions(FileCopyInfo *pFCI, FILETIME timeNew)
   {
     CString csMsg;
     csMsg.Format(theApp.LoadString(IDS_ERROR21), (LPCSTR)csTempFile);
-    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return(-1);  // file does not exist - error (at this point, anyway)
   }
@@ -1688,7 +1688,7 @@ int FileCopyCompareVersions(FileCopyInfo *pFCI, FILETIME timeNew)
   csMsg.Format(theApp.LoadString(IDS_ERROR22), (LPCSTR)pFCI->acsDestFileName[pFCI->iCurrentIndex]);
 
   int i1 = MyMessageBox(csMsg, MB_YESNOCANCEL | MB_DEFBUTTON1
-                                | MB_ICONASTERISK | MB_SETFOREGROUND);
+                                | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
   if(i1 == IDYES)
     return(0);

@@ -120,7 +120,7 @@ void CPathDialog::OnOK()
 
   if(m_csPathName.FindOneOf("?*'\"") >= 0)
   {
-    MyMessageBox((IDS_ERROR24), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR24), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
     return;
   }
 
@@ -143,7 +143,7 @@ void CPathDialog::OnOK()
   {
     if(bIsDrive)
     {
-      MyMessageBox((IDS_ERROR25), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox((IDS_ERROR25), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
       return;
     }
   }

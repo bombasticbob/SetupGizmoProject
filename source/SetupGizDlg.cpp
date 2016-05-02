@@ -384,6 +384,16 @@ LPSTR lp1, lp2;
 
   m_Page1.m_csCertFiles.ReleaseBuffer(-1);
 
+  // hack - if it starts with '\"', trim the '\'
+  // this is because 'GetPrivateProfilString()' trims the quote
+  // and if I'm quoting multiple files, I want it left ALONE
+  if(m_Page1.m_csCertFiles.GetLength() >= 2 &&
+     m_Page1.m_csCertFiles.GetAt(0) == '\\' &&
+     m_Page1.m_csCertFiles.GetAt(1) == '"')
+  {
+    m_Page1.m_csCertFiles = m_Page1.m_csCertFiles.Mid(1);
+  }
+
   // update 'm_acsCertFileNameList' and 'm_acsCertRepositoryList'
 
   UpdatePage1Stuff(TRUE);
@@ -734,9 +744,23 @@ BOOL CSetupGizDlg::DoSave()
                               m_Page1.m_csLicenseFile,
                               csPath);
 
-    WritePrivateProfileString("Page1","CertFiles",
-                              m_Page1.m_csCertFiles,
-                              csPath);
+    // hack - if m_Page1.m_csCertFiles starts with '"', prefix a '\'
+    // this is because 'GetPrivateProfilString()' trims the quote
+    // and if I'm quoting multiple files, I want it left ALONE
+
+    if(m_Page1.m_csCertFiles.GetLength() > 0 &&
+       m_Page1.m_csCertFiles.GetAt(0) == '"')
+    {
+      WritePrivateProfileString("Page1","CertFiles",
+                                (CString)'\\' + m_Page1.m_csCertFiles,
+                                csPath);
+    }
+    else
+    {
+      WritePrivateProfileString("Page1","CertFiles",
+                                m_Page1.m_csCertFiles,
+                                csPath);
+    }
 
     WritePrivateProfileString("Page1","StartMessage",
                               m_Page1.m_csStartMessage,
@@ -1036,14 +1060,30 @@ void CSetupGizDlg::UpdatePage1Stuff(BOOL bLoadFromFile /*= FALSE*/)
 int i1, i2, i3, i4;
 CString csTemp;
 CStringArray acsFileNames, acsRepository;
+LPSTR lp1, lp2;
+
 
   if(bLoadFromFile) // reading from a GIZ file
   {
     m_acsCertFileNameList.RemoveAll();
     m_acsCertRepositoryList.RemoveAll();
- 
+
     // parse 'm_csCertFiles' into 'm_acsCertFileNameList'
-    DoParseString(m_Page1.m_csCertFiles, m_acsCertFileNameList);
+
+    csTemp = m_Page1.m_csCertFiles;
+
+    lp1 = csTemp.GetBuffer(csTemp.GetLength() + 2);
+    lp1[csTemp.GetLength()] = 0; // make sure
+    lp1[csTemp.GetLength() + 1] = 0; // make sure
+
+    InPlaceConvertMultStringToStringList(lp1, csTemp.GetLength() + 2);
+
+    for(lp2=lp1; *lp2; lp2 += strlen(lp2) + 1)
+    {
+      m_acsCertFileNameList.Add(lp2);
+    }
+
+    csTemp.ReleaseBuffer(0); // clears it
 
     for(i1=0, i2 = m_acsCertFileNameList.GetSize(); i1 < i2; i1++)
     {
@@ -1071,7 +1111,20 @@ CStringArray acsFileNames, acsRepository;
   // manage temp arrays by copying relevant data from original
   // list, and using 'ROOT' for the default repository on new items
 
-  DoParseString(m_Page1.m_csCertFiles, acsFileNames); // the new list
+  csTemp = m_Page1.m_csCertFiles;
+
+  lp1 = csTemp.GetBuffer(csTemp.GetLength() + 2);
+  lp1[csTemp.GetLength()] = 0; // make sure
+  lp1[csTemp.GetLength() + 1] = 0; // make sure
+
+  InPlaceConvertMultStringToStringList(lp1, csTemp.GetLength() + 2);
+
+  for(lp2=lp1; *lp2; lp2 += strlen(lp2) + 1)
+  {
+    acsFileNames.Add(lp2);
+  }
+
+  csTemp.ReleaseBuffer(0); // clears it
 
   // TODO:  should I cache the 'friendly name' of the cert??
 

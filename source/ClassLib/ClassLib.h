@@ -316,7 +316,7 @@ public:
       m_nGranularity = 4096;
   }
 
-  virtual ~CArray<Y,X>() { if(m_pData) { RemoveAll(); free(m_pData); m_pData = NULL; } }
+  virtual ~CArray<Y,X>() { if(m_pData) { RemoveAll(); /*free(m_pData); m_pData = NULL;*/ } }
 
   int GetSize() const { if(m_pData) return m_nSize; else return 0; }
 
@@ -401,6 +401,11 @@ public:
       pObj->~Y();
 //      operator delete (pObj, pObj);
     }
+
+    m_nSize = m_nMaxSize = 0; // we shall reset and free the pointer
+
+    free(m_pData);
+    m_pData = NULL;
   }
 
   // MFC-compatible function names

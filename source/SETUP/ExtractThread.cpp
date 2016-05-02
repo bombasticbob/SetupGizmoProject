@@ -92,7 +92,7 @@ static BOOL SafeRunThreadProc()
     // TODO:  should I do this as a message string or not???
 
     ::MessageBox(NULL, tbuf, tbuf2,
-                 MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                 MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
   }
 
   return FALSE;
@@ -123,7 +123,7 @@ CStringArray acsAutoDelete;
 //
   if(CoInitialize(NULL) != S_OK) // CoInitializeEx(NULL, COINIT_APARTMENTTHREADED) != S_OK)
   {
-    MyMessageBox((IDS_ERROR01), MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+    MyMessageBox((IDS_ERROR01), MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;
   }
@@ -506,7 +506,7 @@ int i1, i2, i3;
       if(dlg.DoModal() != IDOK)
       {
         MyMessageBox("Certificates will not be installed.  The application may not function correctly as a result.",
-                      MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND);
+                      MB_OK | MB_ICONEXCLAMATION | MB_SETFOREGROUND | MB_TOPMOST);
       }
       else
       {
@@ -883,7 +883,7 @@ CString csTemp, csTemp2;
   if(!CopyFile(csTemp2, csTemp, FALSE))
   {
     MyMessageBox((IDS_ERROR02),
-                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                  MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
     return FALSE;
   }
@@ -898,12 +898,12 @@ CString csTemp, csTemp2;
     {
 #ifndef _DEBUG
       MyMessageBox(IDS_ERROR03,
-                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       return FALSE;
 #else // _DEBUG
       MyMessageBox("WARNING:  copy error on 'UNINST.EXE' - did you intend it to be self-extracting?",
-                    MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+                    MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 #endif // _DEBUG
     }
   }
@@ -936,7 +936,7 @@ HKEY hKey, hkeyRoot;
     {
       csMsg.Format(theApp.LoadString(IDS_ERROR04), (LPCSTR)csTemp);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       continue;
     }
@@ -1036,7 +1036,7 @@ HKEY hKey, hkeyRoot;
     {
       csMsg.Format(theApp.LoadString(IDS_WARNING01), (LPCSTR)acsRegKeys[i1]);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
 
       continue;
     }
@@ -1085,7 +1085,7 @@ HKEY hKey, hkeyRoot;
     {
       csMsg.Format(theApp.LoadString(IDS_WARNING02), (LPCSTR)csKey);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
       hkeyRoot = HKEY_CLASSES_ROOT;
     }
 
@@ -1110,7 +1110,7 @@ HKEY hKey, hkeyRoot;
       {
         csMsg.Format(theApp.LoadString(IDS_ERROR05), (LPCSTR)csKey);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
         return FALSE;  // fail it NOW
       }
@@ -1165,7 +1165,7 @@ CString csKey, csEntry, csTemp, csTemp2, csMsg;
     {
       csMsg.Format(theApp.LoadString(IDS_ERROR05), (LPCSTR)csKey);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
       return FALSE;  // fail it NOW
     }
@@ -1267,7 +1267,7 @@ CString csKey, csEntry, csTemp, csTemp2, csMsg;
           {
             csMsg.Format(theApp.LoadString(IDS_WARNING03), (LPCSTR)csTemp);
 
-            MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+            MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
             dwVal = 0;
           }
         }
@@ -1276,7 +1276,7 @@ CString csKey, csEntry, csTemp, csTemp2, csMsg;
         {
           csMsg.Format(theApp.LoadString(IDS_WARNING04), (LPCSTR)csTemp);
 
-          MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+          MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
           dwVal = 0;
         }
         else
@@ -1289,7 +1289,7 @@ CString csKey, csEntry, csTemp, csTemp2, csMsg;
           {
             csMsg.Format(theApp.LoadString(IDS_WARNING05), (LPCSTR)csTemp);
 
-            MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+            MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
             dwVal = 0;
           }
         }
@@ -1460,7 +1460,7 @@ BOOL bRval = TRUE;
         {
           csMsg.Format(theApp.LoadString(IDS_ERROR06), (LPCSTR)(csRegAsm + " /s " + csTemp));
 
-          MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+          MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
 //          return FALSE;
         }
@@ -1474,7 +1474,7 @@ BOOL bRval = TRUE;
       {
         csMsg.Format(theApp.LoadString(IDS_WARNING04), (LPCSTR)csTemp);
 
-        MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+        MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
       }
       else
       {
@@ -1488,7 +1488,7 @@ BOOL bRval = TRUE;
           {
             csMsg.Format(theApp.LoadString(IDS_ERROR06), (LPCSTR)csTemp);
 
-            MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
+            MyMessageBox(csMsg, MB_OK | MB_ICONHAND | MB_SETFOREGROUND | MB_TOPMOST);
 
             return FALSE;
           }
@@ -1575,7 +1575,7 @@ CString csTemp, csTemp2, csParm, csMsg;
       // warn the user???
       csMsg.Format(theApp.LoadString(IDS_WARNING06), (LPCSTR)csParm);
 
-      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND);
+      MyMessageBox(csMsg, MB_OK | MB_ICONASTERISK | MB_SETFOREGROUND | MB_TOPMOST);
     }
 
     //---------------------------------------------------------------
