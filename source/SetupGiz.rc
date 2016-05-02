@@ -349,8 +349,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,1,1
- PRODUCTVERSION 1,2,1,1
+ FILEVERSION 1,2,1,2
+ PRODUCTVERSION 1,2,1,2
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -368,12 +368,12 @@ BEGIN
             VALUE "Comments", "http://www.mrp3.com/ - Setup GIZMO Main Application - use this to create setup images"
             VALUE "CompanyName", "Stewart~Frazier Tools, Inc"
             VALUE "FileDescription", "SFT Setup Gizmo Application - aka ""Setup Gizzard"""
-            VALUE "FileVersion", "1, 2, 1, 1"
+            VALUE "FileVersion", "1, 2, 1, 2"
             VALUE "InternalName", "SetupGiz"
             VALUE "LegalCopyright", "Copyright © 1998-2016  by Stewart~Frazier Tools, Inc. - all rights reserved"
             VALUE "OriginalFilename", "SetupGiz.EXE"
             VALUE "ProductName", "SFT Setup Gizmo Wizard"
-            VALUE "ProductVersion", "1, 2, 1, 1"
+            VALUE "ProductVersion", "1, 2, 1, 2"
         END
     END
     BLOCK "VarFileInfo"

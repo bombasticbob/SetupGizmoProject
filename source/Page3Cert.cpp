@@ -160,7 +160,8 @@ BOOL CPage3Cert::OnSetActive()
   // load the repository list with possible entries
   for(i1=0; i1 < sizeof(aszRepositories) / sizeof(aszRepositories[0]); i1++)
   {
-    m_wndRepository.AddString(aszRepositories[i1]);
+    // must use 'InsertString' so it shows up in the right place
+    m_wndRepository.InsertString(i1,aszRepositories[i1]);
   }
 
   // load the repository list with any custom entries I might have

@@ -1090,7 +1090,7 @@ LPSTR lp1, lp2;
       csTemp = "";
       if(m_acsCertFileNameList[i1].GetLength()) // just in case
       {
-        GetPrivateProfileString("CertRepo", m_acsCertFileNameList[i1], "",
+        GetPrivateProfileString("CertFiles", m_acsCertFileNameList[i1], "",
                                 csTemp.GetBufferSetLength(MAX_PATH),
                                 MAX_PATH, m_csFileName);
 

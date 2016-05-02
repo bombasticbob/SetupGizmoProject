@@ -146,8 +146,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,1,1
- PRODUCTVERSION 1,2,1,1
+ FILEVERSION 1,2,1,2
+ PRODUCTVERSION 1,2,1,2
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x21L
@@ -165,12 +165,12 @@ BEGIN
             VALUE "Comments", "http://www.mrp3.com/ - self-cleaning UNINSTALL utility for SFT Setup Gizmo - use only with installations created by SFT Setup Gizmo"
             VALUE "CompanyName", "Stewart~Frazier Tools, Inc."
             VALUE "FileDescription", "SFT Setup Gizmo self-cleaning UNINSTALL  Application - unlike OTHERS, it doesn't leave itself ""installed"" when you UNINSTALL"
-            VALUE "FileVersion", "1, 2, 1, 1"
+            VALUE "FileVersion", "1, 2, 1, 2"
             VALUE "InternalName", "UNINST"
             VALUE "LegalCopyright", "Copyright (C) 1998-2016 by Stewart~Frazier Tools, Inc. - all rights reserved"
             VALUE "OriginalFilename", "UNINST.EXE"
             VALUE "ProductName", "SFT Setup Gizmo UNINSTALL"
-            VALUE "ProductVersion", "1, 2, 1, 1"
+            VALUE "ProductVersion", "1, 2, 1, 2"
             VALUE "SpecialBuild", "Every build is ""special"""
         END
     END

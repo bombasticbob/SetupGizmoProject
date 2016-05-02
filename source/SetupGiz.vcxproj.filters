@@ -160,9 +160,6 @@
     <None Include="setupgiz.rtf">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="setupgiz.hpj">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="setupgiz.giz">
       <Filter>Other Files</Filter>
     </None>

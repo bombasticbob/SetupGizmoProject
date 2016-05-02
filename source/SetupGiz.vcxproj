@@ -222,7 +222,6 @@
     <None Include="setupgiz.giz">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </None>
-    <None Include="setupgiz.hpj" />
     <None Include="setupgiz.rtf" />
     <None Include="setup_gizmo_demo.giz">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
