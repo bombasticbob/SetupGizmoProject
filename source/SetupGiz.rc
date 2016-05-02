@@ -77,8 +77,8 @@ CAPTION "About the S.F.T. Setup Gizmo"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,2,2,21,20
-    CTEXT           "SFT Setup Gizmo Version 1.1",IDC_STATIC,30,4,160,8,SS_NOPREFIX
-    CTEXT           "Copyright © 1998-2004 by S.F.T. Inc.\nAll Rights Reserved",IDC_STATIC,30,17,160,18
+    CTEXT           "SFT Setup Gizmo Version 1.2",IDC_STATIC,30,4,160,8,SS_NOPREFIX
+    CTEXT           "Copyright © 1998-2016 by S.F.T. Inc.\nAll Rights Reserved",IDC_STATIC,30,17,160,18
     DEFPUSHBUTTON   "OK",IDOK,80,96,60,17,WS_GROUP
     ICON            IDR_MAINFRAME,IDC_STATIC,197,2,21,20
     LTEXT           "The SFT Setup Gizmo is a set of applications that allows you to easily create a SETUP for your application, without a lot of excess overhead for capabilities you are unlikely to need.  It is a lean, mean, SETUP machine that saves you both time and money.",IDC_STATIC,2,38,216,33
@@ -349,8 +349,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,2,3
- PRODUCTVERSION 1,1,2,3
+ FILEVERSION 1,2,1,1
+ PRODUCTVERSION 1,2,1,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -368,12 +368,12 @@ BEGIN
             VALUE "Comments", "http://www.mrp3.com/ - Setup GIZMO Main Application - use this to create setup images"
             VALUE "CompanyName", "Stewart~Frazier Tools, Inc"
             VALUE "FileDescription", "SFT Setup Gizmo Application - aka ""Setup Gizzard"""
-            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "FileVersion", "1, 2, 1, 1"
             VALUE "InternalName", "SetupGiz"
             VALUE "LegalCopyright", "Copyright © 1998-2016  by Stewart~Frazier Tools, Inc. - all rights reserved"
             VALUE "OriginalFilename", "SetupGiz.EXE"
             VALUE "ProductName", "SFT Setup Gizmo Wizard"
-            VALUE "ProductVersion", "1, 1, 2, 3"
+            VALUE "ProductVersion", "1, 2, 1, 1"
         END
     END
     BLOCK "VarFileInfo"

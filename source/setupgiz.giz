@@ -32,3 +32,8 @@ SetupGiz.chm="SFT Setup Gizmo HELP file","SFT Setup Gizmo HELP.LNK","","","",-1,
 005=[HKCR\SETUPGizFile\DefaultIcon]@="%apppath%\SETUPGiz.EXE,1"
 006=[HKCR\SETUPGizFile\shell\open\command]@="%apppath%\SETUPGiz.EXE %%1"
 007=[HKCR\.giz]"ContentType"="text/plain"
+008=[HKLM\SOFTWARE\Classes\.giz]@="SETUPGizFile"
+009=[HKLM\SOFTWARE\Classes\SETUPGizFile]@="SFT Setup Gizmo File"
+010=[HKLM\SOFTWARE\Classes\SETUPGizFile\DefaultIcon]@="%apppath%\SETUPGiz.EXE,1"
+011=[HKLM\SOFTWARE\Classes\SETUPGizFile\shell\open\command]@="%apppath%\SETUPGiz.EXE %%1"
+012=[HKLM\SOFTWARE\Classes\.giz]"ContentType"="text/plain"

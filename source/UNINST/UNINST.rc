@@ -76,7 +76,7 @@ CAPTION "About UNINST"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,2,7,20,20
-    CTEXT           "S.F.T. Un-Installer Version 1.1\nA component of the 'SFT Setup Gizmo'",IDC_STATIC,34,8,146,16,SS_NOPREFIX
+    CTEXT           "S.F.T. Un-Installer Version 1.2\nA component of the 'SFT Setup Gizmo'",IDC_STATIC,34,8,146,16,SS_NOPREFIX
     CTEXT           "Copyright © 1998-2004 by Stewart~Frazier Tools, Inc.\nAll rights reserved\n\nPlease visit our Web Page at:  http://www.mrp3.com/",IDC_STATIC,2,31,213,36
     DEFPUSHBUTTON   "OK",IDOK,183,10,32,14,WS_GROUP
 END
@@ -146,8 +146,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,2,3
- PRODUCTVERSION 1,1,2,3
+ FILEVERSION 1,2,1,1
+ PRODUCTVERSION 1,2,1,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x21L
@@ -165,12 +165,12 @@ BEGIN
             VALUE "Comments", "http://www.mrp3.com/ - self-cleaning UNINSTALL utility for SFT Setup Gizmo - use only with installations created by SFT Setup Gizmo"
             VALUE "CompanyName", "Stewart~Frazier Tools, Inc."
             VALUE "FileDescription", "SFT Setup Gizmo self-cleaning UNINSTALL  Application - unlike OTHERS, it doesn't leave itself ""installed"" when you UNINSTALL"
-            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "FileVersion", "1, 2, 1, 1"
             VALUE "InternalName", "UNINST"
             VALUE "LegalCopyright", "Copyright (C) 1998-2016 by Stewart~Frazier Tools, Inc. - all rights reserved"
             VALUE "OriginalFilename", "UNINST.EXE"
             VALUE "ProductName", "SFT Setup Gizmo UNINSTALL"
-            VALUE "ProductVersion", "1, 1, 2, 3"
+            VALUE "ProductVersion", "1, 2, 1, 1"
             VALUE "SpecialBuild", "Every build is ""special"""
         END
     END

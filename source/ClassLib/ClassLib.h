@@ -373,7 +373,7 @@ public:
 
   void RemoveAt(int iIndex)
   {
-    if(iIndex < 0 || iIndex >= GetSize())
+    if(iIndex < 0 || iIndex >= GetSize() || !m_pData)
       return;
 
     Y *pObj = m_pData + iIndex;
@@ -395,17 +395,20 @@ public:
   {
     int i1;
 
-    for(i1=m_nSize - 1; i1 >= 0; i1--)
+    if(m_pData)
     {
-      Y *pObj = m_pData + i1;
-      pObj->~Y();
-//      operator delete (pObj, pObj);
+      for(i1=m_nSize - 1; i1 >= 0; i1--)
+      {
+        Y *pObj = m_pData + i1;
+        pObj->~Y();
+  //      operator delete (pObj, pObj);
+      }
+
+      free(m_pData);
+      m_pData = NULL;
     }
 
     m_nSize = m_nMaxSize = 0; // we shall reset and free the pointer
-
-    free(m_pData);
-    m_pData = NULL;
   }
 
   // MFC-compatible function names

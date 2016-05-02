@@ -106,8 +106,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,2,3
- PRODUCTVERSION 1,1,2,3
+ FILEVERSION 1,2,1,1
+ PRODUCTVERSION 1,2,1,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -125,12 +125,12 @@ BEGIN
             VALUE "Comments", "http://www.mrp3.com/ - part of the SFT Setup Gizmo, autorun 'helper' for CD ROM install"
             VALUE "CompanyName", "Stewart~Frazier Tools, Inc."
             VALUE "FileDescription", "AutoRun CDROM 'Helper' application for CDROM installs"
-            VALUE "FileVersion", "1, 1, 2, 3"
+            VALUE "FileVersion", "1, 2, 1, 1"
             VALUE "InternalName", "AutoRun"
             VALUE "LegalCopyright", "Copyright (C) 2000-2016 by Stewart~Frazier Tools, Inc. - all rights reserved"
             VALUE "OriginalFilename", "AutoRun.EXE"
             VALUE "ProductName", "AutoRun Application"
-            VALUE "ProductVersion", "1, 1, 2, 3"
+            VALUE "ProductVersion", "1, 2, 1, 1"
         END
     END
     BLOCK "VarFileInfo"
