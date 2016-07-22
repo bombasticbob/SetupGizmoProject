@@ -23,25 +23,25 @@
 
 class CLicenseDlg : public CDialog
 {
-	DECLARE_DYNAMIC(CLicenseDlg)
+  DECLARE_DYNAMIC(CLicenseDlg)
 
 public:
-	CLicenseDlg(CWnd* pParent = NULL);   // standard constructor
-	virtual ~CLicenseDlg();
+  CLicenseDlg(CWnd* pParent = NULL);   // standard constructor
+  virtual ~CLicenseDlg();
 
 // Dialog Data
-	enum { IDD = IDD_LICENSE };
+  enum { IDD = IDD_LICENSE };
 
   CString m_csLicense;
   HMODULE m_hLib;  // for RICHED32.DLL
   DWORD m_dwRTFPos;
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
   static DWORD WINAPI RichTextFormatCallback(DWORD_PTR dwCookie, LPBYTE pbBuff, LONG cb, LONG *pcb);
 
-	DECLARE_MESSAGE_MAP()
+  DECLARE_MESSAGE_MAP()
 public:
   virtual BOOL OnInitDialog();
   CRichEditCtrl m_wndLicense;

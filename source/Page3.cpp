@@ -36,21 +36,21 @@ IMPLEMENT_DYNCREATE(CPage3, CPropertyPage)
 CPage3::CPage3() : CPropertyPage(CPage3::IDD)
 , m_bRegDotNet(FALSE)
 {
-	//{{AFX_DATA_INIT(CPage3)
-	m_bAutoDelete = FALSE;
-	m_bExecute = FALSE;
-	m_bOptionInstall = FALSE;
-	m_csOtherPathName = _T("");
-	m_bOverwrite = FALSE;
-	m_bSelectOS = FALSE;
-	m_bShared = FALSE;
-	m_iDestPath = -1;
-	m_bNoUninstall = FALSE;
-	m_bRegister = FALSE;
-	m_bAddShortcut = FALSE;
-	m_csExecArgs = _T("");
-	m_csUninstArgs = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage3)
+  m_bAutoDelete = FALSE;
+  m_bExecute = FALSE;
+  m_bOptionInstall = FALSE;
+  m_csOtherPathName = _T("");
+  m_bOverwrite = FALSE;
+  m_bSelectOS = FALSE;
+  m_bShared = FALSE;
+  m_iDestPath = -1;
+  m_bNoUninstall = FALSE;
+  m_bRegister = FALSE;
+  m_bAddShortcut = FALSE;
+  m_csExecArgs = _T("");
+  m_csUninstArgs = _T("");
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -61,19 +61,19 @@ CPage3::~CPage3()
 
 void CPage3::DoClear()
 {
-	m_bAutoDelete = FALSE;
-	m_bExecute = FALSE;
-	m_bOptionInstall = FALSE;
-	m_csOtherPathName = _T("");
-	m_bOverwrite = FALSE;
-	m_bSelectOS = FALSE;
-	m_bShared = FALSE;
-	m_iDestPath = -1;
-	m_bNoUninstall = FALSE;
-	m_bRegister = FALSE;
-	m_bAddShortcut = FALSE;
-	m_csExecArgs = _T("");
-	m_csUninstArgs = _T("");
+  m_bAutoDelete = FALSE;
+  m_bExecute = FALSE;
+  m_bOptionInstall = FALSE;
+  m_csOtherPathName = _T("");
+  m_bOverwrite = FALSE;
+  m_bSelectOS = FALSE;
+  m_bShared = FALSE;
+  m_iDestPath = -1;
+  m_bNoUninstall = FALSE;
+  m_bRegister = FALSE;
+  m_bAddShortcut = FALSE;
+  m_csExecArgs = _T("");
+  m_csUninstArgs = _T("");
 
   m_iCurSel = LB_ERR;
 }
@@ -160,19 +160,19 @@ void CPage3::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CPage3, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage3)
-	ON_BN_CLICKED(IDC_SYSTEMDIR, OnSystemdir)
-	ON_BN_CLICKED(IDC_TEMPDIR, OnTempdir)
-	ON_BN_CLICKED(IDC_APPDIR, OnAppdir)
-	ON_BN_CLICKED(IDC_OTHERPATH, OnOtherpath)
-	ON_BN_CLICKED(IDC_OPTION_INSTALL, OnOptionInstall)
-	ON_BN_CLICKED(IDC_SELECT_OS, OnSelectOs)
-	ON_LBN_SELCHANGE(IDC_FILE_LIST, OnSelchangeFileList)
-	ON_BN_CLICKED(IDC_MINI_HELP, OnMiniHelp)
-	ON_BN_CLICKED(IDC_EXECUTE, OnExecute)
-	ON_BN_CLICKED(IDC_NO_UNINSTALL, OnNoUninstall)
-	ON_BN_CLICKED(IDC_SHARED, OnShared)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage3)
+  ON_BN_CLICKED(IDC_SYSTEMDIR, OnSystemdir)
+  ON_BN_CLICKED(IDC_TEMPDIR, OnTempdir)
+  ON_BN_CLICKED(IDC_APPDIR, OnAppdir)
+  ON_BN_CLICKED(IDC_OTHERPATH, OnOtherpath)
+  ON_BN_CLICKED(IDC_OPTION_INSTALL, OnOptionInstall)
+  ON_BN_CLICKED(IDC_SELECT_OS, OnSelectOs)
+  ON_LBN_SELCHANGE(IDC_FILE_LIST, OnSelchangeFileList)
+  ON_BN_CLICKED(IDC_MINI_HELP, OnMiniHelp)
+  ON_BN_CLICKED(IDC_EXECUTE, OnExecute)
+  ON_BN_CLICKED(IDC_NO_UNINSTALL, OnNoUninstall)
+  ON_BN_CLICKED(IDC_SHARED, OnShared)
+  //}}AFX_MSG_MAP
   ON_BN_CLICKED(IDC_REG_DOT_NET, OnClickRegDotNet)
 END_MESSAGE_MAP()
 
@@ -284,22 +284,22 @@ BOOL CPage3::OnSetActive()
   m_iCurSel = LB_ERR;  // forces a re-load
   OnSelchangeFileList();
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage3::OnKillActive() 
 {
   OnSelchangeFileList();  // this updates data properly
-	
-	return CPropertyPage::OnKillActive();
+  
+  return CPropertyPage::OnKillActive();
 }
 
 LRESULT CPage3::OnWizardBack() 
 {
 //  UpdateData(1);
   OnSelchangeFileList();  // this updates data properly
-	
-	return CPropertyPage::OnWizardBack();
+  
+  return CPropertyPage::OnWizardBack();
 }
 
 LRESULT CPage3::OnWizardNext() 
@@ -406,8 +406,8 @@ LRESULT CPage3::OnWizardNext()
 
     return IDD_PAGE_4;  // go to 'page 4' and not 'page 3B' or cert
   }
-	
-	CPropertyPage::OnWizardNext();
+  
+  CPropertyPage::OnWizardNext();
 
   return(IDD_PAGE_3A);
 }

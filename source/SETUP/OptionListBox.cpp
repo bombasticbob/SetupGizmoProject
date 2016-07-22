@@ -204,8 +204,8 @@ LRESULT COptionListBox::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
       InvalidateRect(NULL, TRUE);
     }
   }
-	
-	return(DefWindowProc(WM_KEYDOWN, (WPARAM)nChar, MAKELPARAM(nRepCnt, nFlags)));
+  
+  return(DefWindowProc(WM_KEYDOWN, (WPARAM)nChar, MAKELPARAM(nRepCnt, nFlags)));
 }
 
 LRESULT COptionListBox::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) 
@@ -218,5 +218,5 @@ LRESULT COptionListBox::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
     return(0);  // eat it (already processed)
   }
 
-	return(DefWindowProc(WM_KEYUP, (WPARAM)nChar, MAKELPARAM(nRepCnt, nFlags)));
+  return(DefWindowProc(WM_KEYUP, (WPARAM)nChar, MAKELPARAM(nRepCnt, nFlags)));
 }

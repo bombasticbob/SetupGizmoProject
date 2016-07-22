@@ -42,8 +42,8 @@ CThermometer::~CThermometer()
 
 BOOL CThermometer::OnEraseBkgnd(HDC hDC) 
 {
-	// TODO: Add your message handler code here and/or call default
-	
+  // TODO: Add your message handler code here and/or call default
+  
   return(FALSE);  // *NOT* erased
 }
 
@@ -67,11 +67,11 @@ LRESULT CThermometer::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 void CThermometer::OnPaint() 
 {
-	CMyPaintDC dc(m_hWnd); // device context for painting
-	
-	CString csText;
+  CMyPaintDC dc(m_hWnd); // device context for painting
+  
+  CString csText;
   GetWindowText(csText);
-	
+  
   CRect rct;
   GetClientRect(&rct);
 

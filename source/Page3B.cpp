@@ -35,12 +35,12 @@ IMPLEMENT_DYNCREATE(CPage3B, CPropertyPage)
 
 CPage3B::CPage3B() : CPropertyPage(CPage3B::IDD)
 {
-	//{{AFX_DATA_INIT(CPage3B)
-	m_csDesc = _T("");
-	m_csFileName = _T("");
-	m_iShow = -1;
-	m_csParms = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage3B)
+  m_csDesc = _T("");
+  m_csFileName = _T("");
+  m_iShow = -1;
+  m_csParms = _T("");
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -58,24 +58,24 @@ void CPage3B::DoClear()
   m_iImage = -1;
   m_csImageFileName = "";
 
-	m_csDesc = _T("");
-	m_csFileName = _T("");
-	m_iShow = 0;
-	m_csParms = _T("");
+  m_csDesc = _T("");
+  m_csFileName = _T("");
+  m_iShow = 0;
+  m_csParms = _T("");
 }
 
 void CPage3B::DoDataExchange(CDataExchange* pDX)
 {
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage3B)
-	DDX_Control(pDX, IDC_ICON_FILES, m_wndIconFiles);
-	DDX_Control(pDX, IDC_ICON_LIST, m_wndIconList);
-	DDX_Control(pDX, IDC_APP_LIST, m_wndAppList);
-	DDX_Text(pDX, IDC_DESC, m_csDesc);
-	DDX_Text(pDX, IDC_FILENAME, m_csFileName);
-	DDX_Radio(pDX, IDC_SHOWNORMAL, m_iShow);
-	DDX_Text(pDX, IDC_PARMS, m_csParms);
-	//}}AFX_DATA_MAP
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage3B)
+  DDX_Control(pDX, IDC_ICON_FILES, m_wndIconFiles);
+  DDX_Control(pDX, IDC_ICON_LIST, m_wndIconList);
+  DDX_Control(pDX, IDC_APP_LIST, m_wndAppList);
+  DDX_Text(pDX, IDC_DESC, m_csDesc);
+  DDX_Text(pDX, IDC_FILENAME, m_csFileName);
+  DDX_Radio(pDX, IDC_SHOWNORMAL, m_iShow);
+  DDX_Text(pDX, IDC_PARMS, m_csParms);
+  //}}AFX_DATA_MAP
 
   if(pDX->m_bSaveAndValidate)
   {
@@ -168,21 +168,21 @@ void CPage3B::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CPage3B, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage3B)
-	ON_LBN_SELCHANGE(IDC_APP_LIST, OnSelchangeAppList)
-	ON_EN_KILLFOCUS(IDC_FILENAME, OnKillfocusFilename)
-	ON_EN_KILLFOCUS(IDC_DESC, OnKillfocusDesc)
-	ON_LBN_SELCHANGE(IDC_ICON_LIST, OnSelchangeIconList)
-	ON_CBN_CLOSEUP(IDC_ICON_FILES, OnCloseupIconFiles)
-	ON_CBN_KILLFOCUS(IDC_ICON_FILES, OnKillfocusIconFiles)
-	ON_EN_KILLFOCUS(IDC_PARMS, OnKillfocusParms)
-	ON_BN_CLICKED(IDC_SHOWHIDE, OnShowhide)
-	ON_BN_CLICKED(IDC_SHOWMAX, OnShowmax)
-	ON_BN_CLICKED(IDC_SHOWMIN, OnShowmin)
-	ON_BN_CLICKED(IDC_SHOWNORMAL, OnShownormal)
-	ON_WM_DRAWITEM()
-	ON_WM_MEASUREITEM()
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage3B)
+  ON_LBN_SELCHANGE(IDC_APP_LIST, OnSelchangeAppList)
+  ON_EN_KILLFOCUS(IDC_FILENAME, OnKillfocusFilename)
+  ON_EN_KILLFOCUS(IDC_DESC, OnKillfocusDesc)
+  ON_LBN_SELCHANGE(IDC_ICON_LIST, OnSelchangeIconList)
+  ON_CBN_CLOSEUP(IDC_ICON_FILES, OnCloseupIconFiles)
+  ON_CBN_KILLFOCUS(IDC_ICON_FILES, OnKillfocusIconFiles)
+  ON_EN_KILLFOCUS(IDC_PARMS, OnKillfocusParms)
+  ON_BN_CLICKED(IDC_SHOWHIDE, OnShowhide)
+  ON_BN_CLICKED(IDC_SHOWMAX, OnShowmax)
+  ON_BN_CLICKED(IDC_SHOWMIN, OnShowmin)
+  ON_BN_CLICKED(IDC_SHOWNORMAL, OnShownormal)
+  ON_WM_DRAWITEM()
+  ON_WM_MEASUREITEM()
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 
@@ -335,14 +335,14 @@ BOOL CPage3B::OnSetActive()
 
   OnSelchangeAppList();
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage3B::OnKillActive() 
 {
   OnSelchangeAppList();  // this updates data properly
 
-	return CPropertyPage::OnKillActive();
+  return CPropertyPage::OnKillActive();
 }
 
 LRESULT CPage3B::OnWizardBack() 
@@ -358,7 +358,7 @@ LRESULT CPage3B::OnWizardBack()
     return -1;
   }
 
-	CPropertyPage::OnWizardBack();
+  CPropertyPage::OnWizardBack();
 
   if(!pSheet->m_aGroupList.GetSize())
   {
@@ -387,7 +387,7 @@ LRESULT CPage3B::OnWizardNext()
   {
     return IDD_PAGE_3_CERT; // 3 Cert - certificates
   }
-	
+  
   return IDD_PAGE_4; // where to go if there are no certs
 }
 
@@ -653,8 +653,8 @@ void CPage3B::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
 
     return;
   }
-	
-	CPropertyPage::OnDrawItem(nIDCtl, lpDrawItemStruct);
+  
+  CPropertyPage::OnDrawItem(nIDCtl, lpDrawItemStruct);
 }
 
 void CPage3B::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct) 
@@ -666,6 +666,6 @@ void CPage3B::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct)
 
     return;
   }
-	
-	CPropertyPage::OnMeasureItem(nIDCtl, lpMeasureItemStruct);
+  
+  CPropertyPage::OnMeasureItem(nIDCtl, lpMeasureItemStruct);
 }

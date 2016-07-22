@@ -30,38 +30,38 @@ class CLoginDlg : public CMyDialogBaseClass /*CDialog*/
 {
 // Construction
 public:
-	CLoginDlg(HWND hParent = NULL);	// standard constructor
+  CLoginDlg(HWND hParent = NULL); // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CLoginDlg)
-	enum { IDD = IDD_LOGON };
+  //{{AFX_DATA(CLoginDlg)
+  enum { IDD = IDD_LOGON };
   CEdit m_wndDomain;
   CString m_csUserName;
   CString m_csPassword;
   CString m_csDomain;
-	//}}AFX_DATA
+  //}}AFX_DATA
 
   
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CLoginDlg)
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CLoginDlg)
 protected:
-	void UpdateData(BOOL bSaveFlag);
+  void UpdateData(BOOL bSaveFlag);
   virtual BOOL MessageHandler(UINT, WPARAM, LPARAM);
-	//}}AFX_VIRTUAL
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 
-	// Generated message map functions
-	//{{AFX_MSG(CLoginDlg)
-	virtual BOOL OnInitDialog();
-	BOOL OnPaint();
-	HCURSOR OnQueryDragIcon();
-	virtual void OnCancel();
-	virtual void OnOK();
-	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CLoginDlg)
+  virtual BOOL OnInitDialog();
+  BOOL OnPaint();
+  HCURSOR OnQueryDragIcon();
+  virtual void OnCancel();
+  virtual void OnOK();
+  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

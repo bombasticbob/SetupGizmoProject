@@ -32,13 +32,13 @@
 #define _T(X) X /* temporary */
 
 CSETUPDlg::CSETUPDlg(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CSETUPDlg::IDD, hParent)
+  : CMyDialogBaseClass(CSETUPDlg::IDD, hParent)
 {
-	m_csWelcome = _T("");
+  m_csWelcome = _T("");
 
   m_csTitle = "SFT SETUP Application";  // default
 
-	m_hIcon = /*AfxGetApp()->*/theApp.LoadIcon(IDR_MAINFRAME);
+  m_hIcon = /*AfxGetApp()->*/theApp.LoadIcon(IDR_MAINFRAME);
 }
 
 void CSETUPDlg::UpdateData(BOOL bSaveFlag)
@@ -91,7 +91,7 @@ BOOL CSETUPDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 BOOL CSETUPDlg::OnInitDialog()
 {
-	UpdateData(0);
+  UpdateData(0);
 
   if(theApp.m_csOSName.GetLength())
   {
@@ -127,14 +127,14 @@ BOOL CSETUPDlg::OnInitDialog()
 
   SetWindowText(m_csTitle);
 
-	// Set the icon for this dialog.  The framework does this automatically
-	//  when the application's main window is not a dialog
-	SetIcon(m_hIcon, TRUE);			// Set big icon
-	SetIcon(m_hIcon, FALSE);		// Set small icon
-	
-	// TODO: Add extra initialization here
-	
-	return TRUE;  // return TRUE  unless you set the focus to a control
+  // Set the icon for this dialog.  The framework does this automatically
+  //  when the application's main window is not a dialog
+  SetIcon(m_hIcon, TRUE);     // Set big icon
+  SetIcon(m_hIcon, FALSE);    // Set small icon
+  
+  // TODO: Add extra initialization here
+  
+  return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
 // If you add a minimize button to your dialog, you will need the code below
@@ -143,34 +143,34 @@ BOOL CSETUPDlg::OnInitDialog()
 
 BOOL CSETUPDlg::OnPaint()
 {
-	if (IsIconic())
-	{
-		CMyPaintDC dc(m_hWnd); // device context for painting
+  if (IsIconic())
+  {
+    CMyPaintDC dc(m_hWnd); // device context for painting
 
-		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+    SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// Center icon in client rectangle
-		int cxIcon = GetSystemMetrics(SM_CXICON);
-		int cyIcon = GetSystemMetrics(SM_CYICON);
-		CRect rect;
-		GetClientRect(&rect);
-		int x = (rect.Width() - cxIcon + 1) / 2;
-		int y = (rect.Height() - cyIcon + 1) / 2;
+    // Center icon in client rectangle
+    int cxIcon = GetSystemMetrics(SM_CXICON);
+    int cyIcon = GetSystemMetrics(SM_CYICON);
+    CRect rect;
+    GetClientRect(&rect);
+    int x = (rect.Width() - cxIcon + 1) / 2;
+    int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Draw the icon
-		dc.DrawIcon(x, y, m_hIcon);
+    // Draw the icon
+    dc.DrawIcon(x, y, m_hIcon);
 
     return TRUE;
-	}
-	else
-	{
+  }
+  else
+  {
     return FALSE;
-	}
+  }
 }
 
 // The system calls this to obtain the cursor to display while the user drags
 //  the minimized window.
 HCURSOR CSETUPDlg::OnQueryDragIcon()
 {
-	return (HCURSOR) m_hIcon;
+  return (HCURSOR) m_hIcon;
 }

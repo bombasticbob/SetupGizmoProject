@@ -24,10 +24,10 @@
 #endif // _MSC_VER >= 1000
 
 #ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
+  #error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"		// main symbols
+#include "resource.h"   // main symbols
 
 // KEY_ALL_ACCESS works only if administrator is accessing HKLM
 // KEY_POWERUSER_ACCESS works if not admin
@@ -43,14 +43,14 @@
 class CSetupGizApp : public CWinApp
 {
 public:
-	CSetupGizApp();
+  CSetupGizApp();
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CSetupGizApp)
-	public:
-	virtual BOOL InitInstance();
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CSetupGizApp)
+  public:
+  virtual BOOL InitInstance();
+  //}}AFX_VIRTUAL
 
 // Implementation
 
@@ -62,11 +62,11 @@ public:
 
   BOOL ValidateAuthCode(LPCSTR szAuthCode = NULL, LPCSTR szAuthCompany = NULL);
 
-	//{{AFX_MSG(CSetupGizApp)
-		// NOTE - the ClassWizard will add and remove member functions here.
-		//    DO NOT EDIT what you see in these blocks of generated code !
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  //{{AFX_MSG(CSetupGizApp)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //    DO NOT EDIT what you see in these blocks of generated code !
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 };
 
 extern CSetupGizApp theApp;

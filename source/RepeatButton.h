@@ -32,7 +32,7 @@ class CRepeatButton : public CButton
 {
 // Construction
 public:
-	CRepeatButton();
+  CRepeatButton();
 
 // Attributes
 public:
@@ -41,25 +41,25 @@ public:
 public:
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CRepeatButton)
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CRepeatButton)
+  //}}AFX_VIRTUAL
 
 // Implementation
 public:
-	virtual ~CRepeatButton();
+  virtual ~CRepeatButton();
 
-	// Generated message map functions
+  // Generated message map functions
 protected:
-	//{{AFX_MSG(CRepeatButton)
-	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
-	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
-	afx_msg void OnKillFocus(CWnd* pNewWnd);
-	afx_msg void OnTimer(UINT nIDEvent);
-	//}}AFX_MSG
+  //{{AFX_MSG(CRepeatButton)
+  afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+  afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+  afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
+  afx_msg void OnKillFocus(CWnd* pNewWnd);
+  afx_msg void OnTimer(UINT nIDEvent);
+  //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+  DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

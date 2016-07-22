@@ -24,10 +24,10 @@
 #endif // _MSC_VER >= 1000
 
 //#ifndef __AFXWIN_H__
-//	#error include 'stdafx.h' before including this file for PCH
+//  #error include 'stdafx.h' before including this file for PCH
 //#endif
 
-#include "resource.h"		// main symbols
+#include "resource.h"   // main symbols
 
 // KEY_ALL_ACCESS works only if administrator is accessing HKLM
 // KEY_POWERUSER_ACCESS works if not admin
@@ -45,17 +45,17 @@ class CMainFrame;
 class CSETUPApp : public CMyApp//CWinApp
 {
 public:
-	CSETUPApp();
+  CSETUPApp();
 
   CMainFrame *m_pMyFrameWnd;
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CSETUPApp)
-	public:
-	virtual BOOL InitInstance();
-	virtual int ExitInstance();
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CSETUPApp)
+  public:
+  virtual BOOL InitInstance();
+  virtual int ExitInstance();
+  //}}AFX_VIRTUAL
 
   BOOL m_bIsNT;                      // TRUE for NT, FALSE for 95/98
   DWORD m_dwMajorVer, m_dwMinorVer;  // major/minor version
@@ -171,11 +171,11 @@ public:
 
 // Implementation
 
-	//{{AFX_MSG(CSETUPApp)
-		// NOTE - the ClassWizard will add and remove member functions here.
-		//    DO NOT EDIT what you see in these blocks of generated code !
-	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+  //{{AFX_MSG(CSETUPApp)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //    DO NOT EDIT what you see in these blocks of generated code !
+  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
   virtual int Run();
   virtual int DoMessageBox(LPCTSTR lpszPrompt, UINT nType, UINT nIDPrompt);
 };

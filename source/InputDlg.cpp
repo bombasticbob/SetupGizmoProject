@@ -31,29 +31,29 @@ static char THIS_FILE[] = __FILE__;
 
 
 CInputDlg::CInputDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CInputDlg::IDD, pParent)
+  : CDialog(CInputDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CInputDlg)
-	m_csCaption = _T("");
-	m_csInput = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CInputDlg)
+  m_csCaption = _T("");
+  m_csInput = _T("");
+  //}}AFX_DATA_INIT
 }
 
 
 void CInputDlg::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CInputDlg)
-	DDX_Text(pDX, IDC_CAPTION, m_csCaption);
-	DDX_Text(pDX, IDC_INPUT, m_csInput);
-	//}}AFX_DATA_MAP
+  CDialog::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CInputDlg)
+  DDX_Text(pDX, IDC_CAPTION, m_csCaption);
+  DDX_Text(pDX, IDC_INPUT, m_csInput);
+  //}}AFX_DATA_MAP
 }
 
 
 BEGIN_MESSAGE_MAP(CInputDlg, CDialog)
-	//{{AFX_MSG_MAP(CInputDlg)
-	ON_BN_CLICKED(IDHELP, OnHelp)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CInputDlg)
+  ON_BN_CLICKED(IDHELP, OnHelp)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -61,12 +61,12 @@ END_MESSAGE_MAP()
 
 BOOL CInputDlg::OnInitDialog() 
 {
-	CDialog::OnInitDialog();
-	
+  CDialog::OnInitDialog();
+  
   SetWindowText(m_csTitle);
-	
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 void CInputDlg::OnOK() 
@@ -74,13 +74,13 @@ void CInputDlg::OnOK()
   UpdateData(1);
 
   // TODO:  validate?
-	
-	CDialog::OnOK();
+  
+  CDialog::OnOK();
 }
 
 void CInputDlg::OnCancel() 
 {
-	CDialog::OnCancel();
+  CDialog::OnCancel();
 }
 
 void CInputDlg::OnHelp() 

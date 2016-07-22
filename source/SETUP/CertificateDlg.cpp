@@ -30,7 +30,7 @@
 
 
 CCertificateDlg::CCertificateDlg(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CCertificateDlg::IDD, hParent)
+  : CMyDialogBaseClass(CCertificateDlg::IDD, hParent)
 {
 }
 

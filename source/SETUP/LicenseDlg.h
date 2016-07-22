@@ -34,11 +34,11 @@ class CLicenseDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CLicenseDlg(HWND hParent = NULL);   // standard constructor
+  CLicenseDlg(HWND hParent = NULL);   // standard constructor
   ~CLicenseDlg();
 
-	enum { IDD = IDD_LICENSE };
-	CString	m_csLicense;
+  enum { IDD = IDD_LICENSE };
+  CString m_csLicense;
   DWORD m_dwRTFPos;  // used while reading RTF text for license
 
   HMODULE m_hLib;  // library handle for RICHED32.DLL (valid on '95 and later)

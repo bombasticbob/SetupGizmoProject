@@ -25,7 +25,7 @@ class CThermometer : public CMySubClassWindow
 {
 // Construction
 public:
-	CThermometer();
+  CThermometer();
 
 // Attributes
 public:
@@ -34,20 +34,20 @@ public:
 public:
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CThermometer)
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CThermometer)
+  //}}AFX_VIRTUAL
 
 // Implementation
 public:
-	virtual ~CThermometer();
+  virtual ~CThermometer();
 
-	// Generated message map functions
+  // Generated message map functions
 protected:
-	//{{AFX_MSG(CThermometer)
-	BOOL OnEraseBkgnd(HDC hDC);
-	void OnPaint();
-	//}}AFX_MSG
+  //{{AFX_MSG(CThermometer)
+  BOOL OnEraseBkgnd(HDC hDC);
+  void OnPaint();
+  //}}AFX_MSG
 
   LRESULT OnSetText(WPARAM wParam, LPARAM lParam);
 

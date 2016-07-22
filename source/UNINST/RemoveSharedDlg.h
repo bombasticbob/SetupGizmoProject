@@ -33,11 +33,11 @@ class CRemoveSharedDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CRemoveSharedDlg(HWND hParent = NULL);   // standard constructor
+  CRemoveSharedDlg(HWND hParent = NULL);   // standard constructor
 
-	enum { IDD = IDD_REMOVE_SHARED };
-	CString	m_csFileName;
-	CString	m_csMessage;
+  enum { IDD = IDD_REMOVE_SHARED };
+  CString m_csFileName;
+  CString m_csMessage;
 
 // Implementation
 protected:
@@ -45,10 +45,10 @@ protected:
   virtual BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
   void Update(BOOL bSaveFlag);
 
-	void OnYesToAll();
-	virtual void OnCancel();
-	void OnNo();
-	void OnYes();
+  void OnYesToAll();
+  virtual void OnCancel();
+  void OnNo();
+  void OnYes();
 
 };
 

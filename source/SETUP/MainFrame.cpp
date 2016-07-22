@@ -257,13 +257,13 @@ LRESULT CMainFrame::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 //
 //BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
-//	//{{AFX_MSG_MAP(CMainFrame)
-//	ON_WM_ERASEBKGND()
-//	ON_WM_CREATE()
-//	ON_WM_PAINT()
-//	ON_WM_ENDSESSION()
-//	ON_WM_QUERYENDSESSION()
-//	//}}AFX_MSG_MAP
+//  //{{AFX_MSG_MAP(CMainFrame)
+//  ON_WM_ERASEBKGND()
+//  ON_WM_CREATE()
+//  ON_WM_PAINT()
+//  ON_WM_ENDSESSION()
+//  ON_WM_QUERYENDSESSION()
+//  //}}AFX_MSG_MAP
 //END_MESSAGE_MAP()
 
 
@@ -272,7 +272,7 @@ LRESULT CMainFrame::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 //BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs) 
 //{
-//	BOOL rval = CFrameWnd::PreCreateWindow(cs);
+//  BOOL rval = CFrameWnd::PreCreateWindow(cs);
 //
 //  cs.style = WS_POPUP | WS_MAXIMIZE | WS_VISIBLE;
 //  cs.dwExStyle = WS_EX_LEFT;
@@ -285,7 +285,7 @@ BOOL CMainFrame::Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwS
 {
 static const char szWndClass[]="SFT179862A1179E11D2A115004033901FF3";
 
-	// TODO: Add your specialized code here and/or call the base class
+  // TODO: Add your specialized code here and/or call the base class
 
 //  CString csWndClass = AfxRegisterWndClass(CS_CLASSDC, NULL, NULL, theApp.LoadIcon(IDR_MAINFRAME));
 
@@ -313,7 +313,7 @@ static const char szWndClass[]="SFT179862A1179E11D2A115004033901FF3";
   int iWidth = GetSystemMetrics(SM_CXSCREEN);
   int iHeight = GetSystemMetrics(SM_CYSCREEN);
 
-//	return CWnd::Create(lpszClassName, lpszWindowName, dwStyle, rect, pParentWnd, nID, pContext);
+//  return CWnd::Create(lpszClassName, lpszWindowName, dwStyle, rect, pParentWnd, nID, pContext);
 
   BOOL bShowFlag = TRUE;
 
@@ -360,7 +360,7 @@ BOOL CMainFrame::OnEraseBkgnd(HDC hDC)
   CDC dc;
 
   dc.CreateCompatibleDC(&dcOrig);
-	dc.SaveDC();
+  dc.SaveDC();
 
   CRect rct, rctClip;
 
@@ -491,7 +491,7 @@ BOOL CMainFrame::OnEraseBkgnd(HDC hDC)
 
   dc.RestoreDC(-1);
   dc.DeleteDC();
-	
+  
 //  ValidateRect(NULL);  // no need to paint, now
 
   dcOrig.RestoreDC(-1);
@@ -508,7 +508,7 @@ void CMainFrame::OnPaint()
     return;  // don't paint
 
   CMyPaintDC dc(m_hWnd); // device context for painting
-	
+  
   CDC *pDC = &dc;  // for coding convenience
 
   CRect rct;
@@ -658,10 +658,10 @@ void CMainFrame::OnPaint()
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct) 
 {
-//	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
-//		return -1;
-	
-	// find out how high the window is, and create an appropriate bitmap for it
+//  if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
+//    return -1;
+  
+  // find out how high the window is, and create an appropriate bitmap for it
 
   CRect rct;
   GetClientRect(&rct);  // should be same as window
@@ -863,7 +863,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
   EndWaitCursor();
 
-	return 0;
+  return 0;
 }
 
 
@@ -879,14 +879,14 @@ void CMainFrame::OnEndSession(BOOL bEnding)
                  MB_SETFOREGROUND | MB_OK | MB_ICONHAND | MB_TOPMOST);
   }
 
-//	CFrameWnd::OnEndSession(bEnding);  // this calls 'ExitInstance' for me
+//  CFrameWnd::OnEndSession(bEnding);  // this calls 'ExitInstance' for me
 }
 
 BOOL CMainFrame::OnQueryEndSession() 
 {
 // NOTE:  calling this can cause trouble!!!
-//	if(!CFrameWnd::OnQueryEndSession())
-//		return FALSE;
+//  if(!CFrameWnd::OnQueryEndSession())
+//    return FALSE;
 
   theApp.m_bRebootFlag = TRUE;  // if someone/thing attempts to restart
                                 // I most likely need to reboot...

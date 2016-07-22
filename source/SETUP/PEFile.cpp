@@ -97,8 +97,8 @@ LPCVOID WINAPI IsSelfExtracting(LPCVOID lpSelf, DWORD cbSelf)
 //            PIMAGE_RESOURCE_DIRECTORY pdrType = (PIMAGE_RESOURCE_DIRECTORY)
 //              (((int)prdRoot + (int)(prde->OffsetToData & 0x7fffffff)));
 //
-////	          /* mask off most significant bit of the data offset */
-////	          prdType = (PIMAGE_RESOURCE_DIRECTORY)
+////            /* mask off most significant bit of the data offset */
+////            prdType = (PIMAGE_RESOURCE_DIRECTORY)
 ////              ((DWORD)prdType ^ 0x80000000);  // why???
 //
 //            PIMAGE_RESOURCE_DIRECTORY_ENTRY prde2 = (PIMAGE_RESOURCE_DIRECTORY_ENTRY)
@@ -188,9 +188,9 @@ LPCVOID WINAPI IsSelfExtracting(LPCVOID lpSelf, DWORD cbSelf)
 #if 0
 
 
-BOOL	WINAPI GetDosHeader (LPVOID, PIMAGE_DOS_HEADER);
-BOOL	WINAPI GetPEFileHeader (LPVOID, PIMAGE_FILE_HEADER);
-BOOL	WINAPI GetPEOptionalHeader (LPVOID, PIMAGE_OPTIONAL_HEADER);
+BOOL  WINAPI GetDosHeader (LPVOID, PIMAGE_DOS_HEADER);
+BOOL  WINAPI GetPEFileHeader (LPVOID, PIMAGE_FILE_HEADER);
+BOOL  WINAPI GetPEOptionalHeader (LPVOID, PIMAGE_OPTIONAL_HEADER);
 
 
 

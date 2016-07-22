@@ -17,8 +17,8 @@
 
 
 //  source file that includes just the standard includes
-//	AutoRun.pch will be the pre-compiled header
-//	stdafx.obj will contain the pre-compiled type information
+//  AutoRun.pch will be the pre-compiled header
+//  stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"
 

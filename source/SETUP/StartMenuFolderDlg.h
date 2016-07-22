@@ -34,11 +34,11 @@ class CStartMenuFolderDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CStartMenuFolderDlg(HWND hParent = NULL);   // standard constructor
+  CStartMenuFolderDlg(HWND hParent = NULL);   // standard constructor
 
-	enum { IDD = IDD_STARTMENU_FOLDER };
-	BOOL	m_bAllUsers;
-	CString	m_csFolderName;
+  enum { IDD = IDD_STARTMENU_FOLDER };
+  BOOL  m_bAllUsers;
+  CString m_csFolderName;
 
   BOOL m_bHasUserProfile; // for '98 must check registry first
                           // always true for 'NT.
@@ -60,8 +60,8 @@ protected:
   void UpdateData(BOOL bSaveFlag);
   virtual BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
-	void OnOK();
-	void OnCancel();
+  void OnOK();
+  void OnCancel();
   void OnBrowse();
 
 };

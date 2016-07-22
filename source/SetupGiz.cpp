@@ -129,11 +129,11 @@ extern "C" BOOL STDAPICALLTYPE PathStripToRoot(LPTSTR pszPath)
 // CSetupGizApp
 
 BEGIN_MESSAGE_MAP(CSetupGizApp, CWinApp)
-	//{{AFX_MSG_MAP(CSetupGizApp)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code!
-	//}}AFX_MSG
-	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
+  //{{AFX_MSG_MAP(CSetupGizApp)
+    // NOTE - the ClassWizard will add and remove mapping macros here.
+    //    DO NOT EDIT what you see in these blocks of generated code!
+  //}}AFX_MSG
+  ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -141,8 +141,8 @@ END_MESSAGE_MAP()
 
 CSetupGizApp::CSetupGizApp()
 {
-	// TODO: add construction code here,
-	// Place all significant initialization in InitInstance
+  // TODO: add construction code here,
+  // Place all significant initialization in InitInstance
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -161,16 +161,16 @@ BOOL CSetupGizApp::InitInstance()
 
   AfxEnableControlContainer();
 
-	// Standard initialization
-	// If you are not using these features and wish to reduce the size
-	//  of your final executable, you should remove from the following
-	//  the specific initialization routines you do not need.
+  // Standard initialization
+  // If you are not using these features and wish to reduce the size
+  //  of your final executable, you should remove from the following
+  //  the specific initialization routines you do not need.
 
-//	Enable3dControlsStatic();	// Call this when linking to MFC statically
+//  Enable3dControlsStatic(); // Call this when linking to MFC statically
 
   BOOL bValidate = ValidateAuthCode();
 
-	CSetupGizDlg dlg;
+  CSetupGizDlg dlg;
   m_pMainWnd = NULL;  // make sure it's NULL, initially
 
   CString csTemp, csTemp2;
@@ -491,7 +491,7 @@ show_nag_dialog:
 
   bValidate = ValidateAuthCode();  // once more so that everything "lines up" properly
 
-	m_pMainWnd = &dlg;  // to avoid problems, do THIS *NOW*
+  m_pMainWnd = &dlg;  // to avoid problems, do THIS *NOW*
 
   if(dlg.m_csFileName.GetLength())
   {
@@ -564,17 +564,17 @@ show_nag_dialog:
   }
   else
   {
-	  int nResponse = dlg.DoModal();
-	  if (nResponse == IDOK)
-	  {
-		  // TODO: Place code here to handle when the dialog is
-		  //  dismissed with OK
-	  }
-	  else if (nResponse == IDCANCEL)
-	  {
-		  // TODO: Place code here to handle when the dialog is
-		  //  dismissed with Cancel
-	  }
+    int nResponse = dlg.DoModal();
+    if (nResponse == IDOK)
+    {
+      // TODO: Place code here to handle when the dialog is
+      //  dismissed with OK
+    }
+    else if (nResponse == IDCANCEL)
+    {
+      // TODO: Place code here to handle when the dialog is
+      //  dismissed with Cancel
+    }
   }
 
   if(dlg.m_hWnd)
@@ -582,9 +582,9 @@ show_nag_dialog:
 
   m_pMainWnd = NULL;  // make *SURE* I do this!  If not, it may crash on exit
 
-	// Since the dialog has been closed, return FALSE so that we exit the
-	//  application, rather than start the application's message pump.
-	return FALSE;
+  // Since the dialog has been closed, return FALSE so that we exit the
+  //  application, rather than start the application's message pump.
+  return FALSE;
 }
 
 HKEY CSetupGizApp::GetRegistryKey(BOOL bReadOnly)

@@ -34,7 +34,7 @@ class COptionListBox : public CMySubClassWindow
 {
 // Construction
 public:
-	COptionListBox();
+  COptionListBox();
 
   virtual LRESULT MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
@@ -74,14 +74,14 @@ protected:
 
 // Implementation
 public:
-	virtual ~COptionListBox();
+  virtual ~COptionListBox();
 
-	// Generated message map functions
+  // Generated message map functions
 protected:
-	LRESULT OnLButtonDown(UINT nFlags, CPoint point);
-	LRESULT OnLButtonUp(UINT nFlags, CPoint point);
-	LRESULT OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
-	LRESULT OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
+  LRESULT OnLButtonDown(UINT nFlags, CPoint point);
+  LRESULT OnLButtonUp(UINT nFlags, CPoint point);
+  LRESULT OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+  LRESULT OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 
 };
 

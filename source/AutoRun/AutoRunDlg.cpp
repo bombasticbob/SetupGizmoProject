@@ -33,10 +33,10 @@ static char THIS_FILE[] = __FILE__;
 CAutoRunDlg::CAutoRunDlg(HWND hParent /*=NULL*/)
 : CMyDialogBaseClass(CAutoRunDlg::IDD, hParent)
 {
-	//{{AFX_DATA_INIT(CAutoRunDlg)
-		// NOTE: the ClassWizard will add member initialization here
-	//}}AFX_DATA_INIT
-	m_hIcon = MyGetApp()->LoadIcon(IDR_MAINFRAME);
+  //{{AFX_DATA_INIT(CAutoRunDlg)
+    // NOTE: the ClassWizard will add member initialization here
+  //}}AFX_DATA_INIT
+  m_hIcon = MyGetApp()->LoadIcon(IDR_MAINFRAME);
 
   HBITMAP hbmpBK = (HBITMAP)::LoadImage(0, "AUTORUN.BMP", IMAGE_BITMAP, 0, 0,
                                         LR_LOADFROMFILE | LR_DEFAULTCOLOR);
@@ -65,13 +65,13 @@ CAutoRunDlg::CAutoRunDlg(HWND hParent /*=NULL*/)
 
 void CAutoRunDlg::UpdateData(BOOL bSaveFlag)
 {
-//	CDialog::DoDataExchange(pDX);
-//	//{{AFX_DATA_MAP(CAutoRunDlg)
-//	DDX_Control(pDX, IDC_BACKGROUND, m_wndBackground);
-//	DDX_Control(pDX, IDRETRY, m_wndExplore);
-//	DDX_Control(pDX, IDOK, m_wndInstall);
-//	DDX_Control(pDX, IDCANCEL, m_wndExit);
-//	//}}AFX_DATA_MAP
+//  CDialog::DoDataExchange(pDX);
+//  //{{AFX_DATA_MAP(CAutoRunDlg)
+//  DDX_Control(pDX, IDC_BACKGROUND, m_wndBackground);
+//  DDX_Control(pDX, IDRETRY, m_wndExplore);
+//  DDX_Control(pDX, IDOK, m_wndInstall);
+//  DDX_Control(pDX, IDCANCEL, m_wndExit);
+//  //}}AFX_DATA_MAP
 }
 
 BOOL CAutoRunDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
@@ -123,12 +123,12 @@ BOOL CAutoRunDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 
 //BEGIN_MESSAGE_MAP(CAutoRunDlg, CDialog)
-//	//{{AFX_MSG_MAP(CAutoRunDlg)
-//	ON_WM_PAINT()
-//	ON_WM_QUERYDRAGICON()
-//	ON_BN_CLICKED(IDOK, OnInstall)
-//	ON_BN_CLICKED(IDRETRY, OnExplore)
-//	//}}AFX_MSG_MAP
+//  //{{AFX_MSG_MAP(CAutoRunDlg)
+//  ON_WM_PAINT()
+//  ON_WM_QUERYDRAGICON()
+//  ON_BN_CLICKED(IDOK, OnInstall)
+//  ON_BN_CLICKED(IDRETRY, OnExplore)
+//  //}}AFX_MSG_MAP
 //END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -136,19 +136,19 @@ BOOL CAutoRunDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 BOOL CAutoRunDlg::OnInitDialog()
 {
-	SetIcon(m_hIcon, TRUE);			// Set big icon
-	SetIcon(m_hIcon, FALSE);		// Set small icon
+  SetIcon(m_hIcon, TRUE);     // Set big icon
+  SetIcon(m_hIcon, FALSE);    // Set small icon
 
   m_wndExit.Attach(::GetDlgItem(m_hWnd, IDCANCEL));
   m_wndExplore.Attach(::GetDlgItem(m_hWnd, IDRETRY));
   m_wndInstall.Attach(::GetDlgItem(m_hWnd, IDOK));
   m_wndBackground.Attach(::GetDlgItem(m_hWnd, IDC_BACKGROUND));
-//	DDX_Control(pDX, IDC_BACKGROUND, m_wndBackground);
-//	DDX_Control(pDX, IDRETRY, m_wndExplore);
-//	DDX_Control(pDX, IDOK, m_wndInstall);
-//	DDX_Control(pDX, IDCANCEL, m_wndExit);
+//  DDX_Control(pDX, IDC_BACKGROUND, m_wndBackground);
+//  DDX_Control(pDX, IDRETRY, m_wndExplore);
+//  DDX_Control(pDX, IDOK, m_wndInstall);
+//  DDX_Control(pDX, IDCANCEL, m_wndExit);
 
-	return TRUE;  // return TRUE  unless you set the focus to a control
+  return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
 // If you add a minimize button to your dialog, you will need the code below
@@ -157,38 +157,38 @@ BOOL CAutoRunDlg::OnInitDialog()
 
 BOOL CAutoRunDlg::OnPaint() 
 {
-	if(IsIconic())
-	{
-		CMyPaintDC dc(m_hWnd); // device context for painting
+  if(IsIconic())
+  {
+    CMyPaintDC dc(m_hWnd); // device context for painting
 
-		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+    SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// Center icon in client rectangle
-		int cxIcon = GetSystemMetrics(SM_CXICON);
-		int cyIcon = GetSystemMetrics(SM_CYICON);
-		CRect rect;
-		GetClientRect(&rect);
-		int x = (rect.Width() - cxIcon + 1) / 2;
-		int y = (rect.Height() - cyIcon + 1) / 2;
+    // Center icon in client rectangle
+    int cxIcon = GetSystemMetrics(SM_CXICON);
+    int cyIcon = GetSystemMetrics(SM_CYICON);
+    CRect rect;
+    GetClientRect(&rect);
+    int x = (rect.Width() - cxIcon + 1) / 2;
+    int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Draw the icon
-		dc.DrawIcon(x, y, m_hIcon);
+    // Draw the icon
+    dc.DrawIcon(x, y, m_hIcon);
     return TRUE;
   }
-	else
-	{
-		return FALSE;
-	}
+  else
+  {
+    return FALSE;
+  }
 }
 
 HCURSOR CAutoRunDlg::OnQueryDragIcon()
 {
-	return((HCURSOR) m_hIcon);
+  return((HCURSOR) m_hIcon);
 }
 
 void CAutoRunDlg::OnCancel() 
 {
-	EndDialog(IDCANCEL);
+  EndDialog(IDCANCEL);
 }
 
 BOOL CAutoRunDlg::RunApplication(LPCSTR szCommand)

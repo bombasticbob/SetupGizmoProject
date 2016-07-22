@@ -46,15 +46,15 @@ IMPLEMENT_DYNCREATE(CPage1, CPropertyPage)
 
 CPage1::CPage1() : CPropertyPage(CPage1::IDD)
 {
-	//{{AFX_DATA_INIT(CPage1)
-	m_csAppName = _T("");
-	m_csCompanyName = _T("");
-	m_csSourcePath = _T("");
-	m_csStartMessage = _T("");
-	m_csDestPath = _T("");
-	m_csLicenseFile = _T("");
+  //{{AFX_DATA_INIT(CPage1)
+  m_csAppName = _T("");
+  m_csCompanyName = _T("");
+  m_csSourcePath = _T("");
+  m_csStartMessage = _T("");
+  m_csDestPath = _T("");
+  m_csLicenseFile = _T("");
   m_csCertFiles = _T("");
-	//}}AFX_DATA_INIT
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -74,9 +74,9 @@ void CPage1::DoClear()
 
   m_csStartMessage = "Welcome to SETUP!";
 
-	m_csSourcePath = _T("");
-	m_csDestPath = _T("");
-	m_csLicenseFile = _T("");
+  m_csSourcePath = _T("");
+  m_csDestPath = _T("");
+  m_csLicenseFile = _T("");
 
 
   // ADVANCED SETTINGS
@@ -90,16 +90,16 @@ void CPage1::DoClear()
 
 void CPage1::DoDataExchange(CDataExchange* pDX)
 {
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage1)
-	DDX_Text(pDX, IDC_APP_NAME, m_csAppName);
-	DDX_Text(pDX, IDC_COMPANY_NAME, m_csCompanyName);
-	DDX_Text(pDX, IDC_SOURCE_PATH, m_csSourcePath);
-	DDX_Text(pDX, IDC_START_MESSAGE, m_csStartMessage);
-	DDX_Text(pDX, IDC_DEST_PATH, m_csDestPath);
-	DDX_Text(pDX, IDC_LICENSE_FILE, m_csLicenseFile);
-	DDX_Text(pDX, IDC_CERT_FILES, m_csCertFiles);
-	//}}AFX_DATA_MAP
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage1)
+  DDX_Text(pDX, IDC_APP_NAME, m_csAppName);
+  DDX_Text(pDX, IDC_COMPANY_NAME, m_csCompanyName);
+  DDX_Text(pDX, IDC_SOURCE_PATH, m_csSourcePath);
+  DDX_Text(pDX, IDC_START_MESSAGE, m_csStartMessage);
+  DDX_Text(pDX, IDC_DEST_PATH, m_csDestPath);
+  DDX_Text(pDX, IDC_LICENSE_FILE, m_csLicenseFile);
+  DDX_Text(pDX, IDC_CERT_FILES, m_csCertFiles);
+  //}}AFX_DATA_MAP
 
   CWnd *pCtrl = GetDlgItem(IDC_TEST_LIC);
 
@@ -119,15 +119,15 @@ void CPage1::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CPage1, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage1)
-	ON_BN_CLICKED(IDC_BROWSE_DEST, OnBrowseDest)
-	ON_BN_CLICKED(IDC_BROWSE, OnBrowse)
-	ON_BN_CLICKED(IDC_BROWSE_LICENSE, OnBrowseLicense)
-	ON_BN_CLICKED(IDC_BROWSE_CERT, OnBrowseCert)
-	ON_BN_CLICKED(IDC_TEST, OnTest)
-	ON_BN_CLICKED(IDC_OPEN, OnOpen)
-	ON_BN_CLICKED(IDC_ADVANCED, OnAdvanced)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage1)
+  ON_BN_CLICKED(IDC_BROWSE_DEST, OnBrowseDest)
+  ON_BN_CLICKED(IDC_BROWSE, OnBrowse)
+  ON_BN_CLICKED(IDC_BROWSE_LICENSE, OnBrowseLicense)
+  ON_BN_CLICKED(IDC_BROWSE_CERT, OnBrowseCert)
+  ON_BN_CLICKED(IDC_TEST, OnTest)
+  ON_BN_CLICKED(IDC_OPEN, OnOpen)
+  ON_BN_CLICKED(IDC_ADVANCED, OnAdvanced)
+  //}}AFX_MSG_MAP
   ON_BN_CLICKED(IDC_TEST_LIC, OnTestLic)
 END_MESSAGE_MAP()
 
@@ -148,14 +148,14 @@ BOOL CPage1::OnSetActive()
 
   UpdateData(0);
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage1::OnKillActive() 
 {
   UpdateData(1);
-	
-	return CPropertyPage::OnKillActive();
+  
+  return CPropertyPage::OnKillActive();
 }
 
 
@@ -248,7 +248,7 @@ LRESULT CPage1::OnWizardNext()
   UpdateData(1);
 
   // validate data
-	
+  
   if(!m_csSourcePath.GetLength())
   {
     AfxMessageBox("You must enter a valid source path",
@@ -370,7 +370,7 @@ LRESULT CPage1::OnWizardNext()
     pSheet->UpdatePage1Stuff(); // updates from internal arrays
   }
 
-	return(CPropertyPage::OnWizardNext());
+  return(CPropertyPage::OnWizardNext());
 }
 
 void CPage1::OnBrowseDest() 

@@ -33,36 +33,36 @@ class CSetupGizDlg;
 
 class CPage2 : public CPropertyPage
 {
-	DECLARE_DYNCREATE(CPage2)
+  DECLARE_DYNCREATE(CPage2)
 
 // Construction
 public:
-	CPage2();
-	~CPage2();
+  CPage2();
+  ~CPage2();
 
 // Dialog Data
-	//{{AFX_DATA(CPage2)
-	enum { IDD = IDD_PAGE_2 };
-	CRepeatButton	m_btnMoveUp;
-	CRepeatButton	m_btnMoveDown;
-	CListBox	m_wndSourceList;
-	CListBox	m_wndDestList;
-	BOOL	m_bShowDirs;
-	//}}AFX_DATA
+  //{{AFX_DATA(CPage2)
+  enum { IDD = IDD_PAGE_2 };
+  CRepeatButton m_btnMoveUp;
+  CRepeatButton m_btnMoveDown;
+  CListBox  m_wndSourceList;
+  CListBox  m_wndDestList;
+  BOOL  m_bShowDirs;
+  //}}AFX_DATA
 
   void DoClear();
 
 // Overrides
-	// ClassWizard generate virtual function overrides
-	//{{AFX_VIRTUAL(CPage2)
-	public:
-	virtual BOOL OnKillActive();
-	virtual BOOL OnSetActive();
-	virtual LRESULT OnWizardBack();
-	virtual LRESULT OnWizardNext();
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generate virtual function overrides
+  //{{AFX_VIRTUAL(CPage2)
+  public:
+  virtual BOOL OnKillActive();
+  virtual BOOL OnSetActive();
+  virtual LRESULT OnWizardBack();
+  virtual LRESULT OnWizardNext();
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
@@ -70,16 +70,16 @@ protected:
   void FillSourceListBox(CSetupGizDlg *pSheet, LPCSTR szPath);
   BOOL SynchronizeDestFiles();
 
-	// Generated message map functions
-	//{{AFX_MSG(CPage2)
-	afx_msg void OnGozinta();
-	afx_msg void OnGozouta();
-	afx_msg void OnMoveDown();
-	afx_msg void OnMoveUp();
-	afx_msg void OnDblclkSourceList();
-	afx_msg void OnShowdirs();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CPage2)
+  afx_msg void OnGozinta();
+  afx_msg void OnGozouta();
+  afx_msg void OnMoveDown();
+  afx_msg void OnMoveUp();
+  afx_msg void OnDblclkSourceList();
+  afx_msg void OnShowdirs();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 
 };
 

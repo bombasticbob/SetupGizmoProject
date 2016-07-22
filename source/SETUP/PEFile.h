@@ -22,32 +22,32 @@
 #ifndef _PEFILE_H_
 #define _PEFILE_H_
 
-#define SIZE_OF_NT_SIGNATURE	sizeof (DWORD)
+#define SIZE_OF_NT_SIGNATURE  sizeof (DWORD)
 
 
 /* global macros to define header offsets into file */
-/* offset to PE file signature				       */
-#define NTSIGNATURE(a) ((LPVOID)((BYTE *)a		     +	\
-			((PIMAGE_DOS_HEADER)a)->e_lfanew))
+/* offset to PE file signature               */
+#define NTSIGNATURE(a) ((LPVOID)((BYTE *)a         +  \
+      ((PIMAGE_DOS_HEADER)a)->e_lfanew))
 
 /* DOS header identifies the NT PEFile signature dword
-   the PEFILE header exists just after that dword	       */
-#define PEFHDROFFSET(a) ((LPVOID)((BYTE *)a		     +	\
-			 ((PIMAGE_DOS_HEADER)a)->e_lfanew    +	\
-			 SIZE_OF_NT_SIGNATURE))
+   the PEFILE header exists just after that dword        */
+#define PEFHDROFFSET(a) ((LPVOID)((BYTE *)a        +  \
+       ((PIMAGE_DOS_HEADER)a)->e_lfanew    +  \
+       SIZE_OF_NT_SIGNATURE))
 
 /* PE optional header is immediately after PEFile header       */
-#define OPTHDROFFSET(a) ((LPVOID)((BYTE *)a		     +	\
-			 ((PIMAGE_DOS_HEADER)a)->e_lfanew    +	\
-			 SIZE_OF_NT_SIGNATURE		     +	\
-			 sizeof (IMAGE_FILE_HEADER)))
+#define OPTHDROFFSET(a) ((LPVOID)((BYTE *)a        +  \
+       ((PIMAGE_DOS_HEADER)a)->e_lfanew    +  \
+       SIZE_OF_NT_SIGNATURE        +  \
+       sizeof (IMAGE_FILE_HEADER)))
 
 /* section headers are immediately after PE optional header    */
-#define SECHDROFFSET(a) ((LPVOID)((BYTE *)a		     +	\
-			 ((PIMAGE_DOS_HEADER)a)->e_lfanew    +	\
-			 SIZE_OF_NT_SIGNATURE		     +	\
-			 sizeof (IMAGE_FILE_HEADER)	     +	\
-			 sizeof (IMAGE_OPTIONAL_HEADER)))
+#define SECHDROFFSET(a) ((LPVOID)((BYTE *)a        +  \
+       ((PIMAGE_DOS_HEADER)a)->e_lfanew    +  \
+       SIZE_OF_NT_SIGNATURE        +  \
+       sizeof (IMAGE_FILE_HEADER)      +  \
+       sizeof (IMAGE_OPTIONAL_HEADER)))
 
 typedef struct tagImportDirectory
 {

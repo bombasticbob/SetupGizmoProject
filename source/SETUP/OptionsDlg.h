@@ -35,11 +35,11 @@ class COptionsDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	COptionsDlg(CStringArray *pList, const CStringArray *pPreSel);   // standard constructor
+  COptionsDlg(CStringArray *pList, const CStringArray *pPreSel);   // standard constructor
 
-	enum { IDD = IDD_OPTIONS };
-	COptionListBox m_wndOptionList;
-	CString	m_csOptionDesc;
+  enum { IDD = IDD_OPTIONS };
+  COptionListBox m_wndOptionList;
+  CString m_csOptionDesc;
 
   DWORD m_dwHeight;
   CStringArray *m_pList, m_acsDesc;
@@ -51,12 +51,12 @@ protected:
   void UpdateData(BOOL bSaveFlag);
   BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
-	void OnOK();
-	void OnCancel();
-	void OnSelchangeOptionList();
-	BOOL OnInitDialog();
-	BOOL OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
-	BOOL OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
+  void OnOK();
+  void OnCancel();
+  void OnSelchangeOptionList();
+  BOOL OnInitDialog();
+  BOOL OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
+  BOOL OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 
 };
 

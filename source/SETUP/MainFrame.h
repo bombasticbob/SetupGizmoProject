@@ -23,11 +23,11 @@
 class CMainFrame : public CMyWindowBaseClass //CFrameWnd
 {
 //protected:
-//	DECLARE_DYNCREATE(CMainFrame)
+//  DECLARE_DYNCREATE(CMainFrame)
 
 public:
-	CMainFrame();
-	virtual ~CMainFrame();
+  CMainFrame();
+  virtual ~CMainFrame();
 
 // Attributes
 public:
@@ -41,13 +41,13 @@ public:
 public:
 
 //// Overrides
-//	// ClassWizard generated virtual function overrides
-//	//{{AFX_VIRTUAL(CMainFrame)
-	public:
-	virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CMyWindowBaseClass* pParentWnd, UINT nID /*, CCreateContext* pContext = NULL*/);
-	protected:
-//	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
-//	//}}AFX_VIRTUAL
+//  // ClassWizard generated virtual function overrides
+//  //{{AFX_VIRTUAL(CMainFrame)
+  public:
+  virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CMyWindowBaseClass* pParentWnd, UINT nID /*, CCreateContext* pContext = NULL*/);
+  protected:
+//  virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+//  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
@@ -56,15 +56,15 @@ protected:
 
 
 
-//	// Generated message map functions
-//	//{{AFX_MSG(CMainFrame)
-	BOOL OnEraseBkgnd(HDC hDC);
-	int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	void OnPaint();
-	void OnEndSession(BOOL bEnding);
-	BOOL OnQueryEndSession();
-//	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+//  // Generated message map functions
+//  //{{AFX_MSG(CMainFrame)
+  BOOL OnEraseBkgnd(HDC hDC);
+  int OnCreate(LPCREATESTRUCT lpCreateStruct);
+  void OnPaint();
+  void OnEndSession(BOOL bEnding);
+  BOOL OnQueryEndSession();
+//  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

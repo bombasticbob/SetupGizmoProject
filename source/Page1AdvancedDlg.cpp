@@ -33,38 +33,38 @@ static char THIS_FILE[] = __FILE__;
 
 
 CPage1AdvancedDlg::CPage1AdvancedDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CPage1AdvancedDlg::IDD, pParent)
+  : CDialog(CPage1AdvancedDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CPage1AdvancedDlg)
-	m_csAppCommon = _T("");
-	m_csAppPath = _T("");
-	m_csStartMenu = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage1AdvancedDlg)
+  m_csAppCommon = _T("");
+  m_csAppPath = _T("");
+  m_csStartMenu = _T("");
+  //}}AFX_DATA_INIT
 }
 
 
 void CPage1AdvancedDlg::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage1AdvancedDlg)
-	DDX_Control(pDX, IDC_REMOVE, m_btnRemove);
-	DDX_Control(pDX, IDC_UPGRADE, m_wndUpgrade);
-	DDX_Text(pDX, IDC_APPCOMMON, m_csAppCommon);
-	DDX_Text(pDX, IDC_APPPATH, m_csAppPath);
-	DDX_Text(pDX, IDC_STARTMENU, m_csStartMenu);
-	//}}AFX_DATA_MAP
+  CDialog::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage1AdvancedDlg)
+  DDX_Control(pDX, IDC_REMOVE, m_btnRemove);
+  DDX_Control(pDX, IDC_UPGRADE, m_wndUpgrade);
+  DDX_Text(pDX, IDC_APPCOMMON, m_csAppCommon);
+  DDX_Text(pDX, IDC_APPPATH, m_csAppPath);
+  DDX_Text(pDX, IDC_STARTMENU, m_csStartMenu);
+  //}}AFX_DATA_MAP
 
   m_btnRemove.EnableWindow(m_wndUpgrade.GetCurSel() != LB_ERR);
 }
 
 
 BEGIN_MESSAGE_MAP(CPage1AdvancedDlg, CDialog)
-	//{{AFX_MSG_MAP(CPage1AdvancedDlg)
-	ON_BN_CLICKED(IDC_ADD, OnAdd)
-	ON_BN_CLICKED(IDC_REMOVE, OnRemove)
-	ON_BN_CLICKED(IDHELP, OnHelp)
-	ON_LBN_SELCHANGE(IDC_UPGRADE, OnSelchangeUpgrade)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage1AdvancedDlg)
+  ON_BN_CLICKED(IDC_ADD, OnAdd)
+  ON_BN_CLICKED(IDC_REMOVE, OnRemove)
+  ON_BN_CLICKED(IDHELP, OnHelp)
+  ON_LBN_SELCHANGE(IDC_UPGRADE, OnSelchangeUpgrade)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -72,7 +72,7 @@ END_MESSAGE_MAP()
 
 BOOL CPage1AdvancedDlg::OnInitDialog() 
 {
-	CDialog::OnInitDialog();
+  CDialog::OnInitDialog();
 
   int i1;
   for(i1=0; i1 < m_acsUpgrade.GetSize(); i1++)
@@ -82,13 +82,13 @@ BOOL CPage1AdvancedDlg::OnInitDialog()
 
   m_wndUpgrade.SetCurSel(0);  // just do it and ignore errors
 
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 void CPage1AdvancedDlg::OnOK() 
 {
-	UpdateData(1);
+  UpdateData(1);
 
   CString csUpper1 = m_csAppCommon;
   csUpper1.MakeUpper();
@@ -124,7 +124,7 @@ void CPage1AdvancedDlg::OnOK()
   }
 
 
-	CDialog::OnOK();
+  CDialog::OnOK();
 }
 
 void CPage1AdvancedDlg::OnAdd() 

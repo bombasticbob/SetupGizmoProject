@@ -30,27 +30,27 @@
 
 class CPage3B : public CPropertyPage
 {
-	DECLARE_DYNCREATE(CPage3B)
+  DECLARE_DYNCREATE(CPage3B)
 
 // Construction
 public:
-	CPage3B();
-	~CPage3B();
+  CPage3B();
+  ~CPage3B();
 
   void DoClear();
 
 
 // Dialog Data
-	//{{AFX_DATA(CPage3B)
-	enum { IDD = IDD_PAGE_3B };
-	CComboBox	m_wndIconFiles;
-	CListBox	m_wndIconList;
-	CListBox	m_wndAppList;
-	CString	m_csDesc;
-	CString	m_csFileName;
-	int		m_iShow;
-	CString	m_csParms;
-	//}}AFX_DATA
+  //{{AFX_DATA(CPage3B)
+  enum { IDD = IDD_PAGE_3B };
+  CComboBox m_wndIconFiles;
+  CListBox  m_wndIconList;
+  CListBox  m_wndAppList;
+  CString m_csDesc;
+  CString m_csFileName;
+  int   m_iShow;
+  CString m_csParms;
+  //}}AFX_DATA
 
   int m_iCurSel;             // current selection from 'App List'
 
@@ -65,36 +65,36 @@ public:
 
 
 // Overrides
-	// ClassWizard generate virtual function overrides
-	//{{AFX_VIRTUAL(CPage3B)
-	public:
-	virtual BOOL OnKillActive();
-	virtual BOOL OnSetActive();
-	virtual LRESULT OnWizardBack();
-	virtual LRESULT OnWizardNext();
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generate virtual function overrides
+  //{{AFX_VIRTUAL(CPage3B)
+  public:
+  virtual BOOL OnKillActive();
+  virtual BOOL OnSetActive();
+  virtual LRESULT OnWizardBack();
+  virtual LRESULT OnWizardNext();
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	// Generated message map functions
-	//{{AFX_MSG(CPage3B)
-	afx_msg void OnSelchangeAppList();
-	afx_msg void OnKillfocusFilename();
-	afx_msg void OnKillfocusDesc();
-	afx_msg void OnSelchangeIconList();
-	afx_msg void OnCloseupIconFiles();
-	afx_msg void OnKillfocusIconFiles();
-	afx_msg void OnKillfocusParms();
-	afx_msg void OnShowhide();
-	afx_msg void OnShowmax();
-	afx_msg void OnShowmin();
-	afx_msg void OnShownormal();
-	afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
-	afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CPage3B)
+  afx_msg void OnSelchangeAppList();
+  afx_msg void OnKillfocusFilename();
+  afx_msg void OnKillfocusDesc();
+  afx_msg void OnSelchangeIconList();
+  afx_msg void OnCloseupIconFiles();
+  afx_msg void OnKillfocusIconFiles();
+  afx_msg void OnKillfocusParms();
+  afx_msg void OnShowhide();
+  afx_msg void OnShowmax();
+  afx_msg void OnShowmin();
+  afx_msg void OnShownormal();
+  afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
+  afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 
 public:
   afx_msg void OnEnChangeFilename();

@@ -34,12 +34,12 @@
 #define _T(X) X /* for now */
 
 CPathDialog::CPathDialog(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CPathDialog::IDD, hParent)
+  : CMyDialogBaseClass(CPathDialog::IDD, hParent)
 {
-	//{{AFX_DATA_INIT(CPathDialog)
-	m_csPathName = _T("");
-	m_csPathCaption = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPathDialog)
+  m_csPathName = _T("");
+  m_csPathCaption = _T("");
+  //}}AFX_DATA_INIT
 
   m_csPathCaption = "SETUP will install the application to the path "
                     "specified below.  If you like, you may change it to\n"
@@ -104,7 +104,7 @@ BOOL CPathDialog::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 void CPathDialog::OnOK() 
 {
-	UpdateData(1);
+  UpdateData(1);
 
   if(m_csPathName.GetLength() > 260)
   {
@@ -159,20 +159,20 @@ void CPathDialog::OnOK()
 
   TRACE("Path name is \"%s\"\r\n", (LPCSTR)m_csPathName);
 
-	EndDialog(IDOK);
+  EndDialog(IDOK);
 }
 
 BOOL CPathDialog::OnInitDialog() 
 {
-	UpdateData(0);
+  UpdateData(0);
 
   if(m_csTitle.GetLength())
     SetWindowText(m_csTitle);
 
-	SetForegroundWindow();
-	
-	return TRUE;  // return TRUE unless you set the focus to a control
-	               // EXCEPTION: OCX Property Pages should return FALSE
+  SetForegroundWindow();
+  
+  return TRUE;  // return TRUE unless you set the focus to a control
+                 // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 void CPathDialog::OnBrowse() 

@@ -127,9 +127,9 @@ extern "C" BOOL STDAPICALLTYPE PathStripToRoot(LPTSTR pszPath)
 // CAutoRunApp
 
 //BEGIN_MESSAGE_MAP(CAutoRunApp, CWinApp)
-//	//{{AFX_MSG_MAP(CAutoRunApp)
-//	//}}AFX_MSG
-//	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
+//  //{{AFX_MSG_MAP(CAutoRunApp)
+//  //}}AFX_MSG
+//  ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 //END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -149,12 +149,12 @@ CAutoRunApp theApp;
 
 BOOL CAutoRunApp::InitInstance()
 {
-	// Standard initialization
+  // Standard initialization
 
 //#ifdef _AFXDLL
-//	Enable3dControls();			// Call this when using MFC in a shared DLL
+//  Enable3dControls();     // Call this when using MFC in a shared DLL
 //#else
-//	Enable3dControlsStatic();	// Call this when linking to MFC statically
+//  Enable3dControlsStatic(); // Call this when linking to MFC statically
 //#endif
 
 //  // check for access rights
@@ -271,21 +271,21 @@ BOOL CAutoRunApp::InitInstance()
 //    RegCloseKey(hkeyTest);  // now that I'm done with it...
 //  }
 
-	CAutoRunDlg dlg;
+  CAutoRunDlg dlg;
 
   int nResponse = dlg.DoModal();
-	if (nResponse == IDOK)
-	{
-	}
-	else if (nResponse == IDCANCEL)
-	{
-	}
+  if (nResponse == IDOK)
+  {
+  }
+  else if (nResponse == IDCANCEL)
+  {
+  }
 
   m_hWnd = NULL; // make sure
 
-	// Since the dialog has been closed, return FALSE so that we exit the
-	//  application, rather than start the application's message pump.
-	return FALSE;
+  // Since the dialog has been closed, return FALSE so that we exit the
+  //  application, rather than start the application's message pump.
+  return FALSE;
 }
 
 CString GetRegistryString(HKEY hkeyRoot, LPCSTR szKeyName, LPCSTR szString)

@@ -34,11 +34,11 @@ IMPLEMENT_DYNCREATE(CPage4, CPropertyPage)
 
 CPage4::CPage4() : CPropertyPage(CPage4::IDD)
 {
-	//{{AFX_DATA_INIT(CPage4)
-	m_csValue = _T("");
-	m_csString = _T("");
-	m_csKey = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage4)
+  m_csValue = _T("");
+  m_csString = _T("");
+  m_csKey = _T("");
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -49,26 +49,26 @@ CPage4::~CPage4()
 
 void CPage4::DoClear()
 {
-	m_csValue = _T("");
-	m_csString = _T("");
-	m_csKey = _T("");
+  m_csValue = _T("");
+  m_csString = _T("");
+  m_csKey = _T("");
 
   m_iCurSel = -1;
 }
 
 void CPage4::DoDataExchange(CDataExchange* pDX)
 {
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage4)
-	DDX_Control(pDX, IDC_REVERT, m_btnRevert);
-	DDX_Control(pDX, IDC_VALUE, m_wndValue);
-	DDX_Control(pDX, IDC_STRING, m_wndString);
-	DDX_Control(pDX, IDC_KEY, m_wndKey);
-	DDX_Control(pDX, IDC_ENTRY_LIST, m_wndEntryList);
-	DDX_Text(pDX, IDC_VALUE, m_csValue);
-	DDX_Text(pDX, IDC_STRING, m_csString);
-	DDX_Text(pDX, IDC_KEY, m_csKey);
-	//}}AFX_DATA_MAP
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage4)
+  DDX_Control(pDX, IDC_REVERT, m_btnRevert);
+  DDX_Control(pDX, IDC_VALUE, m_wndValue);
+  DDX_Control(pDX, IDC_STRING, m_wndString);
+  DDX_Control(pDX, IDC_KEY, m_wndKey);
+  DDX_Control(pDX, IDC_ENTRY_LIST, m_wndEntryList);
+  DDX_Text(pDX, IDC_VALUE, m_csValue);
+  DDX_Text(pDX, IDC_STRING, m_csString);
+  DDX_Text(pDX, IDC_KEY, m_csKey);
+  //}}AFX_DATA_MAP
 
   if(pDX->m_bSaveAndValidate)
   {
@@ -82,19 +82,19 @@ void CPage4::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CPage4, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage4)
-	ON_BN_CLICKED(IDC_ADD_NEW, OnAddNew)
-	ON_LBN_SELCHANGE(IDC_ENTRY_LIST, OnSelchangeEntryList)
-	ON_BN_CLICKED(IDC_MINI_HELP, OnMiniHelp)
-	ON_BN_CLICKED(IDC_REMOVE, OnRemove)
-	ON_BN_CLICKED(IDC_REVERT, OnRevert)
-	ON_EN_CHANGE(IDC_KEY, OnChangeKey)
-	ON_EN_CHANGE(IDC_STRING, OnChangeString)
-	ON_EN_CHANGE(IDC_VALUE, OnChangeValue)
-	ON_BN_CLICKED(IDC_KEY_HELP, OnKeyHelp)
-	ON_BN_CLICKED(IDC_ADD_STANDARD, OnAddStandard)
-	ON_BN_CLICKED(IDC_IMPORT_REG, OnImportReg)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage4)
+  ON_BN_CLICKED(IDC_ADD_NEW, OnAddNew)
+  ON_LBN_SELCHANGE(IDC_ENTRY_LIST, OnSelchangeEntryList)
+  ON_BN_CLICKED(IDC_MINI_HELP, OnMiniHelp)
+  ON_BN_CLICKED(IDC_REMOVE, OnRemove)
+  ON_BN_CLICKED(IDC_REVERT, OnRevert)
+  ON_EN_CHANGE(IDC_KEY, OnChangeKey)
+  ON_EN_CHANGE(IDC_STRING, OnChangeString)
+  ON_EN_CHANGE(IDC_VALUE, OnChangeValue)
+  ON_BN_CLICKED(IDC_KEY_HELP, OnKeyHelp)
+  ON_BN_CLICKED(IDC_ADD_STANDARD, OnAddStandard)
+  ON_BN_CLICKED(IDC_IMPORT_REG, OnImportReg)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -142,7 +142,7 @@ BOOL CPage4::OnSetActive()
 
   OnSelchangeEntryList();
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage4::OnKillActive() 
@@ -165,8 +165,8 @@ BOOL CPage4::OnKillActive()
         pSheet->m_acsRegistry.Add(csTemp);
     }
   }
-	
-	return CPropertyPage::OnKillActive();
+  
+  return CPropertyPage::OnKillActive();
 }
 
 LRESULT CPage4::OnWizardBack() 
@@ -203,15 +203,15 @@ LRESULT CPage4::OnWizardBack()
       return(IDD_PAGE_3A);  // go to 'page 3' and not 'page 3a'
     }
   }
-	
+  
   return IDD_PAGE_3; // where I go when I can't determine where else to go
 }
 
 LRESULT CPage4::OnWizardNext() 
 {
-	// TODO: Add your specialized code here and/or call the base class
-	
-	return CPropertyPage::OnWizardNext();
+  // TODO: Add your specialized code here and/or call the base class
+  
+  return CPropertyPage::OnWizardNext();
 }
 
 void CPage4::OnSelchangeEntryList() 
@@ -505,35 +505,35 @@ void CPage4::OnRevert()
 
 void CPage4::OnChangeKey() 
 {
-	// TODO: If this is a RICHEDIT control, the control will not
-	// send this notification unless you override the CPropertyPage::OnInitDialog()
-	// function to send the EM_SETEVENTMASK message to the control
-	// with the ENM_CHANGE flag ORed into the lParam mask.
-	
-	// TODO: Add your control notification handler code here
-	
+  // TODO: If this is a RICHEDIT control, the control will not
+  // send this notification unless you override the CPropertyPage::OnInitDialog()
+  // function to send the EM_SETEVENTMASK message to the control
+  // with the ENM_CHANGE flag ORed into the lParam mask.
+  
+  // TODO: Add your control notification handler code here
+  
 }
 
 void CPage4::OnChangeString() 
 {
-	// TODO: If this is a RICHEDIT control, the control will not
-	// send this notification unless you override the CPropertyPage::OnInitDialog()
-	// function to send the EM_SETEVENTMASK message to the control
-	// with the ENM_CHANGE flag ORed into the lParam mask.
-	
-	// TODO: Add your control notification handler code here
-	
+  // TODO: If this is a RICHEDIT control, the control will not
+  // send this notification unless you override the CPropertyPage::OnInitDialog()
+  // function to send the EM_SETEVENTMASK message to the control
+  // with the ENM_CHANGE flag ORed into the lParam mask.
+  
+  // TODO: Add your control notification handler code here
+  
 }
 
 void CPage4::OnChangeValue() 
 {
-	// TODO: If this is a RICHEDIT control, the control will not
-	// send this notification unless you override the CPropertyPage::OnInitDialog()
-	// function to send the EM_SETEVENTMASK message to the control
-	// with the ENM_CHANGE flag ORed into the lParam mask.
-	
-	// TODO: Add your control notification handler code here
-	
+  // TODO: If this is a RICHEDIT control, the control will not
+  // send this notification unless you override the CPropertyPage::OnInitDialog()
+  // function to send the EM_SETEVENTMASK message to the control
+  // with the ENM_CHANGE flag ORed into the lParam mask.
+  
+  // TODO: Add your control notification handler code here
+  
 }
 
 void CPage4::OnKeyHelp() 

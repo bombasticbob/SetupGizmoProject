@@ -47,18 +47,18 @@ IMPLEMENT_DYNCREATE(CFinishPage, CPropertyPage)
 
 CFinishPage::CFinishPage() : CPropertyPage(CFinishPage::IDD)
 {
-	//{{AFX_DATA_INIT(CFinishPage)
-	m_bAutoInsert = FALSE;
-	m_iInstallType = -1;
-	m_bDoNotClose = FALSE;
-	m_bLZCompress = FALSE;
-	m_bNoUninstall = FALSE;
-	m_bQuietSetup = FALSE;
+  //{{AFX_DATA_INIT(CFinishPage)
+  m_bAutoInsert = FALSE;
+  m_iInstallType = -1;
+  m_bDoNotClose = FALSE;
+  m_bLZCompress = FALSE;
+  m_bNoUninstall = FALSE;
+  m_bQuietSetup = FALSE;
   m_bDoNotDelWorkFiles = FALSE;
   m_bDoNotRebuildCab = FALSE;
-	m_iRebootFlag = -1;
-	m_iDisk1Reserve = 0;
-	//}}AFX_DATA_INIT
+  m_iRebootFlag = -1;
+  m_iDisk1Reserve = 0;
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -69,12 +69,12 @@ CFinishPage::~CFinishPage()
 
 void CFinishPage::DoClear()
 {
-	m_bAutoInsert = FALSE;
-	m_iInstallType = -1;
-	m_bDoNotClose = FALSE;
-	m_bLZCompress = FALSE;
-	m_bNoUninstall = FALSE;
-	m_bQuietSetup = FALSE;
+  m_bAutoInsert = FALSE;
+  m_iInstallType = -1;
+  m_bDoNotClose = FALSE;
+  m_bLZCompress = FALSE;
+  m_bNoUninstall = FALSE;
+  m_bQuietSetup = FALSE;
   m_bDoNotDelWorkFiles = FALSE;
   m_bDoNotRebuildCab = FALSE;
 
@@ -89,22 +89,22 @@ void CFinishPage::DoDataExchange(CDataExchange* pDX)
   if(!m_hWnd)
     return;  // don't do anything if there's no window (to avoid trouble)
 
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CFinishPage)
-	DDX_Control(pDX, IDC_DISK1_RESERVE, m_wndDisk1Reserve);
-	DDX_Control(pDX, IDC_AUTOINSERT, m_btnAutoInsert);
-	DDX_Check(pDX, IDC_AUTOINSERT, m_bAutoInsert);
-	DDX_Radio(pDX, IDC_CDROM, m_iInstallType);
-	DDX_Check(pDX, IDC_DO_NOT_CLOSE, m_bDoNotClose);
-	DDX_Check(pDX, IDC_LZCOMPRESS, m_bLZCompress);
-	DDX_Check(pDX, IDC_NO_UNINSTALL, m_bNoUninstall);
-	DDX_Check(pDX, IDC_QUIET_SETUP, m_bQuietSetup);
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CFinishPage)
+  DDX_Control(pDX, IDC_DISK1_RESERVE, m_wndDisk1Reserve);
+  DDX_Control(pDX, IDC_AUTOINSERT, m_btnAutoInsert);
+  DDX_Check(pDX, IDC_AUTOINSERT, m_bAutoInsert);
+  DDX_Radio(pDX, IDC_CDROM, m_iInstallType);
+  DDX_Check(pDX, IDC_DO_NOT_CLOSE, m_bDoNotClose);
+  DDX_Check(pDX, IDC_LZCOMPRESS, m_bLZCompress);
+  DDX_Check(pDX, IDC_NO_UNINSTALL, m_bNoUninstall);
+  DDX_Check(pDX, IDC_QUIET_SETUP, m_bQuietSetup);
   DDX_Check(pDX, IDC_DO_NOT_DEL_WORKFILES, m_bDoNotDelWorkFiles);
   DDX_Check(pDX, IDC_DO_NOT_REBUILD_CAB, m_bDoNotRebuildCab);
-	DDX_Radio(pDX, IDC_BOOT_AUTO, m_iRebootFlag);
-	DDX_Text(pDX, IDC_DISK1_RESERVE, m_iDisk1Reserve);
-	DDV_MinMaxInt(pDX, m_iDisk1Reserve, 0, 1024);
-	//}}AFX_DATA_MAP
+  DDX_Radio(pDX, IDC_BOOT_AUTO, m_iRebootFlag);
+  DDX_Text(pDX, IDC_DISK1_RESERVE, m_iDisk1Reserve);
+  DDV_MinMaxInt(pDX, m_iDisk1Reserve, 0, 1024);
+  //}}AFX_DATA_MAP
 
 //  if(m_iInstallType == 0 || m_iInstallType == 1)
 //  {
@@ -127,13 +127,13 @@ void CFinishPage::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CFinishPage, CPropertyPage)
-	//{{AFX_MSG_MAP(CFinishPage)
-	ON_BN_CLICKED(IDC_SAVE, OnSave)
-	ON_BN_CLICKED(IDC_CDROM, OnCdrom)
-	ON_BN_CLICKED(IDC_CDROM_MULTI, OnCdromMulti)
-	ON_BN_CLICKED(IDC_DISKETTE, OnDiskette)
-	ON_BN_CLICKED(IDC_SELF_EXTRACT, OnSelfExtract)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CFinishPage)
+  ON_BN_CLICKED(IDC_SAVE, OnSave)
+  ON_BN_CLICKED(IDC_CDROM, OnCdrom)
+  ON_BN_CLICKED(IDC_CDROM_MULTI, OnCdromMulti)
+  ON_BN_CLICKED(IDC_DISKETTE, OnDiskette)
+  ON_BN_CLICKED(IDC_SELF_EXTRACT, OnSelfExtract)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -148,21 +148,21 @@ BOOL CFinishPage::OnSetActive()
     pSheet->SetWizardButtons(PSWIZB_BACK | PSWIZB_FINISH);
   }
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 LRESULT CFinishPage::OnWizardBack() 
 {
   UpdateData(1);
-	
-	return CPropertyPage::OnWizardBack();
+  
+  return CPropertyPage::OnWizardBack();
 }
 
 BOOL CFinishPage::OnKillActive() 
 {
-	// TODO: Add your specialized code here and/or call the base class
-	
-	return CPropertyPage::OnKillActive();
+  // TODO: Add your specialized code here and/or call the base class
+  
+  return CPropertyPage::OnKillActive();
 }
 
 void CFinishPage::OnSave() 
@@ -218,7 +218,7 @@ BOOL CFinishPage::OnWizardFinish()
       }
     }
 
-	  return CPropertyPage::OnWizardFinish();
+    return CPropertyPage::OnWizardFinish();
   }
   else
     return(0);  // so I stay visible
@@ -228,24 +228,24 @@ BOOL CFinishPage::OnWizardFinish()
 void CFinishPage::OnCdrom() 
 {
   // this is now DVD
-  UpdateData(1);	
+  UpdateData(1);  
 }
 
 void CFinishPage::OnCdromMulti() 
 {
   // this is now DVD multi
-  UpdateData(1);	
+  UpdateData(1);  
 }
 
 void CFinishPage::OnDiskette() 
 {
   // NOTE:  this is now 'CDROM'; CD is now DVD
-  UpdateData(1);	
+  UpdateData(1);  
 }
 
 void CFinishPage::OnSelfExtract() 
 {
-  UpdateData(1);	
+  UpdateData(1);  
 }
 
 

@@ -30,59 +30,59 @@
 
 class CPage4 : public CPropertyPage
 {
-	DECLARE_DYNCREATE(CPage4)
+  DECLARE_DYNCREATE(CPage4)
 
 // Construction
 public:
-	CPage4();
-	~CPage4();
+  CPage4();
+  ~CPage4();
 
 // Dialog Data
-	//{{AFX_DATA(CPage4)
-	enum { IDD = IDD_PAGE_4 };
-	CButton	m_btnRevert;
-	CEdit	m_wndValue;
-	CEdit	m_wndString;
-	CEdit	m_wndKey;
-	CListBox	m_wndEntryList;
-	CString	m_csValue;
-	CString	m_csString;
-	CString	m_csKey;
-	//}}AFX_DATA
+  //{{AFX_DATA(CPage4)
+  enum { IDD = IDD_PAGE_4 };
+  CButton m_btnRevert;
+  CEdit m_wndValue;
+  CEdit m_wndString;
+  CEdit m_wndKey;
+  CListBox  m_wndEntryList;
+  CString m_csValue;
+  CString m_csString;
+  CString m_csKey;
+  //}}AFX_DATA
 
   int m_iCurSel;
 
   void DoClear();
 
 // Overrides
-	// ClassWizard generate virtual function overrides
-	//{{AFX_VIRTUAL(CPage4)
-	public:
-	virtual BOOL OnSetActive();
-	virtual BOOL OnKillActive();
-	virtual LRESULT OnWizardBack();
-	virtual LRESULT OnWizardNext();
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generate virtual function overrides
+  //{{AFX_VIRTUAL(CPage4)
+  public:
+  virtual BOOL OnSetActive();
+  virtual BOOL OnKillActive();
+  virtual LRESULT OnWizardBack();
+  virtual LRESULT OnWizardNext();
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	// Generated message map functions
-	//{{AFX_MSG(CPage4)
-	afx_msg void OnAddNew();
-	afx_msg void OnSelchangeEntryList();
-	afx_msg void OnMiniHelp();
-	afx_msg void OnRemove();
-	afx_msg void OnRevert();
-	afx_msg void OnChangeKey();
-	afx_msg void OnChangeString();
-	afx_msg void OnChangeValue();
-	afx_msg void OnKeyHelp();
-	afx_msg void OnAddStandard();
-	afx_msg void OnImportReg();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CPage4)
+  afx_msg void OnAddNew();
+  afx_msg void OnSelchangeEntryList();
+  afx_msg void OnMiniHelp();
+  afx_msg void OnRemove();
+  afx_msg void OnRevert();
+  afx_msg void OnChangeKey();
+  afx_msg void OnChangeString();
+  afx_msg void OnChangeValue();
+  afx_msg void OnKeyHelp();
+  afx_msg void OnAddStandard();
+  afx_msg void OnImportReg();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 
 };
 

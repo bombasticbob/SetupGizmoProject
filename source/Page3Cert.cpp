@@ -65,9 +65,9 @@ void CPage3Cert::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CPage3Cert, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage3Cert)
-	ON_LBN_SELCHANGE(IDC_CERT_LIST, OnSelchangeCertList)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage3Cert)
+  ON_LBN_SELCHANGE(IDC_CERT_LIST, OnSelchangeCertList)
+  //}}AFX_MSG_MAP
   ON_CBN_SELCHANGE(IDC_REPOSITORY, &CPage3Cert::OnSelchangeRepository)
   ON_CBN_EDITUPDATE(IDC_REPOSITORY, &CPage3Cert::OnEditupdateRepository)
   ON_CBN_KILLFOCUS(IDC_REPOSITORY, &CPage3Cert::OnKillfocusRepository)
@@ -188,20 +188,20 @@ BOOL CPage3Cert::OnSetActive()
   m_iCurSel = LB_ERR;  // forces a re-load
   OnSelchangeCertList();
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage3Cert::OnKillActive() 
 {
   OnSelchangeCertList();  // this updates data properly
-	
-	return CPropertyPage::OnKillActive();
+  
+  return CPropertyPage::OnKillActive();
 }
 
 LRESULT CPage3Cert::OnWizardBack() 
 {
   OnSelchangeCertList();  // this updates data properly
-	
+  
   int i1;
 
   CSetupGizDlg *pSheet = CSetupGizDlg::GetPropertySheet(this);
@@ -213,7 +213,7 @@ LRESULT CPage3Cert::OnWizardBack()
     return -1;
   }
 
-	CPropertyPage::OnWizardBack();
+  CPropertyPage::OnWizardBack();
 
   // check for 3B first
 

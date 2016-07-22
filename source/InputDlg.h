@@ -32,35 +32,35 @@ class CInputDlg : public CDialog
 {
 // Construction
 public:
-	CInputDlg(CWnd* pParent = NULL);   // standard constructor
+  CInputDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CInputDlg)
-	enum { IDD = IDD_INPUT };
-	CString	m_csCaption;
-	CString	m_csInput;
-	//}}AFX_DATA
+  //{{AFX_DATA(CInputDlg)
+  enum { IDD = IDD_INPUT };
+  CString m_csCaption;
+  CString m_csInput;
+  //}}AFX_DATA
 
   CString m_csTitle;  // string that appears in the title bar
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CInputDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CInputDlg)
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
 
-	// Generated message map functions
-	//{{AFX_MSG(CInputDlg)
-	virtual void OnOK();
-	virtual void OnCancel();
-	afx_msg void OnHelp();
-	virtual BOOL OnInitDialog();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CInputDlg)
+  virtual void OnOK();
+  virtual void OnCancel();
+  afx_msg void OnHelp();
+  virtual BOOL OnInitDialog();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

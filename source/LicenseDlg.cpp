@@ -25,7 +25,7 @@
 
 IMPLEMENT_DYNAMIC(CLicenseDlg, CDialog)
 CLicenseDlg::CLicenseDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CLicenseDlg::IDD, pParent)
+  : CDialog(CLicenseDlg::IDD, pParent)
 {
   m_dwRTFPos = 0;
 

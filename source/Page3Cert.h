@@ -30,44 +30,44 @@
 
 class CPage3Cert : public CPropertyPage
 {
-	DECLARE_DYNCREATE(CPage3Cert)
+  DECLARE_DYNCREATE(CPage3Cert)
 
 // Construction
 public:
-	CPage3Cert();
-	~CPage3Cert();
+  CPage3Cert();
+  ~CPage3Cert();
 
 // Dialog Data
-	//{{AFX_DATA(CPage3A)
-	enum { IDD = IDD_PAGE_3_CERT };
-	//}}AFX_DATA
+  //{{AFX_DATA(CPage3A)
+  enum { IDD = IDD_PAGE_3_CERT };
+  //}}AFX_DATA
 
   int m_iCurSel;
 
   void DoClear();
 
 // Overrides
-	// ClassWizard generate virtual function overrides
-	//{{AFX_VIRTUAL(CPage3A)
-	public:
-	virtual BOOL OnSetActive();
-	virtual BOOL OnKillActive();
-	virtual LRESULT OnWizardBack();
-	virtual LRESULT OnWizardNext();
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generate virtual function overrides
+  //{{AFX_VIRTUAL(CPage3A)
+  public:
+  virtual BOOL OnSetActive();
+  virtual BOOL OnKillActive();
+  virtual LRESULT OnWizardBack();
+  virtual LRESULT OnWizardNext();
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	// Generated message map functions
-	//{{AFX_MSG(CPage3A)
-	afx_msg void OnSelchangeCertList();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CPage3A)
+  afx_msg void OnSelchangeCertList();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 
 public:
-	CListBox	m_wndCertList;
+  CListBox  m_wndCertList;
   CComboBox m_wndRepository;
   CString m_csRepository;
   afx_msg void OnSelchangeRepository();

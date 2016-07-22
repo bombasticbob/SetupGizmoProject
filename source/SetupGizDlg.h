@@ -166,14 +166,14 @@ public:
 
   DECLARE_DYNAMIC(CSetupGizDlg);
 
-	CSetupGizDlg(CWnd* pParent = NULL);	// standard constructor
+  CSetupGizDlg(CWnd* pParent = NULL); // standard constructor
 
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CSetupGizDlg)
-	public:
-	virtual BOOL OnInitDialog();
-	virtual void WinHelp(DWORD dwData, UINT nCmd = HELP_CONTEXT);
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CSetupGizDlg)
+  public:
+  virtual BOOL OnInitDialog();
+  virtual void WinHelp(DWORD dwData, UINT nCmd = HELP_CONTEXT);
+  //}}AFX_VIRTUAL
 
 
   CPage1  m_Page1;
@@ -210,15 +210,15 @@ public:
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 
-	// Generated message map functions
-	//{{AFX_MSG(CSetupGizDlg)
-	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
-	afx_msg void OnPaint();
-	afx_msg HCURSOR OnQueryDragIcon();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CSetupGizDlg)
+  afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
+  afx_msg void OnPaint();
+  afx_msg HCURSOR OnQueryDragIcon();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 };
 
 

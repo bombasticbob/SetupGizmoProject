@@ -35,10 +35,10 @@ IMPLEMENT_DYNCREATE(CPage3A, CPropertyPage)
 
 CPage3A::CPage3A() : CPropertyPage(CPage3A::IDD)
 {
-	//{{AFX_DATA_INIT(CPage3A)
-	m_csLongDesc = _T("");
-	m_csDesc = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage3A)
+  m_csLongDesc = _T("");
+  m_csDesc = _T("");
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -49,28 +49,28 @@ CPage3A::~CPage3A()
 
 void CPage3A::DoClear()
 {
-	m_csLongDesc = _T("");
-	m_csDesc = _T("");
+  m_csLongDesc = _T("");
+  m_csDesc = _T("");
 
   m_iCurSel = LB_ERR;
 }
 
 void CPage3A::DoDataExchange(CDataExchange* pDX)
 {
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage3A)
-	DDX_Control(pDX, IDC_OPTION_LIST, m_wndOptionList);
-	DDX_Text(pDX, IDC_LONGDESC, m_csLongDesc);
-	DDX_Text(pDX, IDC_DESC, m_csDesc);
-	//}}AFX_DATA_MAP
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage3A)
+  DDX_Control(pDX, IDC_OPTION_LIST, m_wndOptionList);
+  DDX_Text(pDX, IDC_LONGDESC, m_csLongDesc);
+  DDX_Text(pDX, IDC_DESC, m_csDesc);
+  //}}AFX_DATA_MAP
 }
 
 
 BEGIN_MESSAGE_MAP(CPage3A, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage3A)
-	ON_LBN_SELCHANGE(IDC_OPTION_LIST, OnSelchangeOptionList)
-	ON_EN_KILLFOCUS(IDC_LONGDESC, OnKillfocusLongdesc)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage3A)
+  ON_LBN_SELCHANGE(IDC_OPTION_LIST, OnSelchangeOptionList)
+  ON_EN_KILLFOCUS(IDC_LONGDESC, OnKillfocusLongdesc)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -112,21 +112,21 @@ BOOL CPage3A::OnSetActive()
 
 
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 BOOL CPage3A::OnKillActive() 
 {
   OnSelchangeOptionList();  // this updates data properly
-	
-	return CPropertyPage::OnKillActive();
+  
+  return CPropertyPage::OnKillActive();
 }
 
 LRESULT CPage3A::OnWizardBack() 
 {
   OnSelchangeOptionList();  // this updates data properly
-	
-	return CPropertyPage::OnWizardBack();
+  
+  return CPropertyPage::OnWizardBack();
 }
 
 LRESULT CPage3A::OnWizardNext() 

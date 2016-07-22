@@ -39,13 +39,13 @@ CRepeatButton::~CRepeatButton()
 
 
 BEGIN_MESSAGE_MAP(CRepeatButton, CButton)
-	//{{AFX_MSG_MAP(CRepeatButton)
-	ON_WM_LBUTTONDOWN()
-	ON_WM_LBUTTONUP()
-	ON_WM_LBUTTONDBLCLK()
-	ON_WM_KILLFOCUS()
-	ON_WM_TIMER()
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CRepeatButton)
+  ON_WM_LBUTTONDOWN()
+  ON_WM_LBUTTONUP()
+  ON_WM_LBUTTONDBLCLK()
+  ON_WM_KILLFOCUS()
+  ON_WM_TIMER()
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -53,7 +53,7 @@ END_MESSAGE_MAP()
 
 void CRepeatButton::OnLButtonDown(UINT nFlags, CPoint point) 
 {
-	CButton::OnLButtonDown(nFlags, point);
+  CButton::OnLButtonDown(nFlags, point);
 
   SetTimer(101, 500, NULL);  // 1/2 second timer
 }
@@ -63,7 +63,7 @@ void CRepeatButton::OnLButtonUp(UINT nFlags, CPoint point)
   KillTimer(101);
   KillTimer(102);
 
-	CButton::OnLButtonUp(nFlags, point);
+  CButton::OnLButtonUp(nFlags, point);
 }
 
 void CRepeatButton::OnLButtonDblClk(UINT nFlags, CPoint point) 
@@ -81,8 +81,8 @@ void CRepeatButton::OnLButtonDblClk(UINT nFlags, CPoint point)
 
 void CRepeatButton::OnKillFocus(CWnd* pNewWnd) 
 {
-	CButton::OnKillFocus(pNewWnd);
-	
+  CButton::OnKillFocus(pNewWnd);
+  
   KillTimer(101);
   KillTimer(102);
 }
@@ -116,5 +116,5 @@ void CRepeatButton::OnTimer(UINT nIDEvent)
     return;
   }
 
-	CButton::OnTimer(nIDEvent);
+  CButton::OnTimer(nIDEvent);
 }

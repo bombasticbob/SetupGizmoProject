@@ -31,23 +31,23 @@ class CSETUPDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CSETUPDlg(HWND hParent = NULL);	// standard constructor
+  CSETUPDlg(HWND hParent = NULL); // standard constructor
 
-	enum { IDD = IDD_SETUP_DIALOG };
-	CString	m_csWelcome;
+  enum { IDD = IDD_SETUP_DIALOG };
+  CString m_csWelcome;
   CString m_csTitle;  // dialog box title
 
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 
   void UpdateData(BOOL bSaveFlag);
   BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
-	BOOL OnInitDialog();
-	BOOL OnPaint();
-	HCURSOR OnQueryDragIcon();
+  BOOL OnInitDialog();
+  BOOL OnPaint();
+  HCURSOR OnQueryDragIcon();
 
 };
 

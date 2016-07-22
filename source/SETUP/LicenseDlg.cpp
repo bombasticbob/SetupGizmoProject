@@ -31,7 +31,7 @@
 
 
 CLicenseDlg::CLicenseDlg(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CLicenseDlg::IDD, hParent)
+  : CMyDialogBaseClass(CLicenseDlg::IDD, hParent)
 {
   m_dwRTFPos = 0;
 

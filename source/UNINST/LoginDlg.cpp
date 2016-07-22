@@ -32,13 +32,13 @@ static char THIS_FILE[] = __FILE__;
 #define _T(X) X /* temporary */
 
 CLoginDlg::CLoginDlg(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CLoginDlg::IDD, hParent)
+  : CMyDialogBaseClass(CLoginDlg::IDD, hParent)
 {
   m_csUserName = _T("");
   m_csPassword = _T("");
   m_csDomain = _T("");
 
-	m_hIcon = MyGetApp()->LoadIcon(IDR_MAINFRAME);
+  m_hIcon = MyGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void CLoginDlg::UpdateData(BOOL bSaveFlag)
@@ -58,10 +58,10 @@ void CLoginDlg::UpdateData(BOOL bSaveFlag)
 }
 
 //BEGIN_MESSAGE_MAP(CLoginDlg, CMyDialogBaseClass)
-//	//{{AFX_MSG_MAP(CLoginDlg)
-//	ON_WM_PAINT()
-//	ON_WM_QUERYDRAGICON()
-//	//}}AFX_MSG_MAP
+//  //{{AFX_MSG_MAP(CLoginDlg)
+//  ON_WM_PAINT()
+//  ON_WM_QUERYDRAGICON()
+//  //}}AFX_MSG_MAP
 //END_MESSAGE_MAP()
 
 BOOL CLoginDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
@@ -109,8 +109,8 @@ BOOL CLoginDlg::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 BOOL CLoginDlg::OnInitDialog()
 {
-	SetIcon(m_hIcon, TRUE);			// Set big icon
-	SetIcon(m_hIcon, FALSE);		// Set small icon
+  SetIcon(m_hIcon, TRUE);     // Set big icon
+  SetIcon(m_hIcon, FALSE);    // Set small icon
 
   // assign a few things based on what I already know
 
@@ -136,7 +136,7 @@ BOOL CLoginDlg::OnInitDialog()
 
   UpdateData(0);
 
-	return TRUE;  // return TRUE  unless you set the focus to a control
+  return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
 // If you add a minimize button to your dialog, you will need the code below
@@ -145,42 +145,42 @@ BOOL CLoginDlg::OnInitDialog()
 
 BOOL CLoginDlg::OnPaint() 
 {
-	if(IsIconic())
-	{
-		CMyPaintDC dc(m_hWnd); // device context for painting
+  if(IsIconic())
+  {
+    CMyPaintDC dc(m_hWnd); // device context for painting
 
-		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+    SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// Center icon in client rectangle
-		int cxIcon = GetSystemMetrics(SM_CXICON);
-		int cyIcon = GetSystemMetrics(SM_CYICON);
-		CRect rect;
-		GetClientRect(&rect);
-		int x = (rect.Width() - cxIcon + 1) / 2;
-		int y = (rect.Height() - cyIcon + 1) / 2;
+    // Center icon in client rectangle
+    int cxIcon = GetSystemMetrics(SM_CXICON);
+    int cyIcon = GetSystemMetrics(SM_CYICON);
+    CRect rect;
+    GetClientRect(&rect);
+    int x = (rect.Width() - cxIcon + 1) / 2;
+    int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Draw the icon
-		dc.DrawIcon(x, y, m_hIcon);
+    // Draw the icon
+    dc.DrawIcon(x, y, m_hIcon);
 
     return(TRUE);
-	}
+  }
   else
     return(FALSE);
 }
 
 HCURSOR CLoginDlg::OnQueryDragIcon()
 {
-	return((HCURSOR) m_hIcon);
+  return((HCURSOR) m_hIcon);
 }
 
 void CLoginDlg::OnCancel() 
 {
-	EndDialog(IDCANCEL);
+  EndDialog(IDCANCEL);
 }
 
 void CLoginDlg::OnOK()
 {
   UpdateData(1);
-	EndDialog(IDOK);
+  EndDialog(IDOK);
 }
 

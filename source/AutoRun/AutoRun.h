@@ -24,10 +24,10 @@
 #endif // _MSC_VER > 1000
 
 //#ifndef __AFXWIN_H__
-//	#error include 'stdafx.h' before including this file for PCH
+//  #error include 'stdafx.h' before including this file for PCH
 //#endif
 
-#include "resource.h"		// main symbols
+#include "resource.h"   // main symbols
 
 // KEY_ALL_ACCESS works only if administrator is accessing HKLM
 // KEY_POWERUSER_ACCESS works if not admin
@@ -43,20 +43,20 @@
 class CAutoRunApp : public CMyApp /*CWinApp*/
 {
 public:
-	CAutoRunApp();
+  CAutoRunApp();
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CAutoRunApp)
-	public:
-	virtual BOOL InitInstance();
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CAutoRunApp)
+  public:
+  virtual BOOL InitInstance();
+  //}}AFX_VIRTUAL
 
 // Implementation
 
-	//{{AFX_MSG(CAutoRunApp)
-	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+  //{{AFX_MSG(CAutoRunApp)
+  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
 };
 
 extern CAutoRunApp theApp;

@@ -31,26 +31,26 @@ static char THIS_FILE[] = __FILE__;
 
 
 CSetupDialog::CSetupDialog(CWnd* pParent /*=NULL*/)
-	: CDialog(CSetupDialog::IDD, pParent)
+  : CDialog(CSetupDialog::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CSetupDialog)
-	m_csWelcome = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CSetupDialog)
+  m_csWelcome = _T("");
+  //}}AFX_DATA_INIT
 }
 
 
 void CSetupDialog::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CSetupDialog)
-	DDX_Text(pDX, IDC_WELCOME, m_csWelcome);
-	//}}AFX_DATA_MAP
+  CDialog::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CSetupDialog)
+  DDX_Text(pDX, IDC_WELCOME, m_csWelcome);
+  //}}AFX_DATA_MAP
 }
 
 
 BEGIN_MESSAGE_MAP(CSetupDialog, CDialog)
-	//{{AFX_MSG_MAP(CSetupDialog)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CSetupDialog)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -58,10 +58,10 @@ END_MESSAGE_MAP()
 
 BOOL CSetupDialog::OnInitDialog() 
 {
-	CDialog::OnInitDialog();
-	
+  CDialog::OnInitDialog();
+  
   SetWindowText(m_csTitle + " (TEST)");
-	
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }

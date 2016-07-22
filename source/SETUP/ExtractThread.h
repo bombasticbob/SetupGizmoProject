@@ -32,9 +32,9 @@
 
 class CExtractThread : public CMyThread /* CWinThread */
 {
-//	DECLARE_DYNCREATE(CExtractThread)
+//  DECLARE_DYNCREATE(CExtractThread)
 protected:
-	CExtractThread();           // protected constructor used by dynamic creation
+  CExtractThread();           // protected constructor used by dynamic creation
 
 // Attributes
 public:
@@ -44,23 +44,23 @@ public:
   static CExtractThread * BeginThread(void);
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CExtractThread)
-	public:
-	virtual BOOL InitInstance();
-	virtual int ExitInstance();
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CExtractThread)
+  public:
+  virtual BOOL InitInstance();
+  virtual int ExitInstance();
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	virtual ~CExtractThread();
+  virtual ~CExtractThread();
 
-	// Generated message map functions
-	//{{AFX_MSG(CExtractThread)
-		// NOTE - the ClassWizard will add and remove member functions here.
-	//}}AFX_MSG
+  // Generated message map functions
+  //{{AFX_MSG(CExtractThread)
+    // NOTE - the ClassWizard will add and remove member functions here.
+  //}}AFX_MSG
 
-//	DECLARE_MESSAGE_MAP()
+//  DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

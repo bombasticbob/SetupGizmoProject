@@ -32,12 +32,12 @@ static char THIS_FILE[] = __FILE__;
 #define _T(X) X /* temporary */
 
 CRemoveSharedDlg::CRemoveSharedDlg(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CRemoveSharedDlg::IDD, hParent)
+  : CMyDialogBaseClass(CRemoveSharedDlg::IDD, hParent)
 {
-	//{{AFX_DATA_INIT(CRemoveSharedDlg)
-	m_csFileName = _T("");
-	m_csMessage = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CRemoveSharedDlg)
+  m_csFileName = _T("");
+  m_csMessage = _T("");
+  //}}AFX_DATA_INIT
 
   m_csMessage.LoadString(IDS_REMOVE_SHARED);  // load from resource (easier)
 }

@@ -31,12 +31,12 @@
 
 
 CProgressDialog::CProgressDialog(HWND hParent /*=NULL*/)
-	: CMyDialogBaseClass(CProgressDialog::IDD, hParent)
+  : CMyDialogBaseClass(CProgressDialog::IDD, hParent)
 {
-//	//{{AFX_DATA_INIT(CProgressDialog)
-//	m_csProgressText = _T("");
-//	m_csProgress = _T("");
-//	//}}AFX_DATA_INIT
+//  //{{AFX_DATA_INIT(CProgressDialog)
+//  m_csProgressText = _T("");
+//  m_csProgress = _T("");
+//  //}}AFX_DATA_INIT
 
   m_csProgressText = "INITIALIZATION...";
   m_csProgress = "0";  // initial value must be '0'
@@ -74,7 +74,7 @@ BOOL CProgressDialog::MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 BOOL CProgressDialog::OnCommand(WPARAM wParam, LPARAM lParam) 
 {
-	if(wParam == 0x1234)  // special command message
+  if(wParam == 0x1234)  // special command message
   {
     m_csProgressText = (LPCSTR)lParam;
     UpdateData(0);  // load controls from members
@@ -88,16 +88,16 @@ BOOL CProgressDialog::OnCommand(WPARAM wParam, LPARAM lParam)
 
     return(1);  // "handled"
   }
-	
+  
   return FALSE;  // I didn't handle anything
 }
 
 BOOL CProgressDialog::OnInitDialog() 
 {
   UpdateData(0);  // that's all I need
-	
-	SetWindowText(theApp.m_csAppName + " SETUP Progress");
-	
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  
+  SetWindowText(theApp.m_csAppName + " SETUP Progress");
+  
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }

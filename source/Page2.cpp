@@ -34,9 +34,9 @@ IMPLEMENT_DYNCREATE(CPage2, CPropertyPage)
 
 CPage2::CPage2() : CPropertyPage(CPage2::IDD)
 {
-	//{{AFX_DATA_INIT(CPage2)
-	m_bShowDirs = FALSE;
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CPage2)
+  m_bShowDirs = FALSE;
+  //}}AFX_DATA_INIT
 
   DoClear();
 }
@@ -52,26 +52,26 @@ void CPage2::DoClear()
 
 void CPage2::DoDataExchange(CDataExchange* pDX)
 {
-	CPropertyPage::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CPage2)
-	DDX_Control(pDX, IDC_MOVE_UP, m_btnMoveUp);
-	DDX_Control(pDX, IDC_MOVE_DOWN, m_btnMoveDown);
-	DDX_Control(pDX, IDC_SOURCE_LIST, m_wndSourceList);
-	DDX_Control(pDX, IDC_DEST_LIST, m_wndDestList);
-	DDX_Check(pDX, IDC_SHOWDIRS, m_bShowDirs);
-	//}}AFX_DATA_MAP
+  CPropertyPage::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CPage2)
+  DDX_Control(pDX, IDC_MOVE_UP, m_btnMoveUp);
+  DDX_Control(pDX, IDC_MOVE_DOWN, m_btnMoveDown);
+  DDX_Control(pDX, IDC_SOURCE_LIST, m_wndSourceList);
+  DDX_Control(pDX, IDC_DEST_LIST, m_wndDestList);
+  DDX_Check(pDX, IDC_SHOWDIRS, m_bShowDirs);
+  //}}AFX_DATA_MAP
 }
 
 
 BEGIN_MESSAGE_MAP(CPage2, CPropertyPage)
-	//{{AFX_MSG_MAP(CPage2)
-	ON_BN_CLICKED(IDC_GOZINTA, OnGozinta)
-	ON_BN_CLICKED(IDC_GOZOUTA, OnGozouta)
-	ON_BN_CLICKED(IDC_MOVE_DOWN, OnMoveDown)
-	ON_BN_CLICKED(IDC_MOVE_UP, OnMoveUp)
-	ON_LBN_DBLCLK(IDC_SOURCE_LIST, OnDblclkSourceList)
-	ON_BN_CLICKED(IDC_SHOWDIRS, OnShowdirs)
-	//}}AFX_MSG_MAP
+  //{{AFX_MSG_MAP(CPage2)
+  ON_BN_CLICKED(IDC_GOZINTA, OnGozinta)
+  ON_BN_CLICKED(IDC_GOZOUTA, OnGozouta)
+  ON_BN_CLICKED(IDC_MOVE_DOWN, OnMoveDown)
+  ON_BN_CLICKED(IDC_MOVE_UP, OnMoveUp)
+  ON_LBN_DBLCLK(IDC_SOURCE_LIST, OnDblclkSourceList)
+  ON_BN_CLICKED(IDC_SHOWDIRS, OnShowdirs)
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -313,7 +313,7 @@ BOOL CPage2::SynchronizeDestFiles()
     }
   }
 
-	return(TRUE);
+  return(TRUE);
 }
 
 void CPage2::FillSourceListBox(CSetupGizDlg *pSheet, LPCSTR szPath)
@@ -465,14 +465,14 @@ BOOL CPage2::OnSetActive()
 
   UpdateData(0);  // do it again to get any selections right...
 
-	return CPropertyPage::OnSetActive();
+  return CPropertyPage::OnSetActive();
 }
 
 LRESULT CPage2::OnWizardBack() 
 {
   SynchronizeDestFiles();
-	
-	return CPropertyPage::OnWizardBack();
+  
+  return CPropertyPage::OnWizardBack();
 }
 
 LRESULT CPage2::OnWizardNext() 
@@ -495,8 +495,8 @@ LRESULT CPage2::OnWizardNext()
                   MB_OK | MB_ICONHAND | MB_SETFOREGROUND);
     return -1;
   }
-	
-	return(CPropertyPage::OnWizardNext());
+  
+  return(CPropertyPage::OnWizardNext());
 }
 
 void CPage2::OnShowdirs() 

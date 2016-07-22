@@ -505,7 +505,7 @@ void DoBitmapBackground(HWND hWnd, CBitmap *pBitmap, CDC &dcOrig)
   CDC dc;
 
   dc.CreateCompatibleDC(&dcOrig);
-	dc.SaveDC();
+  dc.SaveDC();
 
   CRect rct, rctClip;
 

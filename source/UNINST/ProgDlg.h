@@ -26,12 +26,12 @@ class CProgressDialog : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CProgressDialog(HWND hParent = NULL);
+  CProgressDialog(HWND hParent = NULL);
 
-	enum { IDD = IDD_PROGRESS };
-	CThermometer m_Progress;
-	CString	m_csProgressText;
-	CString	m_csProgress;
+  enum { IDD = IDD_PROGRESS };
+  CThermometer m_Progress;
+  CString m_csProgressText;
+  CString m_csProgress;
 
 
   void SetProgressText(UINT uiID)
@@ -55,11 +55,11 @@ public:
 
 
 protected:
-	void UpdateData(BOOL);
+  void UpdateData(BOOL);
 
   virtual BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
   BOOL OnCommand(WPARAM wParam, LPARAM lParam);
-	BOOL OnInitDialog();
+  BOOL OnInitDialog();
 
 };

@@ -32,33 +32,33 @@ class CNagDialog : public CDialog
 {
 // Construction
 public:
-	CNagDialog(CWnd* pParent = NULL);   // standard constructor
+  CNagDialog(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CNagDialog)
-	enum { IDD = IDD_NAG };
-	CString	m_csAuthCode;
-	CString	m_csAuthCompany;
-	//}}AFX_DATA
+  //{{AFX_DATA(CNagDialog)
+  enum { IDD = IDD_NAG };
+  CString m_csAuthCode;
+  CString m_csAuthCompany;
+  //}}AFX_DATA
 
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CNagDialog)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CNagDialog)
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
 
-	// Generated message map functions
-	//{{AFX_MSG(CNagDialog)
-	virtual void OnOK();
-	virtual void OnCancel();
+  // Generated message map functions
+  //{{AFX_MSG(CNagDialog)
+  virtual void OnOK();
+  virtual void OnCancel();
   virtual void OnNo();
   //}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

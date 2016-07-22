@@ -864,7 +864,7 @@ public:
   virtual int Run();
 
   virtual BOOL InitInstance();
-	virtual int ExitInstance();
+  virtual int ExitInstance();
 
   BOOL CreateThread(DWORD dwCreateFlags = 0, UINT nStackSize = 0,
                     LPSECURITY_ATTRIBUTES lpSecurityAttrs = NULL);

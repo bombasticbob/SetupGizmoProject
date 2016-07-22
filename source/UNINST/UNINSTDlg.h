@@ -32,9 +32,9 @@ class CUNINSTDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CUNINSTDlg(HWND hParent = NULL);	// standard constructor
+  CUNINSTDlg(HWND hParent = NULL);  // standard constructor
 
-	enum { IDD = IDD_UNINST_DIALOG };
+  enum { IDD = IDD_UNINST_DIALOG };
 
   HWND m_hwndAppTitle, m_hwndTagLine;
   CString m_csCaption;
@@ -44,20 +44,20 @@ public:
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 //  MSG m_msgLast;  // so I know what I'm dealing with
 
   virtual BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
   static BOOL WINAPI AboutDlgProc(HWND hDlg, UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
-	// Generated message map functions
-	//{{AFX_MSG(CUNINSTDlg)
-	BOOL OnInitDialog();
-	BOOL OnPaint();
-	HCURSOR OnQueryDragIcon();
-	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CUNINSTDlg)
+  BOOL OnInitDialog();
+  BOOL OnPaint();
+  HCURSOR OnQueryDragIcon();
+  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
 public:
   void OnBnClickedRetry();
 };

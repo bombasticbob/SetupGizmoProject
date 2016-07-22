@@ -30,43 +30,43 @@ class CAutoRunDlg : public CMyDialogBaseClass /*CDialog*/
 {
 // Construction
 public:
-	CAutoRunDlg(HWND hParent = NULL);	// standard constructor
+  CAutoRunDlg(HWND hParent = NULL); // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CAutoRunDlg)
+  //{{AFX_DATA(CAutoRunDlg)
   enum { IDD = IDD_AUTORUN_DIALOG };
-  CStatic	m_wndBackground;
-  CButton	m_wndExplore;
-  CButton	m_wndInstall;
-  CButton	m_wndExit;
+  CStatic m_wndBackground;
+  CButton m_wndExplore;
+  CButton m_wndInstall;
+  CButton m_wndExit;
   //}}AFX_DATA
 
   CBitmap m_bmpBackground, m_bmpInstall, m_bmpExplore, m_bmpExit;
 
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CAutoRunDlg)
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CAutoRunDlg)
 protected:
-	void UpdateData(BOOL bSaveFlag);
+  void UpdateData(BOOL bSaveFlag);
   virtual BOOL MessageHandler(UINT, WPARAM, LPARAM);
-	//}}AFX_VIRTUAL
+  //}}AFX_VIRTUAL
 
   BOOL RunApplication(LPCSTR szCommand);
 
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 
-	// Generated message map functions
-	//{{AFX_MSG(CAutoRunDlg)
-	virtual BOOL OnInitDialog();
-	BOOL OnPaint();
-	HCURSOR OnQueryDragIcon();
-	virtual void OnCancel();
-	void OnInstall();
-	void OnExplore();
-	//}}AFX_MSG
-//	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CAutoRunDlg)
+  virtual BOOL OnInitDialog();
+  BOOL OnPaint();
+  HCURSOR OnQueryDragIcon();
+  virtual void OnCancel();
+  void OnInstall();
+  void OnExplore();
+  //}}AFX_MSG
+//  DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

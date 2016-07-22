@@ -31,27 +31,27 @@ static char THIS_FILE[] = __FILE__;
 
 
 CNagDialog::CNagDialog(CWnd* pParent /*=NULL*/)
-	: CDialog(CNagDialog::IDD, pParent)
+  : CDialog(CNagDialog::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CNagDialog)
-	m_csAuthCode = _T("");
-	m_csAuthCompany = _T("");
-	//}}AFX_DATA_INIT
+  //{{AFX_DATA_INIT(CNagDialog)
+  m_csAuthCode = _T("");
+  m_csAuthCompany = _T("");
+  //}}AFX_DATA_INIT
 }
 
 
 void CNagDialog::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CNagDialog)
-	DDX_Text(pDX, IDC_AUTHCODE, m_csAuthCode);
-	DDX_Text(pDX, IDC_AUTHCOMPANY, m_csAuthCompany);
-	//}}AFX_DATA_MAP
+  CDialog::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CNagDialog)
+  DDX_Text(pDX, IDC_AUTHCODE, m_csAuthCode);
+  DDX_Text(pDX, IDC_AUTHCOMPANY, m_csAuthCompany);
+  //}}AFX_DATA_MAP
 }
 
 
 BEGIN_MESSAGE_MAP(CNagDialog, CDialog)
-	//{{AFX_MSG_MAP(CNagDialog)
+  //{{AFX_MSG_MAP(CNagDialog)
   ON_BN_CLICKED(IDNO,OnNo)
   //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
@@ -139,7 +139,7 @@ void CNagDialog::OnOK()
 
 void CNagDialog::OnCancel()
 {
-	CDialog::OnCancel();
+  CDialog::OnCancel();
 }
 
 void CNagDialog::OnNo()

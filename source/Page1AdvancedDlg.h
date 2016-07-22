@@ -32,40 +32,40 @@ class CPage1AdvancedDlg : public CDialog
 {
 // Construction
 public:
-	CPage1AdvancedDlg(CWnd* pParent = NULL);   // standard constructor
+  CPage1AdvancedDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CPage1AdvancedDlg)
-	enum { IDD = IDD_PAGE1_ADVANCED };
-	CButton	m_btnRemove;
-	CListBox	m_wndUpgrade;
-	CString	m_csAppCommon;
-	CString	m_csAppPath;
-	CString	m_csStartMenu;
-	//}}AFX_DATA
+  //{{AFX_DATA(CPage1AdvancedDlg)
+  enum { IDD = IDD_PAGE1_ADVANCED };
+  CButton m_btnRemove;
+  CListBox  m_wndUpgrade;
+  CString m_csAppCommon;
+  CString m_csAppPath;
+  CString m_csStartMenu;
+  //}}AFX_DATA
 
   CStringArray m_acsUpgrade;  // list of 'upgrade' things
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CPage1AdvancedDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generated virtual function overrides
+  //{{AFX_VIRTUAL(CPage1AdvancedDlg)
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
 
-	// Generated message map functions
-	//{{AFX_MSG(CPage1AdvancedDlg)
-	virtual void OnOK();
-	afx_msg void OnAdd();
-	afx_msg void OnRemove();
-	afx_msg void OnHelp();
-	afx_msg void OnSelchangeUpgrade();
-	virtual BOOL OnInitDialog();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CPage1AdvancedDlg)
+  virtual void OnOK();
+  afx_msg void OnAdd();
+  afx_msg void OnRemove();
+  afx_msg void OnHelp();
+  afx_msg void OnSelchangeUpgrade();
+  virtual BOOL OnInitDialog();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

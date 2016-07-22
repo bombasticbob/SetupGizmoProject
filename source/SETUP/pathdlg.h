@@ -25,11 +25,11 @@ class CPathDialog : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CPathDialog(HWND hParent = NULL);   // standard constructor
+  CPathDialog(HWND hParent = NULL);   // standard constructor
 
-	enum { IDD = IDD_PATH_DIALOG };
-	CString	m_csPathName;
-	CString	m_csPathCaption;
+  enum { IDD = IDD_PATH_DIALOG };
+  CString m_csPathName;
+  CString m_csPathCaption;
 
   CString m_csTitle;
 
@@ -39,7 +39,7 @@ protected:
   void UpdateData(BOOL bSaveFlag);
   BOOL MessageHandler(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
-	void OnOK();
-	BOOL OnInitDialog();
-	void OnBrowse();
+  void OnOK();
+  BOOL OnInitDialog();
+  void OnBrowse();
 };

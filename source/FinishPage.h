@@ -32,58 +32,58 @@ class CSetupGizDlg;
 
 class CFinishPage : public CPropertyPage
 {
-	DECLARE_DYNCREATE(CFinishPage)
+  DECLARE_DYNCREATE(CFinishPage)
 
 // Construction
 public:
-	CFinishPage();
-	~CFinishPage();
+  CFinishPage();
+  ~CFinishPage();
 
   BOOL DoWizardFinish(CSetupGizDlg *pSheet);
     // allows me to automate the process by using THIS to write output
 
 // Dialog Data
-	//{{AFX_DATA(CFinishPage)
-	enum { IDD = IDD_FINISH };
-	CEdit	m_wndDisk1Reserve;
-	CButton	m_btnAutoInsert;
-	BOOL	m_bAutoInsert;
-	int		m_iInstallType;
-	BOOL	m_bDoNotClose;
-	BOOL	m_bLZCompress;
-	BOOL	m_bNoUninstall;
-	BOOL	m_bQuietSetup;
+  //{{AFX_DATA(CFinishPage)
+  enum { IDD = IDD_FINISH };
+  CEdit m_wndDisk1Reserve;
+  CButton m_btnAutoInsert;
+  BOOL  m_bAutoInsert;
+  int   m_iInstallType;
+  BOOL  m_bDoNotClose;
+  BOOL  m_bLZCompress;
+  BOOL  m_bNoUninstall;
+  BOOL  m_bQuietSetup;
   BOOL  m_bDoNotDelWorkFiles;
   BOOL  m_bDoNotRebuildCab;
-	int		m_iRebootFlag;
-	int		m_iDisk1Reserve;
-	//}}AFX_DATA
+  int   m_iRebootFlag;
+  int   m_iDisk1Reserve;
+  //}}AFX_DATA
 
   void DoClear();
 
 // Overrides
-	// ClassWizard generate virtual function overrides
-	//{{AFX_VIRTUAL(CFinishPage)
-	public:
-	virtual BOOL OnSetActive();
-	virtual BOOL OnWizardFinish();
-	virtual LRESULT OnWizardBack();
-	virtual BOOL OnKillActive();
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+  // ClassWizard generate virtual function overrides
+  //{{AFX_VIRTUAL(CFinishPage)
+  public:
+  virtual BOOL OnSetActive();
+  virtual BOOL OnWizardFinish();
+  virtual LRESULT OnWizardBack();
+  virtual BOOL OnKillActive();
+  protected:
+  virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  //}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	// Generated message map functions
-	//{{AFX_MSG(CFinishPage)
-	afx_msg void OnSave();
-	afx_msg void OnCdrom();
-	afx_msg void OnCdromMulti();
-	afx_msg void OnDiskette();
-	afx_msg void OnSelfExtract();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  // Generated message map functions
+  //{{AFX_MSG(CFinishPage)
+  afx_msg void OnSave();
+  afx_msg void OnCdrom();
+  afx_msg void OnCdromMulti();
+  afx_msg void OnDiskette();
+  afx_msg void OnSelfExtract();
+  //}}AFX_MSG
+  DECLARE_MESSAGE_MAP()
 
 };
 

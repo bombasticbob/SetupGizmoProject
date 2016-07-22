@@ -32,9 +32,9 @@
 #define _T(X) X /* temporary */
 
 COptionsDlg::COptionsDlg(CStringArray *pList, const CStringArray *pPreSel)
-	: CMyDialogBaseClass(COptionsDlg::IDD, NULL)
+  : CMyDialogBaseClass(COptionsDlg::IDD, NULL)
 {
-	m_csOptionDesc = _T("");
+  m_csOptionDesc = _T("");
 
   m_pList = pList;      // source for data, destination for results
   m_pPreSel = pPreSel;  // pre-selected options list
@@ -113,7 +113,7 @@ void COptionsDlg::OnOK()
     }
   }
 
-	EndDialog(IDOK);
+  EndDialog(IDOK);
 }
 
 void COptionsDlg::OnCancel() 
@@ -121,7 +121,7 @@ void COptionsDlg::OnCancel()
   if(m_pList)
     m_pList->RemoveAll();  // by convention, do this
 
-	EndDialog(IDCANCEL);
+  EndDialog(IDCANCEL);
 }
 
 void COptionsDlg::OnSelchangeOptionList() 
@@ -148,8 +148,8 @@ BOOL COptionsDlg::OnInitDialog()
 {
   m_wndOptionList.Attach(GetDlgItem(IDC_OPTION_LIST));
 
-	UpdateData(0);
-	
+  UpdateData(0);
+  
   int i1, i2;
   CStringArray acsTemp;
 
@@ -177,9 +177,9 @@ BOOL COptionsDlg::OnInitDialog()
     m_wndOptionList.SetCaretIndex(0);
     OnSelchangeOptionList();
   }
-	
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 BOOL COptionsDlg::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct) 
@@ -305,7 +305,7 @@ BOOL COptionsDlg::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStr
 
     m_dwHeight = HIWORD(GetDialogBaseUnits());
 
-	  // get the default dialog box's font
+    // get the default dialog box's font
     HFONT hFont = (HFONT)SendMessage(WM_GETFONT, 0, 0);
     if(hFont)
     {

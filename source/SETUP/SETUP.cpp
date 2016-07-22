@@ -4969,28 +4969,28 @@ int CSETUPApp::DoMessageBox(LPCTSTR lpszPrompt, UINT nType, UINT nIDPrompt)
 {
   HWND hwndParent = m_pMyFrameWnd ? m_pMyFrameWnd->m_hWnd : NULL;
 
-	// determine icon based on type specified
-	if ((nType & MB_ICONMASK) == 0)
-	{
-		switch (nType & MB_TYPEMASK)
-		{
-		case MB_OK:
-		case MB_OKCANCEL:
-			nType |= MB_ICONEXCLAMATION;
-			break;
+  // determine icon based on type specified
+  if ((nType & MB_ICONMASK) == 0)
+  {
+    switch (nType & MB_TYPEMASK)
+    {
+    case MB_OK:
+    case MB_OKCANCEL:
+      nType |= MB_ICONEXCLAMATION;
+      break;
 
-		case MB_YESNO:
-		case MB_YESNOCANCEL:
-			nType |= MB_ICONEXCLAMATION;
-			break;
+    case MB_YESNO:
+    case MB_YESNOCANCEL:
+      nType |= MB_ICONEXCLAMATION;
+      break;
 
-		case MB_ABORTRETRYIGNORE:
-		case MB_RETRYCANCEL:
-			// No default icon for these types, since they are rarely used.
-			// The caller should specify the icon.
-			break;
-		}
-	}
+    case MB_ABORTRETRYIGNORE:
+    case MB_RETRYCANCEL:
+      // No default icon for these types, since they are rarely used.
+      // The caller should specify the icon.
+      break;
+    }
+  }
 
   if(m_csAppName.GetLength())
     return(::MessageBox(hwndParent, lpszPrompt, m_csAppName + " SETUP", nType));

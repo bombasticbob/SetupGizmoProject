@@ -33,9 +33,9 @@ class CLoginDlg : public CMyDialogBaseClass
 {
 // Construction
 public:
-	CLoginDlg(HWND hParent = NULL);	// standard constructor
+  CLoginDlg(HWND hParent = NULL); // standard constructor
 
-	enum { IDD = IDD_LOGON };
+  enum { IDD = IDD_LOGON };
   CEdit m_wndDomain;
   CString m_csUserName;
   CString m_csPassword;
@@ -47,13 +47,13 @@ protected:
 
 // Implementation
 protected:
-	HICON m_hIcon;
+  HICON m_hIcon;
 
-	BOOL OnInitDialog();
-	BOOL OnPaint();
-	HCURSOR OnQueryDragIcon();
-	void OnCancel();
-	void OnOK();
+  BOOL OnInitDialog();
+  BOOL OnPaint();
+  HCURSOR OnQueryDragIcon();
+  void OnCancel();
+  void OnOK();
 };
 
 //{{AFX_INSERT_LOCATION}}

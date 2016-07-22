@@ -45,22 +45,22 @@ BOOL DoTheThing(CString &csDestPath, CString &csLicenseFile);
 
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
-	int nRetCode = 0;
+  int nRetCode = 0;
 
-	HMODULE hModule = ::GetModuleHandle(NULL);
+  HMODULE hModule = ::GetModuleHandle(NULL);
 
-	if (hModule != NULL)
-	{
-		// initialize MFC and print and error on failure
-		if (!AfxWinInit(hModule, NULL, ::GetCommandLine(), 0))
-		{
-			// TODO: change error code to suit your needs
-			_tprintf(_T("Fatal Error: MFC initialization failed\n"));
-			nRetCode = 1;
-		}
-		else
-		{
-			CString csDestPath, csLicenseFile;
+  if (hModule != NULL)
+  {
+    // initialize MFC and print and error on failure
+    if (!AfxWinInit(hModule, NULL, ::GetCommandLine(), 0))
+    {
+      // TODO: change error code to suit your needs
+      _tprintf(_T("Fatal Error: MFC initialization failed\n"));
+      nRetCode = 1;
+    }
+    else
+    {
+      CString csDestPath, csLicenseFile;
 
       if(argc > 2)
       {
@@ -89,15 +89,15 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
         nRetCode = 0;
       }
     }
-	}
-	else
-	{
-		// TODO: change error code to suit your needs
-		_tprintf(_T("Fatal Error: GetModuleHandle failed\n"));
-		nRetCode = 1;
-	}
+  }
+  else
+  {
+    // TODO: change error code to suit your needs
+    _tprintf(_T("Fatal Error: GetModuleHandle failed\n"));
+    nRetCode = 1;
+  }
 
-	return nRetCode;
+  return nRetCode;
 }
 
 // use 'csDestPath' and optionally 'csLicenseFile' to create a self-extracting
